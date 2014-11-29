@@ -44,7 +44,7 @@ li {
 li .list-icon {
 	float: left;
 	margin-right: 12px;
-	height: 100px; /* TODO: use 100x100 pics instead of scaling */ 
+	height: 60px; /* TODO: use 100x100 pics instead of scaling */ 
  }
 
 
