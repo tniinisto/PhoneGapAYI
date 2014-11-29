@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
 
-$sql =	"SELECT p.playerID, p.name
+$sql =	"SELECT p.playerID, p.name, p.photourl
     	FROM areyouin.players p";
 		
 	

@@ -19,7 +19,6 @@ $(document).ajaxError(function(event, request, settings) {
 
 function getPlayerList() {
 	$('#busy').show();
-	alert("Calling getplayers.php...");
 	
 	$.getJSON(serviceURL + 'getplayers.php', function(data) {
 		$('#busy').hide();
@@ -28,6 +27,7 @@ function getPlayerList() {
 		$.each(players, function(index, player) {
 			$('#playerList').append(
 					'<li>' +
+					'<img src="pics/' + player.photourl + '" class="list-icon"/>' +
 					'<p class="line1">' + player.playerID + '</p>' +
 					'<p class="line2">' + player.name + '</p>' +
 					'</li>');
