@@ -1,8 +1,12 @@
 /**
  * @author tniinis
  */
-localStorage['serviceURL'] = "http://localhost:1080/PhoneGapAYIgit/services/";
-var serviceURL = localStorage['serviceURL'];
+
+//localStorage['serviceURL'] = "http://localhost:1080/PhoneGapAYIgit/services/";
+//var serviceURL = localStorage['serviceURL'];
+
+localStorage['azureserviceURL'] = "http://pg-areyouin.azurewebsites.net/services/";
+var serviceURL = localStorage['azureserviceURL'];
 
 var scroll = new iScroll('wrapper', { vScrollbar: false, hScrollbar:false, hScroll: false });
 
