@@ -1,53 +1,85 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Employee Directory</title>
+        <title>AreYouIn</title>
         <meta name="viewport" content="width=device-width,initial-scale=1, target-densityDpi=device-dpi"/>
-
         
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>        
 
         <link rel="stylesheet" href="css/styles.css" />
+        
+        <script>
+			var scroll = null;
+			
+			$(document).on("pageshow","#areyouin-players-page",function(){
+  				//alert("pageshow event fired - Players is now shown");
+  				scroll.refresh();
+			});
+		</script>		
     </head>
 
     <body>
 
-	<div data-role="page" id="areyouin-page" data-theme="b" data-url="areyouin-page">
+	<!-- Events -->
+	<div data-role="page" id="areyouin-events-page" data-theme="b" data-url="areyouin-events-page">
 	    <div data-role="header" data-theme="b">
 	        <h1>AreYouIn</h1>
-	        <a href="#left-panel" data-theme="b" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open left panel</a>
-	        <!-- <a href="#right-panel" data-theme="d" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open right panel</a> -->
+	        <a href="#left-panel1" data-theme="b" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open left panel</a>
 	    </div><!-- /header -->
+	    
 	    <div data-role="content">
 	        <dl>
 	            <dt>Swipe <span>verb</span></dt>
 	            <dd><b>1.</b> to strike or move with a sweeping motion</dd>
 	        </dl>
-	        <!-- <a href="#demo-intro" data-rel="back" class="back-btn" data-role="button" data-mini="true" data-inline="true" data-icon="back" data-iconpos="right">Back to demo intro</a> -->
 	    </div><!-- /content -->
-	    <div data-role="panel" id="left-panel" data-display="overlay" data-theme="b">
+	    
+	    <div data-role="panel" id="left-panel1" data-display="overlay" data-theme="b">
 	        <p>Menu</p>
-	        <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+	        <p><a href="#areyouin-events-page" data-theme="b" data-icon="" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Events</a></p>
+	        <p><a href="#areyouin-players-page" data-theme="b" data-icon="" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Players</a></p>
+
+	        <!-- <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a> -->
 	    </div><!-- /panel -->
-	    <!-- <div data-role="panel" id="right-panel" data-display="push" data-position="right" data-theme="c">
-	        <p>Right push panel.</p>
-	        <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
-	    </div><!-- /panel -->
-    </div>        
+    </div><!-- /Events -->   
 	        
-		<!-- <div id="header" class="header">
-			<h1>AreYouIn - Players</h1>
-		</div>
-		
-		<div id="header2">
-			<h2>Players</h2>
-		</div>	
-				
-		<div id="wrapper">
-			<ul id="playerList" class="icon-list"> </ul>
-		</div>
+	<!-- Players -->	        
+	<div data-role="page" id="areyouin-players-page" data-theme="b" data-url="areyouin-players-page">
+	    <div data-role="header" data-theme="b">
+	        <h1>Players</h1>
+	        <a href="#left-panel2" data-theme="b" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open left panel</a>
+	    </div><!-- /header -->
+	    
+	    <div data-role="content">
+			<div id="wrapper">
+				<ul id="playerList" class="icon-list"> </ul>
+			</div>
+			
+			<div id="busy">Loading...</div>
+	    </div><!-- /content -->
+	    
+	    <div data-role="panel" id="left-panel2" data-display="overlay" data-theme="b">
+	        <p>Menu</p>
+	        <p><a href="#areyouin-events-page" data-theme="b" data-icon="" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Events</a></p>
+	        <p><a href="#areyouin-players-page" data-theme="b" data-icon="" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Players</a></p>
+
+	        <!-- <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a> -->
+	    </div><!-- /panel -->
+    </div><!-- /Players -->
+    	        
+	<!-- <div id="header" class="header">
+		<h1>AreYouIn - Players</h1>
+	</div>
+	
+	<div id="header2">
+		<h2>Players</h2>
+	</div>	
+			
+	<div id="wrapper">
+		<ul id="playerList" class="icon-list"> </ul>
+	</div>
 
 	<div id="busy">Loading...</div> -->
 	
@@ -55,7 +87,7 @@
     <script src="js/jquery.js"></script>
     <script src="js/iscroll.js"></script>
     <script src="js/playerlist.js"></script>
-
+        
     </body>
 
 </html>

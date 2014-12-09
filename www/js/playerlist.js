@@ -8,7 +8,7 @@
 localStorage['azureserviceURL'] = "http://pg-areyouin.azurewebsites.net/services/";
 var serviceURL = localStorage['azureserviceURL'];
 
-var scroll = new iScroll('wrapper', { vScrollbar: false, hScrollbar:false, hScroll: false });
+scroll = new iScroll('wrapper', { vScrollbar: false, hScrollbar:false, hScroll: false });
 
 var players;
 
@@ -32,13 +32,22 @@ function getPlayerList() {
 			$('#playerList').append(
 					'<li>' +
 					'<img src="pics/' + player.photourl + '" class="list-icon"/>' +
-					'<p class="line1">' + player.playerID + '</p>' +
-					'<p class="line2">' + player.name + '</p>' +
+					// '<p class="line1">' + player.playerID + '</p>' +
+					'<p class="line1">' + player.name + '</p>' +
 					'</li>');
 		});
 		setTimeout(function(){
 			scroll.refresh();
 		});
 	});
-	
+
 }
+
+// $(document).on('pageshow', '#areyouin-players-page', function(){
+	// alert("je");
+// });
+// 
+// $( '#areyouin-players-page' ).live( 'pageshow',function(event, ui){
+  // alert( 'This page was just shown: '+ ui.nextPage);
+// });
+

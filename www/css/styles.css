@@ -27,7 +27,7 @@ h3 {
 ul {
 	clear: both;
 	list-style-type: none;
-	background: #FFFFFF;
+	/*background: #FFFFFF;*/
 }
 
 li {
@@ -235,5 +235,5 @@ dd { font-size: 1.25em; margin: 1em 0 0; padding-bottom: 1em; border-bottom: 1px
 
 
 .ui-panel {
-	width: 10em;
+	width: 12em;
 }
