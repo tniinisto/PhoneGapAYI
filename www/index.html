@@ -9,9 +9,16 @@
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>        
 
         <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/styles_www.css" />
+        <link rel="stylesheet" href="css/media-queries_www.css" />
         
         <script>
-			var scroll = null;
+			var scroll, scroll_events = null;
+			
+			// $(document).on("pageshow","#areyouin-events-page",function(){
+  				// //alert("pageshow event fired - Events is now shown");
+  				// scroll_events.refresh();
+			// });
 			
 			$(document).on("pageshow","#areyouin-players-page",function(){
   				//alert("pageshow event fired - Players is now shown");
@@ -24,15 +31,13 @@
 
 	<!-- Events -->
 	<div data-role="page" id="areyouin-events-page" data-theme="b" data-url="areyouin-events-page">
-	    <div data-role="header" data-theme="b">
+	    <div data-role="header" data-theme="b"  data-position="fixed" data-tap-toggle="false">
 	        <h1>AreYouIn</h1>
 	        <a href="#left-panel1" data-theme="b" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open left panel</a>
 	    </div><!-- /header -->
 	    
 	    <div data-role="content">
-	        <div id="event_content_id">
-	        	
-	        </div>
+    		<div id="event_content_id"> </div>
 	    </div><!-- /content -->
 	    
 	    <div data-role="panel" id="left-panel1" data-display="overlay" data-theme="b">
@@ -68,18 +73,6 @@
 	    </div><!-- /panel -->
     </div><!-- /Players -->
     	        
-	<!-- <div id="header" class="header">
-		<h1>AreYouIn - Players</h1>
-	</div>
-	
-	<div id="header2">
-		<h2>Players</h2>
-	</div>	
-			
-	<div id="wrapper">
-		<ul id="playerList" class="icon-list"> </ul>
-	</div>
-
 	<div id="busy">Loading...</div> -->
 	
 	<script src="js/phonegap.js"></script>
