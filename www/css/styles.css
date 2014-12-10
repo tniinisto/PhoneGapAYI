@@ -235,7 +235,7 @@ li .action-icon {
     left: 0;
     right: 0;
     bottom: 0px;
-    overflow: scroll;
+    overflow: hidden;
     -webkit-overflow-scrolling: touch;
 }
 
