@@ -231,7 +231,7 @@
 		    if($playerid != $row['playerid']) {
                 echo "<table class=\"atable2\">";
 				        echo "<tr>";				
-				        echo "<td class=\"col1\">" . $row['eventplayerid'] . "</td>";
+				        echo "<td class=\"col1\">" . $row['EventPlayerID'] . "</td>";
 				        echo "<td class=\"col2\">" . $row['playerid'] . "</td>";
 				        if($row['seen'] == 1)
 					        echo "<td class=\"col3\"><img class=\"seen\" width=\"40\" height=\"40\" src=\"images/" . $row['photourl'] . "\"></td>";
