@@ -43,11 +43,3 @@ function getPlayerList() {
 
 }
 
-// $(document).on('pageshow', '#areyouin-players-page', function(){
-	// alert("je");
-// });
-// 
-// $( '#areyouin-players-page' ).live( 'pageshow',function(event, ui){
-  // alert( 'This page was just shown: '+ ui.nextPage);
-// });
-
