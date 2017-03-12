@@ -37,6 +37,10 @@
     * Create your own at http://cspisawesome.com
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+		
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>   
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Hello World</title>
@@ -44,13 +48,65 @@
 
 <body>
     <div class="app">
-        <h1>PhoneGap</h1>
+        <!--<h1>PhoneGap</h1>
         <div id="deviceready" class="blink">
             <p class="event listening">Connecting to Device</p>
             <p class="event received">Device is Ready2017
             </p>
-        </div>
+        </div>-->
+
+	<!-- Events -->
+	<div data-role="page" id="areyouin-events-page" data-theme="b" data-url="areyouin-events-page">
+	    <div data-role="header" data-theme="b"  data-position="fixed" data-tap-toggle="false">
+	        <h1>AreYouIn</h1>
+	        <a href="#left-panel1" data-theme="b" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open left panel</a>
+	    </div><!-- /header -->
+	    
+	    <div data-role="content">
+    		<div id="event_content_id"> </div>
+	    </div><!-- /content -->
+	    
+	    <div data-role="panel" id="left-panel1" data-display="overlay" data-theme="b">
+	        <p>Menu</p>
+	        <p><a href="#areyouin-events-page" data-theme="b" data-icon="" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Events</a></p>
+	        <p><a href="#areyouin-players-page" data-theme="b" data-icon="" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Players</a></p>
+
+	        <!-- <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a> -->
+	    </div><!-- /panel -->
+    </div><!-- /Events -->   
+	        
+	<!-- Players -->	        
+	<div data-role="page" id="areyouin-players-page" data-theme="b" data-url="areyouin-players-page">
+	    <div data-role="header" data-theme="b">
+	        <h1>Players</h1>
+	        <a href="#left-panel2" data-theme="b" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open left panel</a>
+	    </div><!-- /header -->
+	    
+	    <div data-role="content">
+			<div id="wrapper">
+				<ul id="playerList" class="icon-list"> </ul>
+			</div>
+			
+			<div id="busy">Loading...</div>
+	    </div><!-- /content -->
+	    
+	    <div data-role="panel" id="left-panel2" data-display="overlay" data-theme="b">
+	        <p>Menu</p>
+	        <p><a href="#areyouin-events-page" data-theme="b" data-icon="" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Events</a></p>
+	        <p><a href="#areyouin-players-page" data-theme="b" data-icon="" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Players</a></p>
+
+	        <!-- <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a> -->
+	    </div><!-- /panel -->
+    </div><!-- /Players -->
+    	        
+	<div id="busy">Loading...</div>
+
+
+
     </div>
+
+
+
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
