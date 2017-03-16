@@ -49,6 +49,14 @@
         <splash density="port-xhdpi" src="www/res/screen/android/drawable-port-xhdpi-screen.png" />
         <splash density="port-xxhdpi" src="www/res/screen/android/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
+
+        <icon density="hdpi" src="www/js/images/bars-white.png" />
+        <icon density="hdpi" src="www/js/images/chat-icon.png" />
+        <icon density="hdpi" src="www/js/images/events-icon.png" />
+        <icon density="hdpi" src="www/js/images/logout-icon.png" />
+        <icon density="hdpi" src="www/js/images/menu-icon.png" />
+        <icon density="hdpi" src="www/js/images/new_chat.png" />
+        
     </platform>
     <platform name="ios">
         <icon height="57" platform="ios" src="www/res/icon/ios/icon.png" width="57" />
