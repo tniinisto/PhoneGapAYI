@@ -63,6 +63,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.phonegap.helloworldtest"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.phonegap.areyouin"
         }
     },
     "dependent_plugins": {
