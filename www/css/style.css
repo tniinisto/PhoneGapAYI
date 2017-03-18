@@ -1213,6 +1213,13 @@ vertical-align: middle;
     -webkit-border-radius: 0px;
 }
 
+#themenubutton .ui-icon { 
+    background: url(images/menu-icon.png) 50% 50% no-repeat;
+    background-size: 16px 11px;
+    box-shadow: none;
+    border-radius: 0px;
+}
+
 /************************************************************************************
 Notify switch
 *************************************************************************************/
