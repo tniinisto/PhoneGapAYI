@@ -11,12 +11,12 @@
 
     if(!$_SESSION['myusername']){
 
-        if($_SESSION['ChromeLog']) { ChromePhp::log('login_success.php, not session_is_registered'); }
+        //if($_SESSION['ChromeLog']) { ChromePhp::log('login_success.php, not session_is_registered'); }
 
         header("location:default.php");
     }
     else {
-        if($_SESSION['ChromeLog']) { ChromePhp::log('login_success.php, session_is_registered'); }
+        //if($_SESSION['ChromeLog']) { ChromePhp::log('login_success.php, session_is_registered'); }
 
         header("location:index.html");
 
