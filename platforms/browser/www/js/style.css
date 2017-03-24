@@ -1149,6 +1149,7 @@ Jquery mobile override
 /************************************************************************************
     JQueryMobile menu
 *************************************************************************************/
+
 .menu_text {
 	padding-top: 8px;
 	font-size: 20px;
@@ -1164,10 +1165,10 @@ Jquery mobile override
     box-shadow: none;
     -webkit-box-shadow: none;
     
-margin: -2px !important;
-margin-left: -165px!important;
-padding-left: 130px;
-vertical-align: middle;
+	margin: -2px !important;
+	margin-left: -165px!important;
+	padding-left: 130px;
+	vertical-align: middle;
 }    
 .ui-icon-chat {
     display: block;
@@ -1176,11 +1177,11 @@ vertical-align: middle;
     height: 20px;
     box-shadow: none;
     -webkit-box-shadow: none;
-    
-margin: -2px !important;
-margin-left: -165px!important;
-padding-left: 115px;
-vertical-align: middle;
+		
+	margin: -2px !important;
+	margin-left: -165px!important;
+	padding-left: 115px;
+	vertical-align: middle;
 }    
 .ui-icon-logout {
     display: block;

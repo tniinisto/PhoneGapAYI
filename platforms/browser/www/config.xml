@@ -13,7 +13,7 @@
     <author email="support@phonegap.com" href="http://phonegap.com">
         PhoneGap Team
     </author>
-    <content src="index.html" />
+    <content src="default.html" />
     <icon src="icon.png" />
     <icon gap:platform="ios" height="60" src="res/icons/ios/icon-60.png" width="60" />
     <icon gap:platform="ios" height="120" src="res/icons/ios/icon-60-2x.png" width="120" />
