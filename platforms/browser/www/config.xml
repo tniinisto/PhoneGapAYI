@@ -8,10 +8,10 @@
     </feature>
     <name>R'YouIN</name>
     <description>
-        R'YouIN phonegap app.
+        R'YouIN application.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="puonti@r-youin.com" href="https://r-youin.com">
+        Puonti Solutions
     </author>
     <content src="default.html" />
     <icon src="icon.png" />

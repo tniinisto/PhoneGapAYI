@@ -94,7 +94,7 @@
 
         <div>
 
-		    <form id="loginform" name="loginform" method="post" action="https://r-youin.com/mobile/logincheck.php">
+		    <form id="loginform" name="loginform" method="post" action="https://r-youin.com/PGmobile/logincheck.php">
 
             
 
@@ -175,7 +175,7 @@
         //Clear session, local storage and php session data
         localStorage.clear();
         sessionStorage.clear();
-        $.get("https://r-youin.com/mobile/logout.php");        
+        $.get("https://r-youin.com/PGmobile/logout.php");        
 
         if (!$.cookie('noShowWelcome')) {
 
@@ -278,7 +278,7 @@
         startLoginSpinner();
 
         var variables = "mail=" + mail;
-        xmlhttp.open("GET", "https://r-youin.com/mobile/forgotPassword.php?" + variables, true);
+        xmlhttp.open("GET", "https://r-youin.com/PGmobile/forgotPassword.php?" + variables, true);
         xmlhttp.send();
 
     }
