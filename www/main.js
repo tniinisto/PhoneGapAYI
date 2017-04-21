@@ -705,12 +705,15 @@ function refreshScroll() {
 }
 
 function toLoginPage() {
-    var loginURL = window.location.href;
-    loginURL = loginURL.substring(0, loginURL.lastIndexOf('/') + 1);
-    loginURL = loginURL + "default.php";
-    //alert(loginURL);
 
-    window.location.assign(loginURL);
+    navigator.app.exitApp();
+
+    // var loginURL = window.location.href;
+    // loginURL = loginURL.substring(0, loginURL.lastIndexOf('/') + 1);
+    // loginURL = loginURL + "default.php";
+    // //alert(loginURL);
+
+    // window.location.assign(loginURL);
 }
 
 //function sendMail() {
