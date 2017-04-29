@@ -3,7 +3,7 @@
 
 var serviceURL = "https://dev-areyouin.azurewebsites.net/pgmobile/services/";
 
-var scroll = new iScroll('wrapper', { vScrollbar: false, hScrollbar:false, hScroll: false });
+//var scroll = new iScroll('wrapper', { vScrollbar: false, hScrollbar:false, hScroll: false });
 
 var logininfo;
 
@@ -24,12 +24,10 @@ function getLogin() {
 		$('#busy').hide();
 
 		logininfo = data.items;
-		 $.each(logininfo, function(index, logininfo) {
-			$('#logininfo').append(logininfo.playerID + ' ' + logininfo.name)
-		 });
+		$('#logininfo').text(logininfo[0].playerID + ' ' + logininfo[0].name);
 		
-		setTimeout(function(){
-			scroll.refresh();
-		});
+		// setTimeout(function(){
+		// 	scroll.refresh();
+		// });
 	});
 }
