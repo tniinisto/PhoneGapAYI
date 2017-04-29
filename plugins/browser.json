@@ -8,72 +8,39 @@
     },
     "installed_plugins": {
         "cordova-plugin-battery-status": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
+            "PACKAGE_NAME": "com.phonegap.areyouin"
         },
         "cordova-plugin-camera": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
+            "PACKAGE_NAME": "com.phonegap.areyouin"
         },
         "cordova-plugin-media-capture": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
+            "PACKAGE_NAME": "com.phonegap.areyouin"
         },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
+            "PACKAGE_NAME": "com.phonegap.areyouin"
         },
         "cordova-plugin-contacts": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
+            "PACKAGE_NAME": "com.phonegap.areyouin"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
+            "PACKAGE_NAME": "com.phonegap.areyouin"
         },
         "cordova-plugin-device-motion": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
+            "PACKAGE_NAME": "com.phonegap.areyouin"
         },
         "cordova-plugin-device-orientation": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
+            "PACKAGE_NAME": "com.phonegap.areyouin"
         },
         "cordova-plugin-dialogs": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
-        },
-        "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
-        },
-        "cordova-plugin-geolocation": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
-        },
-        "cordova-plugin-globalization": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
-        },
-        "cordova-plugin-media": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
-        },
-        "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
-        },
-        "cordova-plugin-vibration": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
-        },
-        "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.phonegap.areyouin"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
+            "PACKAGE_NAME": "com.phonegap.areyouin"
         },
         "cordova-plugin-file": {
-            "PACKAGE_NAME": "com.phonegap.helloworldtest"
+            "PACKAGE_NAME": "com.phonegap.areyouin"
         }
     }
 }
