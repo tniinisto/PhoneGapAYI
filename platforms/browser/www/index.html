@@ -36,46 +36,163 @@
         * Enable eval(): add 'unsafe-eval' to default-src
     * Create your own at http://cspisawesome.com
     -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+     <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+		
+    <!--Jquery mobile 1.4.5-->
+    <link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.4.5.min.css" />
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Hello World</title>
+    <!--<script type="text/javascript" charset="utf-8" src="main.js"> </script>-->
+
+    <script src="js/jquery.js"></script>
+
+    <!-- css -->
+    <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
+    <link rel="stylesheet" type="text/css" href="js/index.css" />
+    <link rel="stylesheet" type="text/css" href="js/style.css" />
+    <link rel="stylesheet" type="text/css" href="js/media-queries.css" />        
+    
+    <title>R'YouIN</title>
+
+    <!--<meta http-equiv="refresh" content="0; url=default.html">-->
+
 </head>
 
 <body>
-    <div class="app">
-
-        <div id="wrapper">
-            <h1 id="logininfo" class="">Login info...</h1>
-        </div>
-
+    <!--<div class="app">
         <h1>PhoneGap</h1>
-
-        <!--<div id="deviceready" class="blink">
+        <div id="deviceready" class="blink">
             <p class="event listening">Connecting to Device</p>
-            <p class="event received">We are Hot!</p>
-        </div>-->
+            <p class="event received">Device is Ready2017
+            </p>
+        </div>
+    </div>-->
 
-    </div>
+	<!-- Events -->
+	 <div data-role="page" id="areyouin-events-page" data-theme="b" data-url="areyouin-events-page">
+	    <div data-role="header" data-theme="b"  data-position="fixed" data-tap-toggle="false">	        
+            <h1><span style="display: inline; font-size: 1.7em; text-transform: none;">R'YouIN </span><img id="msg_icon1" class="msg_icon_style noshow" alt="New messages" src="../images/new_chat.png"></img></h1>
+            <h1 id="logininfo"> </h1>
+	        <a href="#left-panel-events" data-theme="b" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc" >Open left panel</a>
+	    </div>
+	    
+	    <div data-role="content">
+    		<div id="event_content_id"> </div>
+	    </div>-->
+	    
+        <!--Left menu panel-->
+	    <div data-role="panel" id="left-panel-events" data-display="overlay" data-theme="b">
+	        <p style="font-size: 22px; font-weight: 700; color:#ffd800;">Menu</p>
+
+	        <a href="#areyouin-events-page" data-role="button" data-theme="b" data-icon="events" data-iconpos="" data-shadow="" data-iconshadow="" class="icon-events menu-layout"
+               style="background-color: #2A2A2A; border-radius: 0; color: #FFF; text-shadow: none; height: 40px;">
+                <div class="menu_text">Events</div>
+            </a>
+
+	        <a href="#areyouin-chat-page" data-role="button" data-theme="b" data-icon="chat" data-iconpos="" data-shadow="" data-iconshadow="" class="icon-chat menu-layout" onclick="updateLastMsgTime();"
+               style="background-color: #2A2A2A; border-radius: 0; color: #FFF; text-shadow: none; height: 40px;">
+                <div class="menu_text" style="padding-left: 10px;">Chat</div>
+            </a>
+
+            <a href="#" data-role="button" data-theme="b" data-icon="logout" data-iconpos="" data-shadow="" data-iconshadow="" class="icon-logout menu-layout" onclick="toLoginPage(); logout();"
+                style="background-color: #2A2A2A; border-radius: 0; color: #FFF; text-shadow: none; height: 40px;">
+                <div class="menu_text">Logout</div>
+            </a>
+	    </div>
+    </div> 
+    <!-- /Events -->   
+
+    <!-- Chat -->
+	 <div data-role="page" id="areyouin-chat-page" data-theme="b" data-url="areyouin-chat-page">
+	    <div data-role="header" data-theme="b"  data-position="fixed" data-tap-toggle="false">	        
+            <h1><span style="display: inline; font-size: 1.7em; text-transform: none;">R'YouIN </span><img id="msg_icon2" class="msg_icon_style noshow" alt="New messages" src="../images/new_chat.png"></img></h1>
+            <h1 id="logininfo"> </h1>
+	        <a href="#left-panel-chat" data-theme="b" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc" >Open left panel</a>
+	    </div>
+	    
+	    <div data-role="content">           
+            <a id="modal_comment" href="modal.html" data-role="button" data-rel="dialog" data-transition="flip" data-theme="b" style="margin-top: -5px;">New comment</a>
+            <div id="chat_content_id"> </div>
+	    </div>-->
+
+        <!--Left menu panel-->
+	    <div data-role="panel" id="left-panel-chat" data-display="overlay" data-theme="b">
+	        <p style="font-size: 22px; font-weight: 700; color:#ffd800;">Menu</p>
+
+	        <a href="#areyouin-events-page" data-role="button" data-theme="b" data-icon="events" data-iconpos="" data-shadow="" data-iconshadow="" class="icon-events menu-layout"
+               style="background-color: #2A2A2A; border-radius: 0; color: #FFF; text-shadow: none; height: 40px;">
+                <div class="menu_text">Events</div>
+            </a>
+
+	        <a href="#areyouin-chat-page" data-role="button" data-theme="b" data-icon="chat" data-iconpos="" data-shadow="" data-iconshadow="" class="icon-chat menu-layout" onclick="updateLastMsgTime();"
+               style="background-color: #2A2A2A; border-radius: 0; color: #FFF; text-shadow: none; height: 40px;">
+                <div class="menu_text" style="padding-left: 10px;">Chat</div>
+            </a>
+
+            <a href="#" data-role="button" data-theme="b" data-icon="logout" data-iconpos="" data-shadow="" data-iconshadow="" class="icon-logout menu-layout" onclick="toLoginPage(); logout();"
+                style="background-color: #2A2A2A; border-radius: 0; color: #FFF; text-shadow: none; height: 40px;">
+                <div class="menu_text">Logout</div>
+            </a>
+	    </div>
+    </div> 
+    <!-- /Chat -->
 
 
-
-	<div id="busy"/>Loading...</div>
-
-	<script src="js/phonegap.js"></script>
-    <!--<script src="js/index.js"></script>-->
-    <script src="js/jquery.js"></script>
-    
-    <script src="js/login.js"></script>
-
-    <!--<script src="js/jquery.js"></script>
-	<script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
-        app.initialize();
-    </script>
-    <script type="text/javascript" src="js/login.js"></script>-->
 
+    app.initialize();
+
+    </script>
+
+    <script src="js/login.js"></script>
+
+<!-- scripts -->
+<script>
+
+    //Logout
+    // function logout() {
+    //     localStorage.clear();
+    //     sessionStorage.clear();
+
+    //     $.get("logout.php");
+    // }
+
+    // //Document ready
+    // jQuery(document).ready(function () {
+        
+    //     //Winter season :)
+    //     //$.fn.snow({ minSize: 5, maxSize: 50, newOn: 1000, flakeColor: '#FFFFFF' });
+
+    //     //Init functions
+    //     getLoginInformation();
+    //     CheckForSession();
+
+    //     //Spinner
+    //     initSpinner();
+    //     startSpinner();
+
+    //     getEvents();
+    //     //getPlayersInsert();
+    //     //getAdminStatus();
+    //     //getPlayerProfile();
+    //     getChat();
+
+    //     waitForChat();
+
+    //     //Stop spinner after events have been load
+    //     stopSpinner();
+
+    //     //Comet for events, affected the whole usability too much, needs more investigation!
+    //     setTimeout('waitForEventUpdate()',60000); //60 seconds after start
+    // });
+
+
+</script>
+    
+<!--<script src="json/playerinfo.js"></script>    			-->
 
 </body>
 
