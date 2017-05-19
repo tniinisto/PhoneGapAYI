@@ -19,16 +19,29 @@ $(document).ajaxError(function(event, request, settings) {
  function getLogin() {
  	//$('#busy').show();
 
-	$.getJSON(serviceURL + 'login.php', function(data) {
+/*	$.getJSON(serviceURL + 'login.php', function(data) {
 		$('#busy').hide();
 
 		logininfo = data.items;
 		$('#logininfo').text(logininfo[0].playerID + ' ' + logininfo[0].name);
-		
-		// setTimeout(function(){
-		// 	scroll.refresh();
-		// });
 	});
+*/
+
+	$('#areyouin-login-page').on('submit', '#loginform', function(event) {
+		event.preventDefault();
+
+		var formData = $(this).serialize();
+
+		$.ajax({
+			type : 'POST',
+			url : 'https://dev-areyouin.azurewebsites.net/pgmobile/services/login.php',
+			data : formData,
+			success : function(data) {
+				$('#areyouin-login-page').text(data);
+			}
+		});
+	});		
+	
 }
 
 // $("#loginbutton").click(function(e){    
