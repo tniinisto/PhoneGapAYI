@@ -1,5 +1,3 @@
-//localStorage['serviceURL'] = "http://coenraets.org/apps/directory/services/";
-//var serviceURL = localStorage['serviceURL'];
 
 var serviceURL = "https://dev-areyouin.azurewebsites.net/pgmobile/services/";
 
