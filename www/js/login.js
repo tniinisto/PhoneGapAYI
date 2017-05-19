@@ -3,8 +3,6 @@
 
 var serviceURL = "https://dev-areyouin.azurewebsites.net/pgmobile/services/";
 
-//var scroll = new iScroll('wrapper', { vScrollbar: false, hScrollbar:false, hScroll: false });
-
 var logininfo;
 
 $(window).load(function() {
