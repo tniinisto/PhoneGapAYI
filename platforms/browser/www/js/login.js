@@ -11,10 +11,14 @@ $(window).load(function() {
 
             $.ajax({type: "POST",
                     url: serviceURL + 'login.php',
+					dataType : 'json',
                     data: {'ayiloginname': $("#ayiloginid").val(), 'ayipassword': $("#ayipassword").val()},
 
                     success:function(result){
-		                $("#logininfo").html(result);
+		                //$("#logininfo").html(result);
+						
+						
+						$("#logininfo").text(result.items[0].name);
 					},
 
 					error: function () {
@@ -40,7 +44,6 @@ function getLogin() {
 		$('#logininfo').text(logininfo[0].playerID + ' ' + logininfo[0].name);
 	});
 }
-
 
 // $("#loginbutton").click(function(e){    
 // 	e.preventDefault();
