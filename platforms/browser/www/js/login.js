@@ -18,7 +18,7 @@ $(window).load(function() {
 		                //$("#logininfo").html(result);
 						
 						
-						$("#logininfo").text(result.items[0].name);
+						$("#logininfo").text(result.items[0].name + ' team ' + result.items[0].teamName);
 					},
 
 					error: function () {
@@ -41,7 +41,7 @@ function getLogin() {
 		$('#busy').hide();
 
 		logininfo = data.items;
-		$('#logininfo').text(logininfo[0].playerID + ' ' + logininfo[0].name);
+		$('#logininfo').text(logininfo[0].playerID + ' ' + logininfo[0].teamName);
 	});
 }
 
