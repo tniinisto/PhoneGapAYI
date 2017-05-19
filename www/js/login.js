@@ -17,7 +17,7 @@ $(window).load(function() {
  var password = $("#ayipassword").val();
 
             $.ajax({type: "POST",
-                    url: 'https://dev-areyouin.azurewebsites.net/pgmobile/services/login.php',
+                    url: serviceURL + 'login.php',
                     data: {'ayiloginname': name, 'ayipassword': password},
 
                     success:function(result){
