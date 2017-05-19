@@ -55,6 +55,8 @@
     
     <title>R'YouIN</title>
 
+    <script src="login.js"></script>
+
     <!--<meta http-equiv="refresh" content="0; url=default.html">-->
 
 </head>
@@ -76,8 +78,31 @@
             <h1 id="logininfo"> </h1> <!--Test purpose-->
         </div>
     
-        <div data-role="content">
-            <h1>Login content here...</h1>
+        <div data-role="login_content">
+            <!--<h1>Login content here...</h1>-->
+            <form id="loginform" name="loginform">
+            
+                <fieldset id="loginfs">
+                    <legend style="text-align: left; color: white;">Login</legend>
+                    <!--<font color="white" size="3">-->
+			    
+                    <label style="color: white">User ID</label>
+                    <input type="text" id="ayiloginid" name="ayiloginName" placeholder="" required>
+			                        
+                    <label style="color: white">Password</label>
+                    <input type="password" id="ayipassword" name="ayipassword" placeholder="" required>
+            
+                    <!--<br>-->
+                    <input type="submit" value="Login" name="loginbutton" id="loginbutton" onClick="startLoginSpinner();">
+                    
+                    <div id="checklogin" class="noshow">
+                        <br>
+                        <label style="color: white">Check username and password</label>
+                        <br>
+                    </div>
+
+	            </fieldset>
+		    </form>
         </div>
     </div>
     <!-- /Login -->
@@ -159,8 +184,6 @@
     app.initialize();
 
     </script>
-
-    <script src="js/login.js"></script>
 
 <!-- scripts -->
 <script>
