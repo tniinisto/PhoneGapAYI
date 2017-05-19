@@ -13,12 +13,9 @@ $(window).load(function() {
         $("#loginbutton").click(function(e){
             e.preventDefault();
 
- var name = $("#ayiloginid").val();
- var password = $("#ayipassword").val();
-
             $.ajax({type: "POST",
                     url: serviceURL + 'login.php',
-                    data: {'ayiloginname': name, 'ayipassword': password},
+                    data: {'ayiloginname': $("#ayiloginid").val(), 'ayipassword': $("#ayipassword").val()},
 
                     success:function(result){
 		                $("#logininfo").html(result);
