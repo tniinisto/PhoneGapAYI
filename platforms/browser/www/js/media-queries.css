@@ -458,7 +458,7 @@ screens smaller or equal to 480
 		left: 40px;
 		z-index: 100;*/
 		height: auto;
-		width: 215px;
+		/*width: 215px;*/
         padding: 5px;
 	}
 
