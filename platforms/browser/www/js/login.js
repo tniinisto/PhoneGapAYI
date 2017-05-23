@@ -18,7 +18,13 @@ $(window).load(function() {
 		                //$("#logininfo").html(result);
 						
 						
-						$("#logininfo").text(result.items[0].name + ' team ' + result.items[0].teamName);
+						$("#logininfo").text(result.items[0].name + ' team ' + result.items[0].teamName); //Login page
+						$("#logininfo_e").text(result.items[0].name + ' team ' + result.items[0].teamName); //Events page
+						$("#logininfo_c").text(result.items[0].name + ' team ' + result.items[0].teamName); //Chat page
+
+						//alert("successsss");						
+
+						changeToEvents();
 					},
 
 					error: function () {
