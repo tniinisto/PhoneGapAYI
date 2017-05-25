@@ -73,16 +73,15 @@
     <div data-role="page" id="areyouin-login-page" data-theme="b" data-url="areyouin-login-page">
         <div data-role="header" data-theme="b"  data-position="fixed" data-tap-toggle="false">	        
             <h1><span style="display: inline; font-size: 1.7em; text-transform: none;">R'YouIN </span><img id="msg_icon1" class="msg_icon_style noshow" alt="New messages" src="../images/new_chat.png"></img></h1>
-            <h1 id="logininfo"> </h1> <!--Test purpose-->
+            <h1 id="logininfo"> </h1>
         </div>
     
         <div data-role="login_content">
-            <!--<h1>Login content here...</h1>-->
+
             <form id="loginform" name="loginform">
             
                 <fieldset id="loginfs">
                     <legend style="text-align: left; color: white;">Login</legend>
-                    <!--<font color="white" size="3">-->
 			    
                     <label style="color: white">User ID</label>
                     <input type="text" id="ayiloginid" name="ayiloginName" placeholder="" required>
@@ -90,7 +89,6 @@
                     <label style="color: white">Password</label>
                     <input type="password" id="ayipassword" name="ayipassword" placeholder="" required>
             
-                    <!--<br>-->
                     <input type="submit" value="Login" name="loginbutton" id="loginbutton">
                     
                     <div id="checklogin" class="noshow">
@@ -106,11 +104,7 @@
 
             function changeToEvents() {
 
-                    //$(':mobile-pagecontainer').pagecontainer('change', "#areyouin-events-page");
-                    //$("body").pagecontainer("change", "#areyouin-events-page");
-                    //$(":mobile-pagecontainer").pagecontainer("change", $("#areyouin-events-page" ));
-                    //$( ":mobile-pagecontainer" ).pagecontainer( "load", "#areyouin-events-page", { showLoadMsg: false } );
-                    
+                    //$(':mobile-pagecontainer').pagecontainer('change', "#areyouin-events-page");                  
                     window.location='#areyouin-events-page';
 
                 }
@@ -130,7 +124,7 @@
 	    
 	    <div data-role="content">
     		<div id="event_content_id"> </div>
-	    </div>-->
+	    </div>
 	    
         <!--Left menu panel-->
 	    <div data-role="panel" id="left-panel-events" data-display="overlay" data-theme="b">
