@@ -78,7 +78,7 @@
     
         <div data-role="login_content">
 
-            <form id="loginform" name="loginform">
+            <!--<form id="loginform" name="loginform">
             
                 <fieldset id="loginfs">
                     <legend style="text-align: left; color: white;">Login</legend>
@@ -97,11 +97,56 @@
                         <br>
                     </div>
                 </fieldset>
-		    </form>
+		    </form>-->
+
+            <form id="loginform" name="loginform">
+                <div class="ui-field-contain">
+                    <label id="ayiloginid_label" for="ayiloginname" style="color: white; width: auto;">User ID</label>
+                    <input type="text" id="ayiloginid" name="ayiloginName" placeholder="" class='required'>
+                </div>
+
+                <div class="ui-field-contain">
+                    <label id="ayipassword_label" for="ayipassword" style="color: white; width: auto;">Password</label>
+                    <input type="password" id="ayipassword" name="ayipassword" placeholder="" class='required'>
+                </div>                           
+            </form>
+
+            <button type="submit" form="loginform" name="loginbutton" id="loginbutton" onclick="checkFields();">Login</button>
+        
         </div>
      
         <script>
+            function checkFields() {
 
+                    var name = $.trim($('#ayiloginid').val());
+                    var pass = $.trim($('#ayipassword').val());
+
+                    // Check if fields or field is empty
+                    if (name  === '' ||  pass === '') {       
+                        
+                        if(name === '') {
+                            $('#ayiloginid_label').text('Enter User ID');
+                            $('#ayiloginid_label').css('color', 'red');
+                        }
+                        else {
+                            $('#ayiloginid_label').text('USER ID');
+                            $('#ayiloginid_label').css('color', 'white');
+                        }
+
+                        if (pass === ''){
+                            $('#ayipassword_label').text('Enter Password');
+                            $('#ayipassword_label').css('color', 'red');
+                        }                            
+                        else {
+                            $('#ayipassword_label').text('PASSWORD');
+                            $('#ayipassword_label').css('color', 'white');
+                        }
+                        return false;
+                    }
+
+
+            }
+        
             function changeToEvents() {
 
                     //$(':mobile-pagecontainer').pagecontainer('change', "#areyouin-events-page");                  
