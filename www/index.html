@@ -100,18 +100,21 @@
 		    </form>-->
 
             <form id="loginform" name="loginform">
-                <div class="ui-field-contain">
+                <div class="">
                     <label id="ayiloginid_label" for="ayiloginname" style="color: white; width: auto;">User ID</label>
                     <input type="text" id="ayiloginid" name="ayiloginName" placeholder="" class='required'>
                 </div>
 
-                <div class="ui-field-contain">
+                <div class="">
                     <label id="ayipassword_label" for="ayipassword" style="color: white; width: auto;">Password</label>
                     <input type="password" id="ayipassword" name="ayipassword" placeholder="" class='required'>
                 </div>                           
+
+                <button type="submit" form="loginform" name="loginbutton" id="loginbutton" style="margin-top:2em;" onclick="checkFields();">Login</button>
+
             </form>
 
-            <button type="submit" form="loginform" name="loginbutton" id="loginbutton" onclick="checkFields();">Login</button>
+
         
         </div>
      
