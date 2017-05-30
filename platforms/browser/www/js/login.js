@@ -35,21 +35,21 @@ $(window).load(function() {
 
 });
 
-$(document).ajaxError(function(event, request, settings) {
-	//$('#busy').hide();
-	alert("Error accessing the server");
-});
+// $(document).ajaxError(function(event, request, settings) {
+// 	//$('#busy').hide();
+// 	alert("Error accessing the server");
+// });
 
-function getLogin() {
- 	$('#busy').show();
+// function getLogin() {
+//  	$('#busy').show();
 
-	$.getJSON(serviceURL + 'login.php', function(data) {
-		$('#busy').hide();
+// 	$.getJSON(serviceURL + 'login.php', function(data) {
+// 		$('#busy').hide();
 
-		logininfo = data.items;
-		$('#logininfo').text(logininfo[0].playerID + ' ' + logininfo[0].teamName);
-	});
-}
+// 		logininfo = data.items;
+// 		$('#logininfo').text(logininfo[0].playerID + ' ' + logininfo[0].teamName);
+// 	});
+// }
 
 // $("#loginbutton").click(function(e){    
 // 	e.preventDefault();

@@ -178,80 +178,12 @@
     </div> 
     <!-- /Chat -->
 
-
+    <!--scripts-->
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
+    <script type="text/javascript">app.initialize();</script>
 
-    app.initialize();
-
-    </script>
-
-<!-- scripts -->
-<script>
-
-    //Logout
-    // function logout() {
-    //     localStorage.clear();
-    //     sessionStorage.clear();
-
-    //     $.get("logout.php");
-    // }
-
-    // //Document ready
-    // jQuery(document).ready(function () {
-        
-    //     //Winter season :)
-    //     //$.fn.snow({ minSize: 5, maxSize: 50, newOn: 1000, flakeColor: '#FFFFFF' });
-
-    //     //Init functions
-    //     getLoginInformation();
-    //     CheckForSession();
-
-    //     //Spinner
-    //     initSpinner();
-    //     startSpinner();
-
-    //     getEvents();
-    //     //getPlayersInsert();
-    //     //getAdminStatus();
-    //     //getPlayerProfile();
-    //     getChat();
-
-    //     waitForChat();
-
-    //     //Stop spinner after events have been load
-    //     stopSpinner();
-
-    //     //Comet for events, affected the whole usability too much, needs more investigation!
-    //     setTimeout('waitForEventUpdate()',60000); //60 seconds after start
-    // });
-
-
-</script>
-
-<script src="js/login.js"></script>    
-
-<!--<script>
-    $(document).ready(function(){
-        $("#loginbutton").click(function(e){
-            e.preventDefault();
-
-            var name = $("#ayiloginid").value;
-            var password = $("#ayipassword").value;
-
-            $.ajax({type: "POST",
-                    url: 'https://dev-areyouin.azurewebsites.net/pgmobile/services/login.php',
-                    //data: { id: $("#Shareitem").val(), access_token: $("#access_token").val() },
-                    data: {ayiloginname: name, ayipassword: password},
-                    success:function(result){
-                $("#logininfo").html(result);
-            }});
-        });
-    });	
-</script>-->
-
-<!--<script src="json/playerinfo.js"></script>    			-->
+    <script src="js/login.js"></script>    
 
 </body>
 
