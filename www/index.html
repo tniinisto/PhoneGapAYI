@@ -118,8 +118,23 @@
 	    </div>
 	    
 	    <div data-role="content">
-    		<div id="event_content_id"> </div>
-            <p id="event_test" style="color:white;">Events listing here...</p>
+    		<div id="event_content_id">
+
+                    <div data-role="panel" id="eventPanel" data-position="right" data-display="overlay" class="ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate"> 
+                        <h2>participants</h2>
+                        <p>You can close the panel by clicking outside the panel, pressing the Esc key or by swiping.</p>
+                    </div> 
+
+                    <div data-role="header">
+                        <h1>Event Header</h1>
+                    </div>
+
+                    <div data-role="button" class="ui-content">
+                        <p>Click on the button below to open the Panel.</p>
+                        <a href="#eventPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">See participants</a>
+                    </div>
+
+            </div>
 	    </div>
 	    
         <!--Left menu panel-->
