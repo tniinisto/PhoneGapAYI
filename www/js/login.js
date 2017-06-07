@@ -15,16 +15,26 @@ $(window).load(function() {
                     data: {'ayiloginname': $("#ayiloginid").val(), 'ayipassword': $("#ayipassword").val()},
 
                     success:function(result){
-		                //$("#logininfo").html(result);
-						
-						
-						$("#logininfo").text(result.items[0].name + ' team ' + result.items[0].teamName); //Login page
-						$("#logininfo_e").text(result.items[0].name + ' team ' + result.items[0].teamName); //Events page
-						$("#logininfo_c").text(result.items[0].name + ' team ' + result.items[0].teamName); //Chat page
+		                //$("#logininfo").html(result);					
+						//alert("successsss");			
 
-						//alert("successsss");						
+						//No teams
+						if(result.items[0].count == 0) { 
+							alert("No teams, try login again.");										
+						}
 
-						changeToEvents();
+						//Multiple teams
+						if(result.items[0].count > 1) {
+							alert("multiple teams");										
+						}
+						//One team
+						else if(result.items[0].count == 1) { 
+							$("#logininfo").text(result.items[0].name + ' team ' + result.items[0].teamName); //Login page
+							$("#logininfo_e").text(result.items[0].name + ' team ' + result.items[0].teamName); //Events page
+							$("#logininfo_c").text(result.items[0].name + ' team ' + result.items[0].teamName); //Chat page
+
+							changeToEvents();
+						}
 					},
 
 					error: function () {
