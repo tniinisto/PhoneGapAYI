@@ -9,39 +9,46 @@ $(window).load(function() {
         $("#loginbutton").click(function(e){
             e.preventDefault();
 
-            $.ajax({type: "POST",
-                    url: serviceURL + 'login.php',
-					dataType : 'json',
-                    data: {'ayiloginname': $("#ayiloginid").val(), 'ayipassword': $("#ayipassword").val()},
+			//Check if id & password have been entered
+			if(checkFields()){
+			
 
-                    success:function(result){
-		                //$("#logininfo").html(result);					
-						//alert("successsss");			
+				$.ajax({type: "POST",
+						url: serviceURL + 'login.php',
+						dataType : 'json',
+						data: {'ayiloginname': $("#ayiloginid").val(), 'ayipassword': $("#ayipassword").val()},
 
-						//No teams
-						if($.isEmptyObject(result.items)) { 
-							alert("No teams, try login again.");										
-						} else
+						success:function(result){
+							//$("#logininfo").html(result);					
+							//alert("successsss");			
 
-						//Multiple teams
-						if(result.items[0].count > 1) {
-							alert("multiple teams");										
-						}
-						//One team
-						else if(result.items[0].count == 1) { 
-							$("#logininfo").text(result.items[0].name + ' team ' + result.items[0].teamName); //Login page
-							$("#logininfo_e").text(result.items[0].name + ' team ' + result.items[0].teamName); //Events page
-							$("#logininfo_c").text(result.items[0].name + ' team ' + result.items[0].teamName); //Chat page
+							//No teams
+							if($.isEmptyObject(result.items)) { 
+								alert("No teams, try login again.");										
+							} else
 
-							changeToEvents();
-						}
-					},
+							//Multiple teams
+							if(result.items[0].count > 1) {
+								alert("multiple teams");										
+							}
+							//One team
+							else if(result.items[0].count == 1) { 
+								$("#logininfo").text(result.items[0].name + ' team ' + result.items[0].teamName); //Login page
+								$("#logininfo_e").text(result.items[0].name + ' team ' + result.items[0].teamName); //Events page
+								$("#logininfo_c").text(result.items[0].name + ' team ' + result.items[0].teamName); //Chat page
 
-					error: function () {
-        				alert("error");
-      				}			
-			});
+								changeToEvents();
+							}
+						},
+
+						error: function () {
+							alert("error");
+						}			
+				});
+		}
+
         });
+		
 
 });
 
