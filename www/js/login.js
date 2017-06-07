@@ -24,7 +24,8 @@ $(window).load(function() {
 
 							//No teams
 							if($.isEmptyObject(result.items)) { 
-								alert("No teams, try login again.");										
+								//alert("No teams, try login again.");
+								$('#ayilogin_label').css("display", "block");
 							} else
 
 							//Multiple teams

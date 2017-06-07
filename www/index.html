@@ -59,6 +59,10 @@
                     <input type="password" id="ayipassword" name="ayipassword" placeholder="" class='required'>
                 </div>                           
 
+                <div>
+                    <label id="ayilogin_label" style="color: white; width: auto; margin-top:2em; display:none">login failed, check your credentials</label>
+                </div>
+
                 <button type="submit" form="loginform" name="loginbutton" id="loginbutton" style="margin-top:2em;">Login</button>
 
             </form>
@@ -91,8 +95,12 @@
                             $('#ayipassword_label').text('PASSWORD');
                             $('#ayipassword_label').css('color', 'white');
                         }
+
+                        $('#ayilogin_label').css("display", "block");
+
                         return false;
                     }
+                    $('#ayilogin_label').css("display", "none");
                     return true;
 
             }
