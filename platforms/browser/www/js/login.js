@@ -31,13 +31,16 @@ $(window).load(function() {
 							//Multiple teams
 							if(result.items[0].count > 1) {
 								alert("multiple teams");										
+								$('#ayilogin_label').css("display", "none");
 							}
+
 							//One team
 							else if(result.items[0].count == 1) { 
 								$("#logininfo").text(result.items[0].name + ' team ' + result.items[0].teamName); //Login page
 								$("#logininfo_e").text(result.items[0].name + ' team ' + result.items[0].teamName); //Events page
 								$("#logininfo_c").text(result.items[0].name + ' team ' + result.items[0].teamName); //Chat page
 
+								$('#ayilogin_label').css("display", "none");
 								changeToEvents();
 							}
 						},
