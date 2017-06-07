@@ -19,9 +19,9 @@ $(window).load(function() {
 						//alert("successsss");			
 
 						//No teams
-						if(result.items[0].count == 0) { 
+						if($.isEmptyObject(result.items)) { 
 							alert("No teams, try login again.");										
-						}
+						} else
 
 						//Multiple teams
 						if(result.items[0].count > 1) {
