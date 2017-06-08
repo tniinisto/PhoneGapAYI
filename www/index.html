@@ -60,7 +60,7 @@
                 </div>                           
 
                 <div>
-                    <label id="ayilogin_label" style="color: white; width: auto; margin-top:2em; display:none">login failed, check your credentials</label>
+                    <label id="ayilogin_label" style="color: white; width: auto; margin-top:2em; display:none">login failed, please check your credentials</label>
                 </div>
 
                 <button type="submit" form="loginform" name="loginbutton" id="loginbutton" style="margin-top:2em;">Login</button>
@@ -80,7 +80,7 @@
                         
                         if(name === '') {
                             $('#ayiloginid_label').text('Enter User ID');
-                            $('#ayiloginid_label').css('color', 'red');
+                            $('#ayiloginid_label').css('color', '#ffca00');
                         }
                         else {
                             $('#ayiloginid_label').text('USER ID');
@@ -89,7 +89,7 @@
 
                         if (pass === ''){
                             $('#ayipassword_label').text('Enter Password');
-                            $('#ayipassword_label').css('color', 'red');
+                            $('#ayipassword_label').css('color', '#ffca00');
                         }                            
                         else {
                             $('#ayipassword_label').text('PASSWORD');
@@ -104,14 +104,15 @@
                     return true;
 
             }
+
         
             function changeToEvents() {
 
                     //$(':mobile-pagecontainer').pagecontainer('change', "#areyouin-events-page");                  
                     window.location='#areyouin-events-page';
 
-                }
-           
+            }
+
         </script>        
 
     </div>
@@ -220,11 +221,30 @@
                 <div class="menu_text" style="padding-left: 10px;">Chat</div>
             </a>
 
-            <a href="#" data-role="button" data-theme="b" data-icon="logout" data-iconpos="" data-shadow="" data-iconshadow="" class="icon-logout menu-layout" onclick="toLoginPage(); logout();"
+            <a href="#" data-role="button" data-theme="b" data-icon="logout" data-iconpos="" data-shadow="" data-iconshadow="" class="icon-logout menu-layout" onclick="LoginPage(); logout();"
                 style="background-color: #2A2A2A; border-radius: 0; color: #FFF; text-shadow: none; height: 40px;">
                 <div class="menu_text">Logout</div>
             </a>
 	    </div>
+
+
+        <script>
+            
+            function LoginPage() {
+                $("#logininfo").text("");
+                window.location='#areyouin-login-page';
+            }
+
+            function logout() {
+                localStorage.clear();
+                sessionStorage.clear();
+
+                //$.get("logout.php");
+            }
+        
+        </script>  
+
+
     </div> 
     <!-- /Events -->
 
@@ -256,7 +276,7 @@
                 <div class="menu_text" style="padding-left: 10px;">Chat</div>
             </a>
 
-            <a href="#" data-role="button" data-theme="b" data-icon="logout" data-iconpos="" data-shadow="" data-iconshadow="" class="icon-logout menu-layout" onclick="toLoginPage(); logout();"
+            <a href="#" data-role="button" data-theme="b" data-icon="logout" data-iconpos="" data-shadow="" data-iconshadow="" class="icon-logout menu-layout" onclick="LoginPage(); logout();"
                 style="background-color: #2A2A2A; border-radius: 0; color: #FFF; text-shadow: none; height: 40px;">
                 <div class="menu_text">Logout</div>
             </a>
