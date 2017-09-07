@@ -43,8 +43,8 @@ $(window).load(function() {
 								
 								$("#select-native-1").html(listItems);
 
-								$('#ayilogin_label').css("display", "none");
-								$('#login_credentials').css("display", "none");								
+								// $('#ayilogin_label').css("display", "none");
+								// $('#login_credentials').css("display", "none");								
 								$('#login_team_selection').css("display", "block");
 
 								$("#teambutton").click(function(e){
@@ -53,8 +53,8 @@ $(window).load(function() {
 									$("#logininfo_e").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Events page
 									$("#logininfo_c").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Chat page
 
-									$('#ayilogin_label').css("display", "none");
 									$('#login_team_selection').css("display", "none");
+
 									changeToEvents();																		
 								});
 							}
