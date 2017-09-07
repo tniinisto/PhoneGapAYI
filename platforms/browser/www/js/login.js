@@ -34,16 +34,6 @@ $(window).load(function() {
 								//alert("multiple teams");
 
 								//Go through the json and populate select items
-								// var listitems = '';
-								// $.each(result.items, function(teamID, teamName){
-								// 	listitems += '<option value=' + items.teamID + '>' + items.teamName + '</option>';
-								// });
-								// $("#select-native-1").append(listitems);
-	
-								// $($.parseJSON(result)).map(function () {
-								// 	return $('<option>').val(this.teamID).text(this.teamName);
-								// }).appendTo('#select-native-1');
-	
 								var listItems = '<option selected="selected" value="0">- Select Team -</option>';
 								//var listItems = '';
 								
@@ -58,7 +48,14 @@ $(window).load(function() {
 								$('#login_team_selection').css("display", "block");
 
 								$("#teambutton").click(function(e){
-									alert("select button clicked");
+									//alert("select button clicked");
+									$("#logininfo").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Login page
+									$("#logininfo_e").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Events page
+									$("#logininfo_c").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Chat page
+
+									$('#login_team_selection').css("display", "none");
+									changeToEvents();
+
 								});
 							}
 
