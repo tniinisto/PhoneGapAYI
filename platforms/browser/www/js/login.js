@@ -35,7 +35,7 @@ $(window).load(function() {
 
 								//Go through the json and populate select items
 								var listitems = '';
-								$.each(result.items, function(teamID, teamName){
+								$.each(result, function(teamID, teamName){
 									listitems += '<option value=' + teamID + '>' + teamName + '</option>';
 								});
 								$("#select-native-1").append(listitems);
