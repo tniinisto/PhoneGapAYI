@@ -43,8 +43,8 @@ $(window).load(function() {
 								
 								$("#select-native-1").html(listItems);
 
-								// $('#ayilogin_label').css("display", "none");
-								// $('#login_credentials').css("display", "none");								
+								$('#ayiloginid_label').css("display", "none");
+								$('#login_credentials').css("display", "none");								
 								$('#login_team_selection').css("display", "block");
 
 								$("#teambutton").click(function(e){
