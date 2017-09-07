@@ -44,8 +44,8 @@ $(window).load(function() {
 								// 	return $('<option>').val(this.teamID).text(this.teamName);
 								// }).appendTo('#select-native-1');
 	
-								//var listItems = '<option selected="selected" value="0">- Select -</option>';
-								var listItems = '';
+								var listItems = '<option selected="selected" value="0">- Select Team -</option>';
+								//var listItems = '';
 								
 									 for (var i = 0; i < result.items[0].count; i++) {
 											listItems += "<option value='" + result.items[i].teamID + "'>" + result.items[i].teamName + "</option>";
@@ -56,6 +56,10 @@ $(window).load(function() {
 								$('#ayilogin_label').css("display", "none");
 								$('#login_credentials').css("display", "none");								
 								$('#login_team_selection').css("display", "block");
+
+								$("#teambutton").click(function(e){
+									alert("select button clicked");
+								});
 							}
 
 							//One team
