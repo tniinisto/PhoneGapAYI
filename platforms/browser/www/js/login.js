@@ -39,10 +39,19 @@ $(window).load(function() {
 								// 	listitems += '<option value=' + items.teamID + '>' + items.teamName + '</option>';
 								// });
 								// $("#select-native-1").append(listitems);
-								$($.parseJSON(result)).map(function () {
-									return $('<option>').val(this.teamID).text(this.teamName);
-								}).appendTo('#select-native-1');
 	
+								// $($.parseJSON(result)).map(function () {
+								// 	return $('<option>').val(this.teamID).text(this.teamName);
+								// }).appendTo('#select-native-1');
+	
+								var listItems = '<option selected="selected" value="0">- Select -</option>';
+								
+									 for (var i = 0; i < result.items[0].count; i++) {
+											listItems += "<option value='" + result.items[i].teamID + "'>" + result.items[i].teamName + "</option>";
+										}
+								
+								$("#select-native-1").html(listItems);
+
 								$('#ayilogin_label').css("display", "none");
 								$('#login_credentials').css("display", "none");								
 								$('#login_team_selection').css("display", "block");
