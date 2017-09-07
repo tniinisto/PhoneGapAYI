@@ -49,12 +49,12 @@ $(window).load(function() {
 
 								$("#teambutton").click(function(e){
 									//alert("select button clicked");
+									$('#login_team_selection').css("display", "none");
+									changeToEvents();									
+
 									$("#logininfo").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Login page
 									$("#logininfo_e").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Events page
 									$("#logininfo_c").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Chat page
-
-									$('#login_team_selection').css("display", "none");
-									changeToEvents();									
 								});
 							}
 
