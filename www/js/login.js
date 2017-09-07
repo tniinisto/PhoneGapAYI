@@ -28,9 +28,18 @@ $(window).load(function() {
 								$('#ayilogin_label').css("display", "block"); //login failed, please check your credentials
 							} else
 
+
 							//Multiple teams
 							if(result.items[0].count > 1) {
-								//alert("multiple teams");										
+								//alert("multiple teams");
+
+								//Go through the json and populate select items
+								var listitems = '';
+								$.each(result.items, function(teamID, teamName){
+									listitems += '<option value=' + teamID + '>' + teamName + '</option>';
+								});
+								$("#select-native-1").append(listitems);
+	
 								$('#ayilogin_label').css("display", "none");
 								$('#login_credentials').css("display", "none");								
 								$('#login_team_selection').css("display", "block");

@@ -47,7 +47,7 @@
             <h1 id="logininfo"> </h1>
         </div>
     
-        <div data-role="login_content">
+        <div id="login_credentials" data-role="login_content">
 
             <form id="loginform" name="loginform">
                 <div class="">
@@ -68,6 +68,26 @@
 
             </form>
         
+        </div>
+
+        <!--Team selection-->
+        <div id="login_team_selection" style="display:none; margin-right: 5px; margin-left: 5px;">
+
+            <form id="teamselect">
+                <div class="ui-field-contain">
+                <label id="ayiteam_label" style="color: white; width: auto; margin-left: 2em; margin-top:2em;">Select your team</label>
+                <!--    <label for="select-native-1">Select team:</label>-->
+                    <select name="select-native-1" id="select-native-1">
+                        <option value="1">The 1st Option</option>
+                        <option value="2">The 2nd Option</option>
+                        <option value="3">The 3rd Option</option>
+                        <option value="4">The 4th Option</option>
+                    </select>
+                </div>
+
+                <button type="submit" form="teamselect" name="teambutton" id="teambutton" style="margin-top:2em;">Select</button>
+
+            </form>
         </div>
      
         <script>
