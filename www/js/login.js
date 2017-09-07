@@ -34,11 +34,14 @@ $(window).load(function() {
 								//alert("multiple teams");
 
 								//Go through the json and populate select items
-								var listitems = '';
-								$.each(result, function(teamID, teamName){
-									listitems += '<option value=' + teamID + '>' + teamName + '</option>';
-								});
-								$("#select-native-1").append(listitems);
+								// var listitems = '';
+								// $.each(result.items, function(teamID, teamName){
+								// 	listitems += '<option value=' + items.teamID + '>' + items.teamName + '</option>';
+								// });
+								// $("#select-native-1").append(listitems);
+								$($.parseJSON(result)).map(function () {
+									return $('<option>').val(this.teamID).text(this.teamName);
+								}).appendTo('#select-native-1');
 	
 								$('#ayilogin_label').css("display", "none");
 								$('#login_credentials').css("display", "none");								
