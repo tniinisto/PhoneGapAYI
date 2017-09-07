@@ -54,7 +54,7 @@ $(window).load(function() {
 									$("#logininfo_c").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Chat page
 
 									$('#login_team_selection').css("display", "none");
-									changeToEvents();
+									//changeToEvents();
 
 								});
 							}
