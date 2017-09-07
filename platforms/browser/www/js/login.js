@@ -55,8 +55,9 @@ $(window).load(function() {
 
 									$('#login_team_selection').css("display", "none");
 
-									window.location='#areyouin-events-page';
-									//changeToEvents();																		
+									//changeToEvents();
+									$(':mobile-pagecontainer').pagecontainer('change', "#areyouin-events-page");
+									
 								});
 							}
 
