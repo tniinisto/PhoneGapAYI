@@ -34,8 +34,8 @@ $(window).load(function() {
 								//alert("multiple teams");
 
 								//Go through the json and populate select items
-								var listItems = '<option selected="selected" value="0">- Select Team -</option>';
-								//var listItems = '';
+								//var listItems = '<option selected="selected" value="0">- Select Team -</option>';
+								var listItems = '';
 								
 									 for (var i = 0; i < result.items[0].count; i++) {
 											listItems += "<option value='" + result.items[i].teamID + "'>" + result.items[i].teamName + "</option>";
