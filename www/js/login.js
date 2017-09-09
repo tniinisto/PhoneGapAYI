@@ -60,8 +60,7 @@ $(window).load(function() {
 									$("#logininfo_e").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Events page
 									$("#logininfo_c").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Chat page
 
-									$('#login_team_selection').css("display", "none");
-
+									//$('#login_team_selection').css("display", "none");
 									//changeToEvents();
 
 									$(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {
