@@ -13,7 +13,7 @@ function getEvents(teamid) {
 
             //Populate eventsPage, check if > 0
             if(result.items != 0)
-                if(result.keys(result.shareInfo[0]).length > 0) {
+                if(result.length > 0) {
                     alert("jess");
                 }
         },
