@@ -1,3 +1,4 @@
+
 var serviceURL = "https://dev-areyouin.azurewebsites.net/pgmobile/services/";
 
 
@@ -10,8 +11,11 @@ function getEvents(teamid) {
 
         success:function(result){
 
-            //Populate eventsPage
-
+            //Populate eventsPage, check if > 0
+            if(result.items.count > 0)
+                if(result.items[0].count > 0) {
+                    alert("jess");
+                }
         },
 
         error: function () {

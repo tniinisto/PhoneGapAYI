@@ -11,10 +11,11 @@ function getEvents(teamid) {
 
         success:function(result){
 
-            //Populate eventsPage
-            if(result.items[0].count > 1) {
-                alert("jess");
-            }
+            //Populate eventsPage, check if > 0
+            if(result.items.count > 0)
+                if(result.items[0].count > 0) {
+                    alert("jess");
+                }
         },
 
         error: function () {
