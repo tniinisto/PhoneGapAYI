@@ -13,10 +13,14 @@ function getEvents(teamid) {
 
             //Populate eventsPage, check if > 0
             if(result.items != 0)
-                var o = JSON.parse(result);
-                if(o.result.length > 0) {
-                    alert("jess");
-                }
+
+                $.each(result.Apps, function() { 
+                    alert(this.groups.length);
+                 });
+                
+                // if(result > 0) {
+                //     alert("jess");
+                // }
         },
 
         error: function () {
