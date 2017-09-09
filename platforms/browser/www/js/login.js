@@ -41,7 +41,6 @@ $(window).load(function() {
 								});
 
 								//Go through the json and populate select items
-								//var listItems = '<option selected="selected" value="0">- Select Team -</option>';
 								var listItems = '';
 								
 									 for (var i = 0; i < result.items[0].count; i++) {
@@ -56,13 +55,16 @@ $(window).load(function() {
 
 								$("#teambutton").click(function(e){
 									e.preventDefault();
-									
+
 									//alert("select button clicked");
 									$("#logininfo").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Login page
 									$("#logininfo_e").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Events page
 									$("#logininfo_c").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Chat page
 
+									//Get team's events, check that license is valid
+									getEvents( $("#select-native-1 option:selected" ).val() );
 
+									//Shoe events page
 									$(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {
 										transition: 'flip',
 										changeHash: false,
@@ -81,6 +83,10 @@ $(window).load(function() {
 
 								$('#ayilogin_label').css("display", "none");
 
+								//Get team's events, check that license is valid
+								getEvents( result.items[0].teamID );
+								
+								//Shoe events page
 								$(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {
 									transition: 'flip',
 									changeHash: false,
