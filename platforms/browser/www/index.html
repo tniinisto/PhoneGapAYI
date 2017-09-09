@@ -267,7 +267,14 @@
             
             function LoginPage() {
                 $("#logininfo").text("");
-                window.location='#areyouin-login-page';
+                // window.location='#areyouin-login-page';
+
+                $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-login-page', {
+										transition: 'flip',
+										changeHash: false,
+										reverse: true,
+										showLoadMsg: true
+									});                
             }
 
             function logout() {
