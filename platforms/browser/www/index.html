@@ -265,11 +265,13 @@
                 $("#logininfo").text("");
 
                 $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-login-page', {
-										transition: 'flip',
-										changeHash: false,
-										reverse: true,
-										showLoadMsg: true
-									});                
+                        transition: 'flip',
+                        changeHash: false,
+                        reverse: true,
+                        showLoadMsg: true
+                });                
+
+                location.reload();
             }
 
             function logout() {
