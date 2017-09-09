@@ -13,7 +13,7 @@ function getEvents(teamid) {
 
             //Populate eventsPage, check if > 0
             if(result.items != 0)
-                if(result.items[0].count > 1)
+                if(result.items > 1)
                     console.warn(`JESSSS`);
         
         },
