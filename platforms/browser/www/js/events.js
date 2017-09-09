@@ -12,7 +12,7 @@ function getEvents(teamid) {
         success:function(result){
 
             //Populate eventsPage, check if > 0
-            if(result != null)
+            if(result.items != 0)
                 if(result.items[0].count > 0) {
                     alert("jess");
                 }
