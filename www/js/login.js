@@ -55,6 +55,8 @@ $(window).load(function() {
 								$('#login_team_selection').css("display", "block");
 
 								$("#teambutton").click(function(e){
+									e.preventDefault();
+									
 									//alert("select button clicked");
 									$("#logininfo").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Login page
 									$("#logininfo_e").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Events page
