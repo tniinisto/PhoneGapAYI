@@ -114,19 +114,16 @@
             }
 
         
-            function changeToEvents() {
+            // function changeToEvents() {
 
-                    //$(':mobile-pagecontainer').pagecontainer('change', "#areyouin-events-page");                  
-                    //window.location='#areyouin-events-page';
+            //         $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {
+			// 							transition: 'flip',
+			// 							changeHash: false,
+			// 							reverse: true,
+			// 							showLoadMsg: true
+			// 						});
 
-                    $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {
-										transition: 'flip',
-										changeHash: false,
-										reverse: true,
-										showLoadMsg: true
-									});
-
-            }
+            // }
 
         </script>        
 
@@ -276,7 +273,6 @@
             
             function LoginPage() {
                 $("#logininfo").text("");
-                // window.location='#areyouin-login-page';
 
                 $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-login-page', {
 										transition: 'flip',
@@ -289,8 +285,6 @@
             function logout() {
                 localStorage.clear();
                 sessionStorage.clear();
-
-                //$.get("logout.php");
             }
         
         </script>  
