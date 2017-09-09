@@ -47,7 +47,7 @@
 
 <body>
 
-	<!-- Login -->
+	<!-- Login page -->
     <div data-role="page" id="areyouin-login-page" data-theme="b" data-url="areyouin-login-page">
         <div data-role="header" data-theme="b"  data-position="fixed" data-tap-toggle="false">	        
             <h1><span style="display: inline; font-size: 1.7em; text-transform: none; font-weight: bold;">R'YouIN </span><img id="msg_icon1" class="msg_icon_style noshow" alt="New messages" src="../images/new_chat.png"></img></h1>
@@ -77,26 +77,6 @@
         
         </div>
 
-        <!--Team selection-->
-        <div id="login_team_selection" style="display:none; margin-right: 5px; margin-left: 5px;">
-
-            <form id="teamselect">
-                <div class="ui-field-contain">
-                <label id="ayiteam_label" style="color: white; width: auto; margin-left: 2em; margin-top:2em;">Select your team</label>
-                <!--    <label for="select-native-1">Select team:</label>-->
-                    <select name="select-native-1" id="select-native-1" class="ui-icon-circle-triangle-s">
-                <!--         <option value="1">The 1st Option</option>
-                        <option value="2">The 2nd Option</option>
-                        <option value="3">The 3rd Option</option>
-                        <option value="4">The 4th Option</option> -->
-                    </select>
-                </div>
-
-                <button type="submit" form="teamselect" name="teambutton" id="teambutton" style="margin-top:2em;">Select</button>
-
-            </form>
-        </div>
-     
         <script>
             function checkFields() {
 
@@ -153,6 +133,35 @@
     </div>
     <!-- /Login -->
 
+    <!--Team selection page -->
+    <div data-role="page" id="login-team-selection" data-theme="b" data-url="login-team-selection">
+        <div data-role="header" data-theme="b"  data-position="fixed" data-tap-toggle="false">	        
+            <h1><span style="display: inline; font-size: 1.7em; text-transform: none; font-weight: bold;">R'YouIN </span><img id="msg_icon1" class="msg_icon_style noshow" alt="New messages" src="../images/new_chat.png"></img></h1>
+            <h1 id="logininfo"> </h1>
+        </div>
+
+        <div id="login_team_selection" style="display:none; margin-right: 5px; margin-left: 5px;"> -->
+
+            <form id="teamselect">
+                <div class="ui-field-contain">
+                <label id="ayiteam_label" style="color: white; width: auto; margin-left: 2em; margin-top:2em;">Select your team</label>
+                <!--    <label for="select-native-1">Select team:</label>-->
+                    <select name="select-native-1" id="select-native-1" class="ui-icon-circle-triangle-s">
+                <!--         <option value="1">The 1st Option</option>
+                        <option value="2">The 2nd Option</option>
+                        <option value="3">The 3rd Option</option>
+                        <option value="4">The 4th Option</option> -->
+                    </select>
+                </div>
+
+                <button type="submit" form="teamselect" name="teambutton" id="teambutton" style="margin-top:2em;">Select</button>
+
+            </form>
+
+        </div>    
+
+    </div>
+    <!--Team selection page -->
 
 	<!-- Events -->
 	 <div data-role="page" id="areyouin-events-page" data-theme="b" data-url="areyouin-events-page">

@@ -33,6 +33,13 @@ $(window).load(function() {
 							if(result.items[0].count > 1) {
 								//alert("multiple teams");
 
+								$(':mobile-pagecontainer').pagecontainer('change', '#login-team-selection', {
+									transition: 'flip',
+									changeHash: false,
+									reverse: true,
+									showLoadMsg: true
+								});
+
 								//Go through the json and populate select items
 								//var listItems = '<option selected="selected" value="0">- Select Team -</option>';
 								var listItems = '';
