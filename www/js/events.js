@@ -13,7 +13,8 @@ function getEvents(teamid) {
 
             //Populate eventsPage, check if > 0
             if(result.items != 0)
-                if(result.items.lenght > 0) {
+                var o = JSON.parse(result);
+                if(o.result.length > 0) {
                     alert("jess");
                 }
         },
