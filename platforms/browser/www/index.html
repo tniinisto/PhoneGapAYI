@@ -133,7 +133,14 @@
             function changeToEvents() {
 
                     //$(':mobile-pagecontainer').pagecontainer('change', "#areyouin-events-page");                  
-                    window.location='#areyouin-events-page';
+                    //window.location='#areyouin-events-page';
+
+                    $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {
+										transition: 'flip',
+										changeHash: false,
+										reverse: true,
+										showLoadMsg: true
+									});
 
             }
 
