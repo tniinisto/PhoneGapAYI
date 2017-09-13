@@ -1,30 +1,46 @@
-document.addEventListener('deviceready', function () {
-    // window.plugin.notification.local is now available
+// document.addEventListener('deviceready', function () {
+//     // window.plugin.notification.local is now available
 
 
-    // window.plugin.notification.local.add({
-    //     id:         '',  // A unique id of the notifiction
-    //     date:       Date,    // This expects a date object
-    //     message:    String,  // The message that is displayed
-    //     title:      String,  // The title of the message
-    //     repeat:     String,  // Either 'secondly', 'minutely', 'hourly', 'daily', 'weekly', 'monthly' or 'yearly'
-    //     badge:      Number,  // Displays number badge to notification
-    //     sound:      String,  // A sound to be played
-    //     json:       String,  // Data to be passed through the notification
-    //     autoCancel: Boolean, // Setting this flag and the notification is automatically canceled when the user clicks it
-    //     ongoing:    Boolean, // Prevent clearing of notification (Android only)
-    // }, callback, scope);
+//     // window.plugin.notification.local.add({
+//     //     id:         '',  // A unique id of the notifiction
+//     //     date:       Date,    // This expects a date object
+//     //     message:    String,  // The message that is displayed
+//     //     title:      String,  // The title of the message
+//     //     repeat:     String,  // Either 'secondly', 'minutely', 'hourly', 'daily', 'weekly', 'monthly' or 'yearly'
+//     //     badge:      Number,  // Displays number badge to notification
+//     //     sound:      String,  // A sound to be played
+//     //     json:       String,  // Data to be passed through the notification
+//     //     autoCancel: Boolean, // Setting this flag and the notification is automatically canceled when the user clicks it
+//     //     ongoing:    Boolean, // Prevent clearing of notification (Android only)
+//     // }, callback, scope);
 
-    // var now                  = new Date().getTime(),
-    // _30_seconds_from_now = new Date(now + 30*1000);
+//     // var now                  = new Date().getTime(),
+//     // _30_seconds_from_now = new Date(now + 30*1000);
 
-    // window.plugin.notification.local.add({
-    //     id:      1,
-    //     title:   'Reminder',
-    //     message: 'RYouIN event test!',
-    //     date:    _30_seconds_from_now
-    // });
+//     // window.plugin.notification.local.add({
+//     //     id:      1,
+//     //     title:   'Reminder',
+//     //     message: 'RYouIN event test!',
+//     //     date:    _30_seconds_from_now
+//     // });
 
-    console.warn(`Phonegap notifications here...`);
+//     console.warn(`Phonegap notifications here...`);
 
-}, false);
+// }, false);
+
+if (“Notification” in window) {
+    Notification.requestPermission(function (permission) {
+      // If the user accepts, let’s create a notification
+      if (permission === ‘granted’) {
+        var notification = new Notification(“My title”, {
+             tag: ‘message1’, 
+             body: “My body” 
+        }); 
+        notification.onshow  = function() { console.log(‘show’); };
+        notification.onclose = function() { console.log(‘close’); };
+        notification.onclick = function() { console.log(‘click’); };
+      }
+    });
+  }
+  
