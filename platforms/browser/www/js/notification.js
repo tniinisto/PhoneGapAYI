@@ -29,26 +29,31 @@
 
 // }, false);
 
+document.addEventListener('deviceready', function () {
 
-$(window).load(function() {
+    $(window).load(function() {
 
-    if ('Notification' in window) {
-        Notification.requestPermission(function (permission) {
+        if ('Notification' in window) {
+            Notification.requestPermission(function (permission) {
 
-        // If the user accepts, let’s create a notification
-        if (permission === ‘granted’) {
-            var notification = new Notification('My title', {
-                tag: ‘message1’, 
-                body: “My body” 
-            }); 
+            console.warn(`Notif`);
 
-            notification.onshow  = function() { console.log(‘show’); };
-            notification.onclose = function() { console.log(‘close’); };
-            notification.onclick = function() { console.log(‘click’); };
-            
+            // If the user accepts, let’s create a notification
+            // if (permission === ‘granted’) {
+            //     var notification = new Notification('My title', {
+            //         tag: ‘message1’, 
+            //         body: “My body” 
+            //     }); 
+
+            //     notification.onshow  = function() { console.log(‘show’); };
+            //     notification.onclose = function() { console.log(‘close’); };
+            //     notification.onclick = function() { console.log(‘click’); };
+                
+            // }
+
+            });
         }
-        
-        });
-    }
+
+    });
 
 });
