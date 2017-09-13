@@ -33,26 +33,28 @@
 
     $(window).load(function() {
 
-        if ('Notification' in window) {
-            Notification.requestPermission(function (permission) {
+        setTimeout( function() {
+        
+            if ('Notification' in window) {
+                Notification.requestPermission(function (permission) {
 
-            //console.warn(`Notif`);
+                //If the user accepts, let’s create a notification
+                if (permission === "granted") {
+                    var notification = new Notification('R\'YouIN', {
+                        tag: 'notification', 
+                        body: 'R\'YouIN notifications look like this' 
+                    }); 
 
-            //If the user accepts, let’s create a notification
-            if (permission === "granted") {
-                var notification = new Notification('R\'YouIN', {
-                    tag: 'New notification', 
-                    body: 'There\'s a new event!' 
-                }); 
+                    notification.onshow  = function() { console.warn('show'); };
+                    notification.onclose = function() { console.log('close'); };
+                    notification.onclick = function() { console.log('click'); };
+                    
+                }
 
-                notification.onshow  = function() { console.warn('show'); };
-                notification.onclose = function() { console.log('close'); };
-                notification.onclick = function() { console.log('click'); };
-                
-            }
+                });
+        };
 
-            });
-        }
+        }, 5000);
 
     });
 
