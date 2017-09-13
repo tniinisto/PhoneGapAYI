@@ -31,7 +31,9 @@
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
 
-    <plugin name="de.appplant.cordova.plugin.local-notification" source="npm" />
+    <!-- Notification plugin -->
+    <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
+
 
 <icon src="icon.png" />
 
@@ -79,9 +81,6 @@
 <splash gap:platform="android" gap:qualifier="port-ldpi" src="res/screens/android/screen-ldpi-portrait.png" />
 <splash gap:platform="android" gap:qualifier="port-mdpi" src="res/screens/android/screen-mdpi-portrait.png" />
 <splash gap:platform="android" gap:qualifier="port-xhdpi" src="res/screens/android/screen-xhdpi-portrait.png" />	
-
-<!-- Notification plugin -->
-<gap:plugin name="de.appplant.cordova.plugin.local-notification" />
 
   <platform name="android">
         <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
