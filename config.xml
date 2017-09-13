@@ -32,8 +32,9 @@
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
 
     <!-- Notification plugin -->    
-    <plugin name="cordova-plugin-background-mode" source="npm" />
-    <!-- <plugin name="de.appplant.cordova.plugin.local-notification" source="pgb" /> -->
+    <!-- <plugin name="cordova-plugin-background-mode" source="npm" /> -->
+    <plugin name="phonegap-plugin-local-notification" source="npm" />
+    
 
 <icon src="icon.png" />
 
