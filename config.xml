@@ -32,7 +32,8 @@
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
 
     <!-- Notification plugin -->
-    <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
+    <!-- <gap:plugin name="de.appplant.cordova.plugin.local-notification" /> -->
+    <plugin name="de.appplant.cordova.plugin.local-notification" source="pgb" />
 
 
 <icon src="icon.png" />
