@@ -40,9 +40,9 @@
 
             //If the user accepts, let’s create a notification
             if (permission === "granted") {
-                var notification = new Notification('My title', {
-                    tag: 'message1', 
-                    body: 'My body' 
+                var notification = new Notification('R\'YouIN', {
+                    tag: 'New notification', 
+                    body: 'There\'s a new event!' 
                 }); 
 
                 notification.onshow  = function() { console.warn('show'); };
