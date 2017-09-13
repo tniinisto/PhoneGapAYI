@@ -15,14 +15,16 @@ document.addEventListener('deviceready', function () {
     //     ongoing:    Boolean, // Prevent clearing of notification (Android only)
     // }, callback, scope);
 
-    var now                  = new Date().getTime(),
-    _30_seconds_from_now = new Date(now + 30*1000);
+    // var now                  = new Date().getTime(),
+    // _30_seconds_from_now = new Date(now + 30*1000);
 
-    window.plugin.notification.local.add({
-        id:      1,
-        title:   'Reminder',
-        message: 'RYouIN event test!',
-        date:    _30_seconds_from_now
-    });
+    // window.plugin.notification.local.add({
+    //     id:      1,
+    //     title:   'Reminder',
+    //     message: 'RYouIN event test!',
+    //     date:    _30_seconds_from_now
+    // });
+
+    console.warn(`Phonegap notifications here...`);
 
 }, false);
