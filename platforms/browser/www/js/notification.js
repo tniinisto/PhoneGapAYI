@@ -42,7 +42,9 @@
                 if (permission === "granted") {
                     var notification = new Notification('R\'YouIN', {
                         tag: 'notification', 
-                        body: 'R\'YouIN notifications look like this' 
+                        body: 'R\'YouIN notifications look like this',
+                        //sound: "file://js/tone.wav",
+                        icon: "images/events-icon.png"
                     }); 
 
                     notification.onshow  = function() { console.warn('show'); };

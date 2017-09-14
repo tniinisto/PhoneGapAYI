@@ -37,6 +37,7 @@
     <icon gap:platform="android" gap:qualifier="xxhdpi" src="res/icons/android/icon-144-xxhdpi.png" />
     <icon gap:platform="android" gap:qualifier="xxxhdpi" src="res/icons/android/icon-192-xxxhdpi.png" />
     <splash src="splash.png" />
+    <resource-file src="js/images/tone.wav" target="res/raw/tone.wav" />
     <splash gap:platform="ios" height="480" src="res/screens/ios/screen-iphone-portrait.png" width="320" />
     <splash gap:platform="ios" height="960" src="res/screens/ios/screen-iphone-portrait-2x.png" width="640" />
     <splash gap:platform="ios" height="1024" src="res/screens/ios/screen-ipad-portrait.png" width="768" />
