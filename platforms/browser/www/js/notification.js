@@ -46,6 +46,8 @@
                         //sound: "file://js/tone.wav",
                         icon: "images/events-icon.png"
                     }); 
+                    
+                    navigator.notification.beep(1);
 
                     notification.onshow  = function() { console.warn('show'); };
                     notification.onclose = function() { console.log('close'); };
