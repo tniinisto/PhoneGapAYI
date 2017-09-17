@@ -12,8 +12,21 @@ function getEvents(teamid) {
         success:function(result){
 
             //Populate eventsPage, check if > 0
-            if(result.items != 0)
-                console.warn(`JESSSS`);
+            // if(result.items != 0)
+            //     console.warn(`JESSSS`);
+
+            // $.each($.parseJSON(result), function(i, item) {
+            //     alert(result[i].teaName);
+            // });
+
+            $.each(result, function (key, data) {
+                //console.log(key)
+                $.each(data, function (index, data) {
+                    console.warn('index', data.teamName + ' ' + data.Events_eventID + ' ' + data.name)
+
+                })
+            })
+
         },
 
         error: function () {
