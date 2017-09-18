@@ -34,6 +34,10 @@
     <!-- Notification plugin -->    
     <!-- <plugin name="cordova-plugin-background-mode" source="npm" /> -->
     <plugin name="phonegap-plugin-local-notification" source="npm" />
+
+    <!-- White list -->
+    <access origin="https://r-youin.com"/>
+
     
 
 <icon src="icon.png" />
