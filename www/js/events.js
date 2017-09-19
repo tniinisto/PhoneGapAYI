@@ -18,6 +18,7 @@ function getEvents(teamid) {
             var i = 0;
             var init = 0;
             var event = 0;
+            var participants = 0;
 
             $.each(result, function (key, data) {
                 //console.log(key)
@@ -31,17 +32,26 @@ function getEvents(teamid) {
                     }
 
                     if(event == parseInt(data.Events_eventID)) {
+                        participants++;
                         areyouin[i][0] = event;
-                        areyouin[i][1] += parseInt(data.areyouin);
-                    }
+                        areyouin[i][1] += parseInt(data.areyouin);                        
+                  }
                     else {
+                        areyouin[i][2] = participants; 
+                        participants = 1;
                         event = parseInt(data.Events_eventID);
+
                         i++;
                         areyouin[i][0] = event;
                         areyouin[i][1] += parseInt(data.areyouin);
                     }
                 })
+
+                //Last event's invited participant count
+                areyouin[i][2] += participants;
+                
             })
+            //Event data end////////////////////////////////////////////////////////////////////////////////////////
 
             console.warn('areyouin: ', areyouin)
 
@@ -61,7 +71,7 @@ function Create2DArray(rows) {
 
     for (i=0;i<rows;i++) {
         f[i]=new Array();
-        for (j=0;j<2;j++) {
+        for (j=0;j<3;j++) {
          f[i][j]=0;
         }
     }
