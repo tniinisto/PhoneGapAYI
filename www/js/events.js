@@ -14,7 +14,7 @@ function getEvents(teamid) {
 
             //Calculate participants who have marked im for it and create table per event///////////////////////////
             //Max length set to 100 events ! ///////////////////////////////////////////////////////////////////////
-            var areyouin = Create2DArray(100);
+            var areyouin = Create2DArray(500);
             var i = 0;
             var init = 0;
             var event = 0;
