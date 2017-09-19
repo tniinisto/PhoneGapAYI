@@ -11,21 +11,39 @@ function getEvents(teamid) {
 
         success:function(result){
 
-            //Populate eventsPage, check if > 0
-            // if(result.items != 0)
-            //     console.warn(`JESSSS`);
 
-            // $.each($.parseJSON(result), function(i, item) {
-            //     alert(result[i].teaName);
-            // });
+            //Calculate participants who have marked im for it and create table per event///////////////////////////
+            //Max length set to 50 ! ///////////////////////////////////////////////////////////////////////////////
+            var areyouin = Create2DArray(50);
+            var i = 0;
+            var init = 0;
+            var event = 0;
 
             $.each(result, function (key, data) {
                 //console.log(key)
-                $.each(data, function (index, data) {
-                    console.warn('index', data.teamName + ' ' + data.Events_eventID + ' ' + data.name)
 
+                $.each(data, function (index, data) {
+                    //console.warn('result: ', data.teamName + ' ' + data.Events_eventID + ' ' + data.name)     
+
+                    if(init == 0) {
+                        init++;
+                        event = parseInt(data.Events_eventID);
+                    }
+
+                    if(event == parseInt(data.Events_eventID)) {
+                        areyouin[i][0] = event;
+                        areyouin[i][1] += parseInt(data.areyouin);
+                    }
+                    else {
+                        event = parseInt(data.Events_eventID);
+                        i++;
+                        areyouin[i][0] = event;
+                        areyouin[i][1] += parseInt(data.areyouin);
+                    }
                 })
             })
+
+            console.warn('areyouin: ', areyouin)
 
         },
 
@@ -36,3 +54,17 @@ function getEvents(teamid) {
     });
 
 }
+
+function Create2DArray(rows) {
+
+    var f = new Array();      
+
+    for (i=0;i<rows;i++) {
+        f[i]=new Array();
+        for (j=0;j<2;j++) {
+         f[i][j]=0;
+        }
+    }
+
+    return f;
+  }

@@ -14,6 +14,7 @@
         Puonti Solutions
     </author>
     <content src="index.html" />
+    <access origin="https://r-youin.com" />
     <icon src="icon.png" />
     <icon gap:platform="ios" height="60" src="res/icons/ios/icon-60.png" width="60" />
     <icon gap:platform="ios" height="120" src="res/icons/ios/icon-60-2x.png" width="120" />
