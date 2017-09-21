@@ -40,7 +40,7 @@ $(window).load(function() {
                                 //alert("multiple teams");
 
                                 $(':mobile-pagecontainer').pagecontainer('change', '#login-team-selection', {
-                                    transition: 'flip',
+                                    //transition: 'flip',
                                     changeHash: false,
                                     reverse: true,
                                     showLoadMsg: true
@@ -72,7 +72,7 @@ $(window).load(function() {
 
                                     //Shoe events page
                                     $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {
-                                        transition: 'flip',
+                                        //transition: 'flip',
                                         changeHash: false,
                                         reverse: true,
                                         showLoadMsg: true
@@ -94,7 +94,7 @@ $(window).load(function() {
                                 
                                 //Shoe events page
                                 $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {
-                                    transition: 'flip',
+                                    //transition: 'flip',
                                     changeHash: false,
                                     reverse: true,
                                     showLoadMsg: true
