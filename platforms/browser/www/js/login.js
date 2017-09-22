@@ -67,7 +67,10 @@ $(window).load(function() {
                                     $("#logininfo_e").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Events page
                                     $("#logininfo_c").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Chat page
 
-                                    //Get team's events, check that license is valid
+									//Save playerID to session
+									sessionStorage['playerID'] =  result.items[0].playerID;
+
+                                    //Get team's events TODO: check that license is valid
                                     getEvents( $("#select-native-1 option:selected" ).val() );
 
                                     //Shoe events page
@@ -87,9 +90,12 @@ $(window).load(function() {
                                 $("#logininfo_e").text(result.items[0].name + ' team ' + result.items[0].teamName); //Events page
                                 $("#logininfo_c").text(result.items[0].name + ' team ' + result.items[0].teamName); //Chat page
 
+								//Save playerID to session
+								sessionStorage['playerID'] =  result.items[0].playerID;
+									
                                 $('#ayilogin_label').css("display", "none");
 
-                                //Get team's events, check that license is valid
+								//Get team's events, check that license is valid
                                 getEvents( result.items[0].teamID );
                                 
                                 //Shoe events page
