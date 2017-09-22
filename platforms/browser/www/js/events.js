@@ -12,9 +12,9 @@ function getEvents(teamid) {
         success:function(result){
 
 
-            //Calculate participants who have marked im for it and create table per event///////////////////////////
+            //Calculate participants who have marked in for it and create table per event///////////////////////////
             //Max length set to 100 events ! ///////////////////////////////////////////////////////////////////////
-            var areyouin = Create2DArray(500);
+            var areyouin = Create2DArray(500); //Areyouin [eventID, participants in, participants invited]
             var i = 0;
             var init = 0;
             var event = 0;
@@ -54,6 +54,74 @@ function getEvents(teamid) {
             //Event data end////////////////////////////////////////////////////////////////////////////////////////
 
             console.warn('areyouin: ', areyouin)
+
+
+            //Create events on ui //////////////////////////////////////////////////////////////////////////////////
+
+            //for(i=0; i < 3; i++) {
+            i = 0;
+            while( areyouin[i][0] != 0 ) {
+                
+                i++;
+
+                $("#event_content_id" ).append(
+                
+                //Event div
+                "<div id='Event_" + areyouin[i][1]  + "'>"
+
+
+                    //Rigth panel
+                    + "<div style='width: 70%;' data-role='panel' id='eventPanel" + areyouin[i][1]  + "'data-position='right' data-position-fixed='true' data-display='overlay' class='ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate'>"
+                        + "<h2>participants</h2>"
+                        + "<p>You can close the panel by clicking outside the panel, pressing the Esc key or by swiping.</p>"
+                    + "</div>"
+
+                    //Event main view
+                    + "<div data-role='header' style='height:auto; width: auto; margin-bottom: 5px; margin-top: 5px;'>"
+                        + "<h1>Event Status: 0/9</h1>"
+                        + "<h1>Event Location</h1>"
+                        + "<h1>Event date</h1>"
+                        + "<h1>Event from - to time</h1>"
+                        + "<h1><img width='40' height='40' src='https://r-youin.com/images/1400431068_iceman.jpg'> Tupu</h1>"
+
+                        + "<div data-role='button' class='ui-content'>"
+                        +  "<a style='width:150px; height: 20px;' href='#eventPanel" + areyouin[i][1] + "' class='ui-btn ui-btn-inline ui-corner-all ui-shadow'>See participants</a>"
+                        + "</div>"
+
+                    + "</div>"
+
+
+                );
+            }
+
+
+                
+            //     <!-- Right panel -->
+            //     <div style="width: 70%;" data-role="panel" id="eventPanel1" data-position="right" data-position-fixed="true" data-display="overlay" class="ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate"> 
+            //         <h2>participants</h2>
+            //         <p>You can close the panel by clicking outside the panel, pressing the Esc key or by swiping.</p>
+            //     </div> 
+
+            //     <!-- Main event view -->
+            //     <div data-role="header" style="height:auto; width: auto; margin-bottom: 5px; margin-top: 5px;">
+            //         <h1>Event Status: 0/9</h1>
+            //         <h1>Event Location</h1>
+            //         <h1>Event date</h1>
+            //         <h1>Event from - to time</h1>
+            //         <!-- <h1>User's picture and event in out switch</h1> -->
+            //         <h1><img width='40' height='40' src="https://r-youin.com/images/1400431068_iceman.jpg"> Tupu</h1>
+
+            //         <div data-role="button" class="ui-content">
+            //             <!--<p>Click on the button below to open the Panel.</p>-->
+            //             <a style="width:150px; height: 20px;" href="#eventPanel1" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">See participants</a>
+            //         </div>
+
+            //     </div>
+
+            // </div>
+
+
+            //Create events on ui //////////////////////////////////////////////////////////////////////////////////
 
         },
 
