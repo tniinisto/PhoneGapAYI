@@ -57,8 +57,6 @@ function getEvents(teamid) {
 
 
             //Create events on ui //////////////////////////////////////////////////////////////////////////////////
-
-            //for(i=0; i < 3; i++) {
             i = 0;
             while( areyouin[i][0] != 0 ) {
                 
@@ -68,13 +66,13 @@ function getEvents(teamid) {
                 "<div id='Event_" + areyouin[i][1]  + "'>"
 
 
-                    //Rigth panel
+                    //Rigth panel///////////////////////////////////////////////////////////////////////////////////
                     + "<div style='width: 70%;' data-role='panel' id='eventPanel" + areyouin[i][1]  + "'data-position='right' data-position-fixed='true' data-display='overlay' class='ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate'>"
                         + "<h2>participants on event: " + areyouin[i][1] + "</h2>"
                         + "<p>You can close the panel by clicking outside the panel, pressing the Esc key or by swiping.</p>"
                     + "</div>"
 
-                    //Event main view
+                    //Event main view///////////////////////////////////////////////////////////////////////////////
                     + "<div data-role='header' style='height:auto; width: auto; margin-bottom: 5px; margin-top: 5px;'>"
                         + "<h1>Event Status: 0/9</h1>"
                         + "<h1>Event Location</h1>"
