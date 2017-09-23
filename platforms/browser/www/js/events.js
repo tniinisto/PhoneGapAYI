@@ -62,8 +62,6 @@ function getEvents(teamid) {
             i = 0;
             while( areyouin[i][0] != 0 ) {
                 
-                i++;
-
                 $("#event_content_id" ).append(
                 
                 //Event div
@@ -72,7 +70,7 @@ function getEvents(teamid) {
 
                     //Rigth panel
                     + "<div style='width: 70%;' data-role='panel' id='eventPanel" + areyouin[i][1]  + "'data-position='right' data-position-fixed='true' data-display='overlay' class='ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate'>"
-                        + "<h2>participants</h2>"
+                        + "<h2>participants on event: " + areyouin[i][1] + "</h2>"
                         + "<p>You can close the panel by clicking outside the panel, pressing the Esc key or by swiping.</p>"
                     + "</div>"
 
@@ -84,42 +82,16 @@ function getEvents(teamid) {
                         + "<h1>Event from - to time</h1>"
                         + "<h1><img width='40' height='40' src='https://r-youin.com/images/1400431068_iceman.jpg'> Tupu</h1>"
 
-                        + "<div data-role='button' class='ui-content'>"
-                        +  "<a style='width:150px; height: 20px;' href='#eventPanel" + areyouin[i][1] + "' class='ui-btn ui-btn-inline ui-corner-all ui-shadow'>See participants</a>"
+                        + "<div data-role='button' class='ui-content')>"
+                        +  "<a style='width:150px; height: 20px;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][1] + ">See participants</a>"
                         + "</div>"
 
                     + "</div>"
-
-
-                );
-            }
-
-
+                ).enhanceWithin();
                 
-            //     <!-- Right panel -->
-            //     <div style="width: 70%;" data-role="panel" id="eventPanel1" data-position="right" data-position-fixed="true" data-display="overlay" class="ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate"> 
-            //         <h2>participants</h2>
-            //         <p>You can close the panel by clicking outside the panel, pressing the Esc key or by swiping.</p>
-            //     </div> 
+                i++;                    
 
-            //     <!-- Main event view -->
-            //     <div data-role="header" style="height:auto; width: auto; margin-bottom: 5px; margin-top: 5px;">
-            //         <h1>Event Status: 0/9</h1>
-            //         <h1>Event Location</h1>
-            //         <h1>Event date</h1>
-            //         <h1>Event from - to time</h1>
-            //         <!-- <h1>User's picture and event in out switch</h1> -->
-            //         <h1><img width='40' height='40' src="https://r-youin.com/images/1400431068_iceman.jpg"> Tupu</h1>
-
-            //         <div data-role="button" class="ui-content">
-            //             <!--<p>Click on the button below to open the Panel.</p>-->
-            //             <a style="width:150px; height: 20px;" href="#eventPanel1" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">See participants</a>
-            //         </div>
-
-            //     </div>
-
-            // </div>
-
+            }
 
             //Create events on ui //////////////////////////////////////////////////////////////////////////////////
 
@@ -146,3 +118,13 @@ function Create2DArray(rows) {
 
     return f;
   }
+
+//   function showPanel (panel) {
+        
+//     $( panel ).on( 'click', panel, function () {
+    
+//         console.warn('onclick: ', panel)
+
+//     });
+  
+// }
