@@ -78,8 +78,21 @@ function getEvents(teamid) {
                         + "<h1>Event Location</h1>"
                         + "<h1>Event date</h1>"
                         + "<h1>Event from - to time</h1>"
-                        //+ "<h1><img width='40' height='40' src='https://r-youin.com/images/1400431068_iceman.jpg'> Tupu</h1>"
-                        + "<h1><img width='40' height='40' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'> " + sessionStorage['pname'] + "</h1>"
+
+                        + "<div style='text-align:center; padding-top: 1em; margin-top: 1em;'>"
+                            
+                            + "<img style='display:inline-block; height: 100%; vertical-align:middle;' width='40' height='40' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
+
+                            + "<h2 style='display:inline-block; height: 100%; vertical-align:middle; margin-left: 1em; margin-right: 1em; font-size: 100%;'> " + sessionStorage['pname'] + "</h2>"
+
+                            + "<form style='display:inline-block; height: 100%; vertical-align:middle;'>"
+                                + "<select name='flip-1' id='flip-1' data-role='slider'>"
+                                + "<option value='out'>out</option>"
+                                + "<option value='in'>in</option>"
+                                + "</select>"
+                            + "</form>"
+
+                        + "</div>"    
 
                         + "<div data-role='button' class='ui-content')>"
                         +  "<a style='width:150px; height: 20px;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][1] + ">See participants</a>"
