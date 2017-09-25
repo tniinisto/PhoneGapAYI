@@ -79,7 +79,7 @@ function getEvents(teamid) {
                         + "<h1>Event date</h1>"
                         + "<h1>Event from - to time</h1>"
                         //+ "<h1><img width='40' height='40' src='https://r-youin.com/images/1400431068_iceman.jpg'> Tupu</h1>"
-                        + "<h1><img width='40' height='40' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>" + sessionStorage['pname'] + "</h1>"
+                        + "<h1><img width='40' height='40' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'> " + sessionStorage['pname'] + "</h1>"
 
                         + "<div data-role='button' class='ui-content')>"
                         +  "<a style='width:150px; height: 20px;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][1] + ">See participants</a>"
