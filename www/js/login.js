@@ -69,6 +69,10 @@ $(window).load(function() {
 
 									//Save playerID to session
 									sessionStorage['playerID'] =  result.items[0].playerID;
+									//Save name to session
+									sessionStorage['pname'] =  result.items[0].name;
+									//Save photourl to session
+									sessionStorage['photourl'] =  result.items[0].photourl;
 
                                     //Get team's events TODO: check that license is valid
                                     getEvents( $("#select-native-1 option:selected" ).val() );
@@ -92,6 +96,10 @@ $(window).load(function() {
 
 								//Save playerID to session
 								sessionStorage['playerID'] =  result.items[0].playerID;
+								//Save name to session
+								sessionStorage['pname'] =  result.items[0].name;
+								//Save photourl to session
+								sessionStorage['photourl'] =  result.items[0].photourl;
 									
                                 $('#ayilogin_label').css("display", "none");
 
