@@ -83,9 +83,9 @@ function getEvents(teamid) {
                             
                             + "<img style='display:inline-block; height: 100%; vertical-align:middle;' width='40' height='40' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
 
-                            + "<h2 style='display:inline-block; height: 100%; vertical-align:middle; margin-left: 1em; margin-right: 1em; font-size: 100%;'> " + sessionStorage['pname'] + "</h2>"
+                            + "<h2 style='display:inline-block; height: 100%; vertical-align:top; margin-left: 1em; margin-right: 1em; font-size: 100%;'> " + sessionStorage['pname'] + "</h2>"
 
-                            + "<form style='display:inline-block; height: 100%; vertical-align:middle;'>"
+                            + "<form style='display:inline-block; height: 100%; vertical-align:middle; margin-top: 5px;'>"
                                 + "<select name='flip-1' id='flip-1' data-role='slider'>"
                                 + "<option value='out'>out</option>"
                                 + "<option value='in'>in</option>"
