@@ -81,7 +81,7 @@ function getEvents(teamid) {
 
                         + "<div style='text-align:center; padding-top: 1em; margin-top: 1em;'>"
                             
-                            + "<img style='display:inline-block; height: 100%; vertical-align:middle;' width='40' height='40' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
+                            + "<img style='display:inline-block; vertical-align:middle;' width='40' height='40' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
 
                             + "<h2 style='display:inline-block; height: 100%; vertical-align:top; margin-left: 1em; margin-right: 1em; font-size: 100%;'> " + sessionStorage['pname'] + "</h2>"
 
