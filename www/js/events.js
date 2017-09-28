@@ -58,18 +58,33 @@ function getEvents(teamid) {
 
             //Create events on ui //////////////////////////////////////////////////////////////////////////////////
             i = 0;
+            j= 0;
+            invited = 0;
+            eventcount = 0;
+            participant_list = '';
+
             while( areyouin[i][0] != 0 ) {
-                
+ 
+                //All event participants, except the logged in user
+                invited += areyouin[i][2];
+                while( j < invited ) {
+
+                    if(result.items[j].playerid != sessionStorage['playerID'] && result.items[j].Events_eventID == areyouin[i][0])
+                        participant_list += "<p><img style='display:inline-block; vertical-align:middle;' width='40' height='40' src='https://r-youin.com/images/" + result.items[j].photourl + "'>&nbsp" + result.items[j].name + "</p>";                           
+                    
+                    j++;
+                }
+
                 $("#event_content_id" ).append(
-                
-                //Event div
+                     
+                 //Event div
                 "<div id='Event_" + areyouin[i][1]  + "'>"
 
 
                     //Rigth panel///////////////////////////////////////////////////////////////////////////////////
                     + "<div style='width: 70%;' data-role='panel' id='eventPanel" + areyouin[i][1]  + "'data-position='right' data-position-fixed='true' data-display='overlay' class='ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate'>"
                         + "<h2>participants on event: " + areyouin[i][1] + "</h2>"
-                        + "<p>You can close the panel by clicking outside the panel, pressing the Esc key or by swiping.</p>"
+                        + "<div>" + participant_list + "</div>"                         
                     + "</div>"
 
                     //Event main view///////////////////////////////////////////////////////////////////////////////
@@ -101,6 +116,7 @@ function getEvents(teamid) {
                     + "</div>"
                 ).enhanceWithin();
                 
+                participant_list = '';
                 i++;                    
 
             }
