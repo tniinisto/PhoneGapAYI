@@ -34,7 +34,10 @@ function getEvents(teamid) {
                     if(event == parseInt(data.Events_eventID)) {
                         participants++;
                         areyouin[i][0] = event;
-                        areyouin[i][1] += parseInt(data.areyouin);                        
+                        areyouin[i][1] += parseInt(data.areyouin);
+                        areyouin[i][3] = data.location;
+                        areyouin[i][4] = data.startTime;
+                        areyouin[i][5] = data.endTime;                        
                   }
                     else {
                         areyouin[i][2] = participants; 
@@ -44,6 +47,9 @@ function getEvents(teamid) {
                         i++;
                         areyouin[i][0] = event;
                         areyouin[i][1] += parseInt(data.areyouin);
+                        areyouin[i][3] = data.location;
+                        areyouin[i][4] = data.startTime;
+                        areyouin[i][5] = data.endTime;                        
                     }
                 })
 
@@ -100,14 +106,14 @@ function getEvents(teamid) {
 
                     //Event main view///////////////////////////////////////////////////////////////////////////////
                     + "<div data-role='header' style='height:auto; width: auto; margin-bottom: 5px; margin-top: 5px;'>"
-                        + "<h1>Event Status: 0/9</h1>"
-                        + "<h1>Event Location</h1>"
-                        + "<h1>Event date</h1>"
-                        + "<h1>Event from - to time</h1>"
+                        + "<h1 style='font-weight: bold; font:size: 110%'>Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
+                        + "<h1 style='font-weight: bold; font:size: 110%'>Event Location: " + areyouin[i][3] + "</h1>"
+                        + "<h1>On "  + getWeekday(areyouin[i][4]) + "</h1>" 
+                        + "<h1>From " + areyouin[i][5] + "</h1>"
 
-                        + "<div style='text-align:center; padding-top: 1em; margin-top: 1em;'>"
+                        + "<div style='text-align:center; padding-bottom: 1em; margin-top: 1em; background: #252525; height: 40px;'>"
                             
-                            + "<img style='display:inline-block; vertical-align:middle;' width='40' height='40' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
+                            + "<img style='display:inline-block; vertical-align:middle; padding-top: 8px;' width='40' height='40' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
 
                             + "<h2 style='display:inline-block; height: 100%; vertical-align:top; margin-left: 1em; margin-right: 1em; font-size: 100%;'> " + sessionStorage['pname'] + "</h2>"
 
@@ -122,7 +128,7 @@ function getEvents(teamid) {
                         + "</div>"    
 
                         + "<div data-role='button' class='ui-content')>"
-                        +  "<a style='width:150px; height: 20px;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][1] + ">See participants</a>"
+                        +  "<a style='width:150px; height: 20px; float: right;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][1] + ">See participants >></a>"
                         + "</div>"
 
                     + "</div>"
@@ -154,7 +160,7 @@ function Create2DArray(rows) {
 
     for (i=0;i<rows;i++) {
         f[i]=new Array();
-        for (j=0;j<3;j++) {
+        for (j=0;j<5;j++) {
          f[i][j]=0;
         }
     }
@@ -176,7 +182,23 @@ function sliderValues(result) {
 
         i++;        
     }
-
-    
+  
 }
 
+//Get day format for From part of event info
+function getWeekday(datetime) {
+
+    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var d = new Date(datetime);
+    var dayName = days[d.getDay()];
+
+    //var datepart = datetime.substr(0, 10);
+    var year = d.getFullYear();
+    var month = d.getMonth() + 1;
+    var day = d.getDate();
+
+    //var result = datepart;
+    var result = dayName + " " + day + "." + month + "." + year;
+
+    return result;
+}
