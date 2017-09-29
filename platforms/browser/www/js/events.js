@@ -89,7 +89,7 @@ function getEvents(teamid) {
                 $("#event_content_id" ).append(
                      
                  //Event div
-                "<div id='Event_" + areyouin[i][1]  + "'>"
+                "<div id='Event_" + areyouin[i][0]  + "'>"
 
 
                     //Rigth panel///////////////////////////////////////////////////////////////////////////////////
@@ -111,8 +111,9 @@ function getEvents(teamid) {
 
                             + "<h2 style='display:inline-block; height: 100%; vertical-align:top; margin-left: 1em; margin-right: 1em; font-size: 100%;'> " + sessionStorage['pname'] + "</h2>"
 
-                            + "<form style='display:inline-block; height: 100%; vertical-align:middle; margin-top: 5px;'>"
-                                + "<select name='flip-1' id='flip-1' data-role='slider'>"
+                            //In/Out slider
+                            + "<form id='eform_" + areyouin[i][0] + "' style='display:inline-block; height: 100%; vertical-align:middle; margin-top: 5px;'>"
+                                + "<select name='slider_" + areyouin[i][0] + "' id='sliderid_" + areyouin[i][0] + "' data-role='slider'>"
                                 + "<option value='out'>out</option>"
                                 + "<option value='in'>in</option>"
                                 + "</select>"
@@ -133,6 +134,9 @@ function getEvents(teamid) {
             }
 
             //Create events on ui //////////////////////////////////////////////////////////////////////////////////
+
+            //Set users in/out value per event
+            sliderValues(result);
 
         },
 
@@ -158,12 +162,21 @@ function Create2DArray(rows) {
     return f;
   }
 
-//   function showPanel (panel) {
-        
-//     $( panel ).on( 'click', panel, function () {
-    
-//         console.warn('onclick: ', panel)
+//Set users in/out value per event
+function sliderValues(result) {
+    //console.warn('oncreate: ', slider)
 
-//     });
-  
-// }
+    i=0;
+    //while( areyouin[i][0] != 0 ) {
+    while( i < result.items[0].rowcount ) {        
+        //console.warn('oncreate: ', 'sliderid_' + areyouin[i][0]);
+        
+        if(result.items[i].areyouin == 1 && result.items[i].playerid == sessionStorage['playerID'])
+            $("#sliderid_" + result.items[i].Events_eventID).val('in').slider("refresh");
+
+        i++;        
+    }
+
+    
+}
+
