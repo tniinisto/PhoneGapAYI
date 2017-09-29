@@ -69,8 +69,19 @@ function getEvents(teamid) {
                 invited += areyouin[i][2];
                 while( j < invited ) {
 
-                    if(result.items[j].playerid != sessionStorage['playerID'] && result.items[j].Events_eventID == areyouin[i][0])
-                        participant_list += "<p><img style='display:inline-block; vertical-align:middle;' width='40' height='40' src='https://r-youin.com/images/" + result.items[j].photourl + "'>&nbsp" + result.items[j].name + "</p>";                           
+                    in_out = 'OUT'
+                    if(result.items[j].areyouin == 1)                    
+                        in_out = 'IN'
+                    
+                    if(result.items[j].seen == 1) {//Show yellow border if user has seen it
+
+                        if(result.items[j].playerid != sessionStorage['playerID'] && result.items[j].Events_eventID == areyouin[i][0])
+                        participant_list += "<div><img class='seen' style='display:inline-block; vertical-align:middle;' width='40' height='40' src='https://r-youin.com/images/" + result.items[j].photourl + "'>&nbsp" + result.items[j].name + "&nbsp<div style='color:#22aadd; font-size: large; display:inline-block; width:20%; text-align:center; float: right; padding-right: 1em; padding-top: 1em; font-weight: bold;'>" + in_out + "</div></div>";
+                    }
+                    else {
+                        if(result.items[j].playerid != sessionStorage['playerID'] && result.items[j].Events_eventID == areyouin[i][0])
+                            participant_list += "<div><img class='unseen' style='display:inline-block; vertical-align:middle;' width='40' height='40' src='https://r-youin.com/images/" + result.items[j].photourl + "'>&nbsp" + result.items[j].name + "&nbsp<div style='color:#22aadd; font-size: large; display:inline-block; width:20%; text-align:center; float: right; padding-right: 1em; padding-top: 1em; font-weight: bold;'>" + in_out + "</div></div>";                           
+                    }
                     
                     j++;
                 }
@@ -83,7 +94,7 @@ function getEvents(teamid) {
 
                     //Rigth panel///////////////////////////////////////////////////////////////////////////////////
                     + "<div style='width: 70%;' data-role='panel' id='eventPanel" + areyouin[i][1]  + "'data-position='right' data-position-fixed='true' data-display='overlay' class='ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate'>"
-                        + "<h2>participants on event: " + areyouin[i][1] + "</h2>"
+                        + "<h2 style='padding-bottom: 1em;'>Event participants</h2>"
                         + "<div>" + participant_list + "</div>"                         
                     + "</div>"
 
