@@ -111,8 +111,8 @@ function getEvents(teamid) {
 
                             + "<h1 style='background: #39414b; margin-top: -15px;'>Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
                             + "<h1 style='font-size: 100%; margin-bottom: -10px;'>Event Location: " + areyouin[i][3] + "</h1>"
-                            + "<h1 style='font-size: 100%; margin-bottom: -10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
-                            + "<h1 style='font-size: 100%; margin-bottom: -10px;'>To " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
+                            + "<h1 style='font-size: 120%; margin-bottom: -10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
+                            + "<h1 style='font-size: 120%; margin-bottom: -10px;'>To " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
 
                         + "</div>"    
                         
@@ -132,7 +132,7 @@ function getEvents(teamid) {
 
                         + "</div>"    
 
-                        + "<div style='padding: 0px;' data-role='button' class='ui-content')>"
+                        + "<div style='padding: 0px; background: #252525;' data-role='button' class='ui-content')>"
                             + "<a style='width:150px; height: 20px; float: right;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][1] + ">See participants >></a>"
                         + "</div>"
 
