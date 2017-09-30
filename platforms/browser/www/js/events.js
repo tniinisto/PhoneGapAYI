@@ -111,8 +111,8 @@ function getEvents(teamid) {
 
                             + "<h1 style='background: #39414b; margin-top: -15px;'>Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
                             + "<h1 style='font-size: 100%; margin-bottom: -10px;'>Event Location: " + areyouin[i][3] + "</h1>"
-                            + "<h1 style='font-size: 100%; margin-bottom: -10px;'>On "  + getWeekday(areyouin[i][4]) + "</h1>" 
-                            + "<h1 style='font-size: 100%; margin-bottom: -10px;'>From " + areyouin[i][5] + "</h1>"
+                            + "<h1 style='font-size: 100%; margin-bottom: -10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
+                            + "<h1 style='font-size: 100%; margin-bottom: -10px;'>To " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
 
                         + "</div>"    
                         
@@ -199,13 +199,42 @@ function getWeekday(datetime) {
     var d = new Date(datetime);
     var dayName = days[d.getDay()];
 
-    //var datepart = datetime.substr(0, 10);
+    //Date
     var year = d.getFullYear();
     var month = d.getMonth() + 1;
     var day = d.getDate();
 
-    //var result = datepart;
-    var result = dayName + " " + day + "." + month + "." + year;
+    //Time
+    var start = new Date(datetime);
+    var start_time = ((start.getHours() < 10) ? '0' + start.getHours() : start.getHours()) + ":" + ((start.getMinutes() < 10) ? '0' + start.getMinutes() : start.getMinutes());
+
+    var result = dayName + " " + day + "." + month + "." + year + ' ' + start_time;
 
     return result;
+}
+
+function getFromToTime(from, to) {
+
+    //From
+    var start = new Date(from);
+    var start_time = ((start.getHours() < 10) ? '0' + start.getHours() : start.getHours()) + ":" + ((start.getMinutes() < 10) ? '0' + start.getMinutes() : start.getMinutes());
+
+    //To
+    var end = new Date(to);
+
+    //Check if event end is on the same day
+    if(start.getDate() == end.getDate())
+        var end_time = ((end.getHours() < 10) ? '0' + end.getHours() : end.getHours()) + ":" + ((end.getMinutes() < 10) ? '0' + end.getMinutes() : end.getMinutes());
+    else {
+        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        var d = new Date(to);
+        var dayName = days[d.getDay()];
+
+        var end_time = dayName + ' ' + (end.getDate() < 10 ? '0' + end.getDate() : end.getDate())  + "." + ((end.getMonth() + 1 < 10) ? '0' + (end.getMonth() + 1) : (end.getMonth() + 1)) + " " +  ((end.getHours() < 10) ? '0' + end.getHours() : end.getHours()) + ":" + ((end.getMinutes() < 10) ? '0' + end.getMinutes() : end.getMinutes());
+    }
+
+    //var time = start_time + " to " + end_time;
+    var time = end_time;
+
+    return time;
 }
