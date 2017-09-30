@@ -112,13 +112,13 @@ function getEvents(teamid) {
                             + "<h1 style='background: #39414b; margin-top: -15px;'>Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
                             + "<h1 style='font-size: 100%; margin-bottom: -10px;'>Event Location: " + areyouin[i][3] + "</h1>"
                             + "<h1 style='font-size: 120%; margin-bottom: -10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
-                            + "<h1 style='font-size: 120%; margin-bottom: -10px;'>To " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
+                            + "<h1 style='font-size: 120%; margin-bottom: -10px;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
 
                         + "</div>"    
                         
                         + "<div style='text-align:center; padding-bottom: 1em; background: #252525; height: 40px;'>"
                             
-                            + "<img style='display:inline-block; vertical-align:middle; padding-top: 8px;' width='40' height='40' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
+                            + "<img style='display:inline-block; vertical-align:middle; padding-top: 8px;' width='50' height='50' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
 
                             + "<h2 style='display:inline-block; height: 100%; vertical-align:top; margin-left: 1em; margin-right: 1em; font-size: 100%;'> " + sessionStorage['pname'] + "</h2>"
 
@@ -206,9 +206,9 @@ function getWeekday(datetime) {
 
     //Time
     var start = new Date(datetime);
-    var start_time = ((start.getHours() < 10) ? '0' + start.getHours() : start.getHours()) + ":" + ((start.getMinutes() < 10) ? '0' + start.getMinutes() : start.getMinutes());
+    //var start_time = ((start.getHours() < 10) ? '0' + start.getHours() : start.getHours()) + ":" + ((start.getMinutes() < 10) ? '0' + start.getMinutes() : start.getMinutes());
 
-    var result = dayName + " " + day + "." + month + "." + year + ' ' + start_time;
+    var result = dayName + " " + day + "." + month + "." + year;
 
     return result;
 }
@@ -233,8 +233,7 @@ function getFromToTime(from, to) {
         var end_time = dayName + ' ' + (end.getDate() < 10 ? '0' + end.getDate() : end.getDate())  + "." + ((end.getMonth() + 1 < 10) ? '0' + (end.getMonth() + 1) : (end.getMonth() + 1)) + " " +  ((end.getHours() < 10) ? '0' + end.getHours() : end.getHours()) + ":" + ((end.getMinutes() < 10) ? '0' + end.getMinutes() : end.getMinutes());
     }
 
-    //var time = start_time + " to " + end_time;
-    var time = end_time;
+    var time = start_time + " to " + end_time;
 
     return time;
 }
