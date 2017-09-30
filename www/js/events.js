@@ -100,18 +100,23 @@ function getEvents(teamid) {
 
                     //Rigth panel///////////////////////////////////////////////////////////////////////////////////
                     + "<div style='width: 70%;' data-role='panel' id='eventPanel" + areyouin[i][1]  + "'data-position='right' data-position-fixed='true' data-display='overlay' class='ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate'>"
-                        + "<h2 style='padding-bottom: 1em;'>Event participants</h2>"
+                        + "<h2 style='padding-bottom: 1em; text-align: center;'>Event participants</h2>"
                         + "<div>" + participant_list + "</div>"                         
                     + "</div>"
 
                     //Event main view///////////////////////////////////////////////////////////////////////////////
                     + "<div data-role='header' style='height:auto; width: auto; margin-bottom: 5px; margin-top: 5px;'>"
-                        + "<h1 style='font-weight: bold; font:size: 110%'>Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
-                        + "<h1 style='font-weight: bold; font:size: 110%'>Event Location: " + areyouin[i][3] + "</h1>"
-                        + "<h1>On "  + getWeekday(areyouin[i][4]) + "</h1>" 
-                        + "<h1>From " + areyouin[i][5] + "</h1>"
+                        
+                        + "<div style='text-align:center; padding-bottom: 1em; margin-top: 1em; background: #252525; height: auto;'>"
 
-                        + "<div style='text-align:center; padding-bottom: 1em; margin-top: 1em; background: #252525; height: 40px;'>"
+                            + "<h1 style='background: #26596c; margin-top: -10px;'>Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
+                            + "<h1 style='font-size: 100%;'>Event Location: " + areyouin[i][3] + "</h1>"
+                            + "<h1 style='font-size: 100%;'>On "  + getWeekday(areyouin[i][4]) + "</h1>" 
+                            + "<h1 style='font-size: 100%;'>From " + areyouin[i][5] + "</h1>"
+
+                        + "</div>"    
+                        
+                        + "<div style='text-align:center; padding-bottom: 1em; margin-top: 2px; background: #252525; height: 40px;'>"
                             
                             + "<img style='display:inline-block; vertical-align:middle; padding-top: 8px;' width='40' height='40' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
 
@@ -128,8 +133,10 @@ function getEvents(teamid) {
                         + "</div>"    
 
                         + "<div data-role='button' class='ui-content')>"
-                        +  "<a style='width:150px; height: 20px; float: right;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][1] + ">See participants >></a>"
+                            + "<a style='width:150px; height: 20px; float: right;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][1] + ">See participants >></a>"
                         + "</div>"
+
+                        + "<div style='padding-bottom: 1px;  background: #26596c; height: 1px;'</di>"
 
                     + "</div>"
                 ).enhanceWithin();
