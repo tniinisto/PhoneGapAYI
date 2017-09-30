@@ -95,7 +95,7 @@ function getEvents(teamid) {
                 $("#event_content_id" ).append(
                      
                  //Event div
-                "<div id='Event_" + areyouin[i][0]  + "'>"
+                "<div style='margin-top: 20px;' id='Event_" + areyouin[i][0]  + "'>"
 
 
                     //Rigth panel///////////////////////////////////////////////////////////////////////////////////
@@ -109,14 +109,14 @@ function getEvents(teamid) {
                         
                         + "<div style='text-align:center; padding-bottom: 1em; margin-top: 1em; background: #252525; height: auto;'>"
 
-                            + "<h1 style='background: #39414b; margin-top: -10px;'>Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
-                            + "<h1 style='font-size: 100%;'>Event Location: " + areyouin[i][3] + "</h1>"
-                            + "<h1 style='font-size: 100%;'>On "  + getWeekday(areyouin[i][4]) + "</h1>" 
-                            + "<h1 style='font-size: 100%;'>From " + areyouin[i][5] + "</h1>"
+                            + "<h1 style='background: #39414b; margin-top: -15px;'>Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
+                            + "<h1 style='font-size: 100%; margin-bottom: -10px;'>Event Location: " + areyouin[i][3] + "</h1>"
+                            + "<h1 style='font-size: 100%; margin-bottom: -10px;'>On "  + getWeekday(areyouin[i][4]) + "</h1>" 
+                            + "<h1 style='font-size: 100%; margin-bottom: -10px;'>From " + areyouin[i][5] + "</h1>"
 
                         + "</div>"    
                         
-                        + "<div style='text-align:center; padding-bottom: 1em; margin-top: 2px; background: #252525; height: 40px;'>"
+                        + "<div style='text-align:center; padding-bottom: 1em; background: #252525; height: 40px;'>"
                             
                             + "<img style='display:inline-block; vertical-align:middle; padding-top: 8px;' width='40' height='40' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
 
@@ -132,11 +132,11 @@ function getEvents(teamid) {
 
                         + "</div>"    
 
-                        + "<div data-role='button' class='ui-content')>"
+                        + "<div style='padding: 0px;' data-role='button' class='ui-content')>"
                             + "<a style='width:150px; height: 20px; float: right;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][1] + ">See participants >></a>"
                         + "</div>"
 
-                        + "<div style='padding-bottom: 1px;  background: #39414b; height: 1px;'</di>"
+                        //+ "<div style='padding-bottom: 1px;  background: #39414b; height: 1px;'</di>"
 
                     + "</div>"
                 ).enhanceWithin();
