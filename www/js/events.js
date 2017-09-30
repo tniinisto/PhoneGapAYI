@@ -132,7 +132,7 @@ function getEvents(teamid) {
 
                         + "</div>"    
 
-                        + "<div style='padding: 0px; background: #252525;' data-role='button' class='ui-content')>"
+                        + "<div style='padding-top: 20px; background: #252525;' data-role='button' class='ui-content')>"
                             + "<a style='width:150px; height: 20px; float: right;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][1] + ">See participants >></a>"
                         + "</div>"
 
