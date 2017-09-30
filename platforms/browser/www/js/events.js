@@ -109,7 +109,7 @@ function getEvents(teamid) {
                         
                         + "<div style='text-align:center; padding-bottom: 1em; margin-top: 1em; background: #252525; height: auto;'>"
 
-                            + "<h1 style='background: #26596c; margin-top: -10px;'>Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
+                            + "<h1 style='background: #39414b; margin-top: -10px;'>Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
                             + "<h1 style='font-size: 100%;'>Event Location: " + areyouin[i][3] + "</h1>"
                             + "<h1 style='font-size: 100%;'>On "  + getWeekday(areyouin[i][4]) + "</h1>" 
                             + "<h1 style='font-size: 100%;'>From " + areyouin[i][5] + "</h1>"
@@ -136,7 +136,7 @@ function getEvents(teamid) {
                             + "<a style='width:150px; height: 20px; float: right;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][1] + ">See participants >></a>"
                         + "</div>"
 
-                        + "<div style='padding-bottom: 1px;  background: #26596c; height: 1px;'</di>"
+                        + "<div style='padding-bottom: 1px;  background: #39414b; height: 1px;'</di>"
 
                     + "</div>"
                 ).enhanceWithin();
