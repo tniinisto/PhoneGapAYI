@@ -757,7 +757,7 @@ td.pcol5 {
 	padding: 15px 10px 30px;
     width: 94%;    
 }
-img.seen {padding:3px; background-color:#FFD800; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; margin-bottom: 1em;}
+img.seen {padding:2px; background-color:#e3c316; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; margin-bottom: 1em;}
 img.unseen {padding:3px; background-color: rgba(255,255,255,.3); -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; margin-bottom: 1em;} 
 img.unseensummary {padding:3px; background-color: rgb(106, 106, 106); -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;}
 /************************************************************************************

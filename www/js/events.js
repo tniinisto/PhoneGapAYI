@@ -107,7 +107,7 @@ function getEvents(teamid) {
                     //Event main view///////////////////////////////////////////////////////////////////////////////
                     + "<div data-role='header' style='height:auto; width: auto; margin-bottom: 5px; margin-top: 5px;'>"
                         
-                        + "<div style='text-align:center; padding-bottom: 1em; margin-top: 1em; background: #252525; height: auto;'>"
+                        + "<div style='text-align:center; padding-bottom: 2em; margin-top: 1em; background: #252525; height: auto;'>"
 
                             + "<h1 style='background: #39414b; margin-top: -15px;'>Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
                             + "<h1 style='font-size: 100%; margin-bottom: -10px;'>Event Location: " + areyouin[i][3] + "</h1>"
@@ -116,24 +116,26 @@ function getEvents(teamid) {
 
                         + "</div>"    
                         
-                        + "<div style='text-align:center; padding-bottom: 1em; background: #252525; height: 40px;'>"
-                            
-                            + "<img style='display:inline-block; vertical-align:middle; padding-top: 8px;' width='50' height='50' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
+                        + "<div style='padding-top: 0px; background: #39414b;' data-role='button' class='ui-content')>"
 
-                            + "<h2 style='display:inline-block; height: 100%; vertical-align:top; margin-left: 1em; margin-right: 1em; font-size: 100%;'> " + sessionStorage['pname'] + "</h2>"
+                            + "<div style='text-align:center; padding-bottom: 1em; /*background: #252525;*/ height: 40px;'>"
+                                
+                                + "<img style='display:inline-block; vertical-align:middle; padding-top: 8px;' width='50' height='50' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
 
-                            //In/Out slider
-                            + "<form id='eform_" + areyouin[i][0] + "' style='display:inline-block; height: 100%; vertical-align:middle; margin-top: 5px;'>"
-                                + "<select name='slider_" + areyouin[i][0] + "' id='sliderid_" + areyouin[i][0] + "' data-role='slider'>"
-                                + "<option value='out'>out</option>"
-                                + "<option value='in'>in</option>"
-                                + "</select>"
-                            + "</form>"
+                                + "<h2 style='display:inline-block; height: 100%; vertical-align:top; margin-left: 1em; margin-right: 1em; font-size: 100%;'> " + sessionStorage['pname'] + "</h2>"
 
-                        + "</div>"    
+                                //In/Out slider
+                                + "<form id='eform_" + areyouin[i][0] + "' style='display:inline-block; height: 100%; vertical-align:middle; margin-top: 5px;'>"
+                                    + "<select name='slider_" + areyouin[i][0] + "' id='sliderid_" + areyouin[i][0] + "' data-role='slider'>"
+                                    + "<option value='out'>out</option>"
+                                    + "<option value='in'>in</option>"
+                                    + "</select>"
+                                + "</form>"
 
-                        + "<div style='padding-top: 20px; background: #252525;' data-role='button' class='ui-content')>"
-                            + "<a style='width:150px; height: 20px; float: right;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][1] + ">See participants >></a>"
+                            + "</div>"    
+
+
+                            + "<a style='width:150px; height: 20px; float: right; margin-top: 1em;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][1] + ">See participants >></a>"
                         + "</div>"
 
                         //+ "<div style='padding-bottom: 1px;  background: #39414b; height: 1px;'</di>"
