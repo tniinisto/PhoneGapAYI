@@ -120,7 +120,7 @@ function getEvents(teamid) {
 
                             + "<div style='text-align:center; padding-bottom: 0em; /*background: #252525;*/ height: 40px;'>"
                                 
-                                + "<img style='display:inline-block; vertical-align:middle; padding-top: 8px;' width='50' height='50' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
+                                + "<img style='display:inline-block; vertical-align:middle; padding-top: 8px;' width='40' height='40' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
 
                                 + "<h2 style='display:inline-block; height: 100%; vertical-align:top; margin-left: 1em; margin-right: 1em; font-size: 100%;'> " + sessionStorage['pname'] + "</h2>"
 
