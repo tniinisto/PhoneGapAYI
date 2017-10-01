@@ -118,7 +118,7 @@ function getEvents(teamid) {
                         
                         + "<div style='padding-top: 0px; background: #39414b;' data-role='button' class='ui-content')>"
 
-                            + "<div style='text-align:center; padding-bottom: 1em; /*background: #252525;*/ height: 40px;'>"
+                            + "<div style='text-align:center; padding-bottom: 0em; /*background: #252525;*/ height: 40px;'>"
                                 
                                 + "<img style='display:inline-block; vertical-align:middle; padding-top: 8px;' width='50' height='50' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
 
@@ -135,7 +135,7 @@ function getEvents(teamid) {
                             + "</div>"    
 
 
-                            + "<a style='width:150px; height: 20px; float: right; margin-top: 1em;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][1] + ">See participants >></a>"
+                            + "<a style='width:150px; height: 20px; float: right; margin-top: 2em; margin-bottom: -5px;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][1] + ">See participants >></a>"
                         + "</div>"
 
                         //+ "<div style='padding-bottom: 1px;  background: #39414b; height: 1px;'</di>"
