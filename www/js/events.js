@@ -37,7 +37,8 @@ function getEvents(teamid) {
                         areyouin[i][1] += parseInt(data.areyouin);
                         areyouin[i][3] = data.location;
                         areyouin[i][4] = data.startTime;
-                        areyouin[i][5] = data.endTime;                        
+                        areyouin[i][5] = data.endTime;
+                        areyouin[i][6] = data.EventPlayerID;                        
                   }
                     else {
                         areyouin[i][2] = participants; 
@@ -49,7 +50,8 @@ function getEvents(teamid) {
                         areyouin[i][1] += parseInt(data.areyouin);
                         areyouin[i][3] = data.location;
                         areyouin[i][4] = data.startTime;
-                        areyouin[i][5] = data.endTime;                        
+                        areyouin[i][5] = data.endTime;
+                        areyouin[i][6] = data.EventPlayerID;                        
                     }
                 })
 
@@ -125,7 +127,7 @@ function getEvents(teamid) {
                                 + "<h2 style='display:inline-block; height: 100%; vertical-align:top; margin-left: 1em; margin-right: 1em; font-size: 100%;'> " + sessionStorage['pname'] + "</h2>"
 
                                 //In/Out slider
-                                + "<form id='eform_" + areyouin[i][0] + "' style='display:inline-block; height: 100%; vertical-align:middle; margin-top: 5px;'>"
+                                + "<form id='eform_" + areyouin[i][6] + "' style='display:inline-block; height: 100%; vertical-align:middle; margin-top: 5px;'>"
                                     + "<select name='slider_" + areyouin[i][0] + "' id='sliderid_" + areyouin[i][0] + "' data-role='slider'>"
                                     + "<option value='out'>out</option>"
                                     + "<option value='in'>in</option>"
