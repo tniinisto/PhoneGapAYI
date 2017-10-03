@@ -38,7 +38,8 @@ function getEvents(teamid) {
                         areyouin[i][3] = data.location;
                         areyouin[i][4] = data.startTime;
                         areyouin[i][5] = data.endTime;
-                        areyouin[i][6] = data.EventPlayerID;                        
+                        if(data.playerid == sessionStorage['playerID'])
+                            areyouin[i][6] = data.EventPlayerID;                        
                   }
                     else {
                         areyouin[i][2] = participants; 
@@ -51,7 +52,8 @@ function getEvents(teamid) {
                         areyouin[i][3] = data.location;
                         areyouin[i][4] = data.startTime;
                         areyouin[i][5] = data.endTime;
-                        areyouin[i][6] = data.EventPlayerID;                        
+                        if(data.playerid == sessionStorage['playerID'])
+                            areyouin[i][6] = data.EventPlayerID;                        
                     }
                 })
 
@@ -127,7 +129,7 @@ function getEvents(teamid) {
                                 + "<h2 style='display:inline-block; height: 100%; vertical-align:top; margin-left: 1em; margin-right: 1em; font-size: 100%;'> " + sessionStorage['pname'] + "</h2>"
 
                                 //In/Out slider
-                                + "<form id='eform_" + areyouin[i][6] + "' style='display:inline-block; height: 100%; vertical-align:middle; margin-top: 5px;'>"
+                                + "<form id='eform_" + areyouin[i][6] + "' style='display:inline-block; height: 100%; vertical-align:middle; margin-top: 5px;' onchange='updateAYI(" + areyouin[i][6] + ", " + areyouin[i][0] + ")'>"
                                     + "<select name='slider_" + areyouin[i][0] + "' id='sliderid_" + areyouin[i][0] + "' data-role='slider'>"
                                     + "<option value='out'>out</option>"
                                     + "<option value='in'>in</option>"
@@ -171,7 +173,7 @@ function Create2DArray(rows) {
 
     for (i=0;i<rows;i++) {
         f[i]=new Array();
-        for (j=0;j<5;j++) {
+        for (j=0;j<10;j++) {
          f[i][j]=0;
         }
     }
@@ -217,6 +219,7 @@ function getWeekday(datetime) {
     return result;
 }
 
+//Get time format fot event inf0
 function getFromToTime(from, to) {
 
     //From
@@ -240,4 +243,36 @@ function getFromToTime(from, to) {
     var time = start_time + " to " + end_time;
 
     return time;
+}
+
+//Update AYI status to db
+function updateAYI(eventplayerid, toggleValue) {
+
+    //console.warn('updateAYI clicked: ', ayi, ' toggle value: ', toggleValue);
+
+    var state = $("#sliderid_" + toggleValue).val();
+    //console.warn('updateAYI value: ',state);
+
+    var areyouin = 0;
+    if(state == 'in')
+        areyouin = 1;
+
+
+    //AJAX
+    $.ajax({type: "POST",
+    url: serviceURL + 'updateAYI.php',
+    dataType : 'json',
+    data: {'eventplayerid': eventplayerid, 'ayi': areyouin},
+
+        success:function(result) {
+            //console.warn('updateAYI success');
+        },
+
+        error: function () {
+            console.warn('updateAYI error');
+        }           
+
+    });
+
+
 }
