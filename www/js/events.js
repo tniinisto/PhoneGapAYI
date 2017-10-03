@@ -245,7 +245,7 @@ function getFromToTime(from, to) {
     return time;
 }
 
-//Update AYI status to db
+//Update AYI status to db and refresh the events status text
 function updateAYI(eventplayerid, toggleValue) {
 
     //console.warn('updateAYI clicked: ', ayi, ' toggle value: ', toggleValue);
