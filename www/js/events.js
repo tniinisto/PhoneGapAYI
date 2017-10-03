@@ -150,6 +150,9 @@ function getEvents(teamid) {
                 participant_list = '';
                 i++;                    
 
+                //Set that user has seen the event
+                updateUserSeen(areyouin[i][6]);
+
             }
 
             //Create events on ui //////////////////////////////////////////////////////////////////////////////////
@@ -303,4 +306,29 @@ function updateAYI(eventplayerid, toggleValue) {
 
 
 }
+
+//Update User's seen status db 
+function updateUserSeen(eventplayerid) {
+    
+        //console.warn('updateUserSeen());
+    
+        //AJAX
+        $.ajax({type: "POST",
+        url: serviceURL + 'updateUserSeen.php',
+        dataType : 'json',
+        data: {'eventplayerid': eventplayerid},
+    
+            success:function(result) {
+                console.warn('updateUserSeen success');            
+    
+            },
+    
+            error: function () {
+                console.warn('updateUserSeen error');
+            }           
+    
+        });
+    
+    
+    }
 
