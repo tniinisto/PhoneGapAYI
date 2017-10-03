@@ -147,11 +147,11 @@ function getEvents(teamid) {
                     + "</div>"
                 ).enhanceWithin();
                 
-                participant_list = '';
-                i++;                    
-
                 //Set that user has seen the event
                 updateUserSeen(areyouin[i][6]);
+
+                participant_list = '';
+                i++;                    
 
             }
 
