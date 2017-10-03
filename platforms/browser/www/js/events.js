@@ -99,7 +99,7 @@ function getEvents(teamid) {
                 $("#event_content_id" ).append(
                      
                  //Event div
-                "<div style='margin-top: 20px;' id='Event_" + areyouin[i][0]  + "'>"
+                "<div style='margin-top: 20px; margin-bottom: 40px;' id='Event_" + areyouin[i][0]  + "'>"
 
 
                     //Rigth panel///////////////////////////////////////////////////////////////////////////////////
