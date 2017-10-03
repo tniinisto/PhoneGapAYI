@@ -129,10 +129,10 @@ function getEvents(teamid) {
                                 + "<h2 style='display:inline-block; height: 100%; vertical-align:top; margin-left: 1em; margin-right: 1em; font-size: 100%;'> " + sessionStorage['pname'] + "</h2>"
 
                                 //In/Out slider
-                                + "<form id='eform_" + areyouin[i][6] + "' style='display:inline-block; height: 100%; vertical-align:middle; margin-top: 5px;' onchange='updateAYI(" + areyouin[i][6] + ", " + areyouin[i][0] + ")'>"
-                                    + "<select name='slider_" + areyouin[i][0] + "' id='sliderid_" + areyouin[i][0] + "' data-role='slider'>"
-                                    + "<option value='out'>out</option>"
-                                    + "<option value='in'>in</option>"
+                                + "<form id='eform_" + areyouin[i][6] + "' style='display:inline-block; height: 100%; vertical-align:middle; margin-top: 5px;' >"
+                                    + "<select name='slider_" + areyouin[i][0] + "' id='sliderid_" + areyouin[i][0] + "' data-role='slider' onchange='updateAYI(" + areyouin[i][6] + ", " + areyouin[i][0] + ")'>"
+                                        + "<option value='out'>out</option>"
+                                        + "<option value='in'>in</option>"
                                     + "</select>"
                                 + "</form>"
 
