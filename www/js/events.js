@@ -82,7 +82,7 @@ function getEvents(teamid) {
             while( areyouin[i][0] != 0 ) {
  
                 //Show private event only for invited users, 0 = public, 2 = private and user is invited, user is admin
-                if(areyouin[i][7] == 0 || areyouin[i][7] == 2 || areyouin[i][6] != 0 || sessionStorage['admin'] == 1) {
+                if(areyouin[i][7] == 0 || areyouin[i][7] == 2 || areyouin[i][6] != 0 || sessionStorage['admin'] == 1 || sessionStorage['registrar'] == 1) {
 
                     //List all event participants, except the logged in user
                     invited += areyouin[i][2];
