@@ -73,6 +73,9 @@ $(window).load(function() {
 									sessionStorage['pname'] =  result.items[0].name;
 									//Save photourl to session
 									sessionStorage['photourl'] =  result.items[0].photourl;
+									//Save admin status to session
+									sessionStorage['admin'] =  result.items[0].teamAdmin;
+																		
 
                                     //Get team's events TODO: check that license is valid
                                     getEvents( $("#select-native-1 option:selected" ).val() );
@@ -100,6 +103,8 @@ $(window).load(function() {
 								sessionStorage['pname'] =  result.items[0].name;
 								//Save photourl to session
 								sessionStorage['photourl'] =  result.items[0].photourl;
+								//Save admin status to session
+								sessionStorage['admin'] =  result.items[0].teamAdmin;
 									
                                 $('#ayilogin_label').css("display", "none");
 

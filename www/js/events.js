@@ -38,8 +38,11 @@ function getEvents(teamid) {
                         areyouin[i][3] = data.location;
                         areyouin[i][4] = data.startTime;
                         areyouin[i][5] = data.endTime;
-                        if(data.playerid == sessionStorage['playerID'])
-                            areyouin[i][6] = data.EventPlayerID;                        
+                        areyouin[i][7] = data.private;   
+                        if(data.playerid == sessionStorage['playerID']) {
+                            areyouin[i][6] = data.EventPlayerID;
+                            areyouin[i][7] = 2;
+                        }               
                   }
                     else {
                         areyouin[i][2] = participants; 
@@ -52,8 +55,11 @@ function getEvents(teamid) {
                         areyouin[i][3] = data.location;
                         areyouin[i][4] = data.startTime;
                         areyouin[i][5] = data.endTime;
-                        if(data.playerid == sessionStorage['playerID'])
-                            areyouin[i][6] = data.EventPlayerID;                        
+                        areyouin[i][7] = data.private;
+                        if(data.playerid == sessionStorage['playerID']) {
+                            areyouin[i][6] = data.EventPlayerID;
+                            areyouin[i][7] = 2;
+                        }     
                     }
                 })
 
@@ -75,80 +81,86 @@ function getEvents(teamid) {
 
             while( areyouin[i][0] != 0 ) {
  
-                //All event participants, except the logged in user
-                invited += areyouin[i][2];
-                while( j < invited ) {
+                //Show private event only for invited users, 0 = public, 2 = private and user is invited, user is admin
+                if(areyouin[i][7] == 0 || areyouin[i][7] == 2 || areyouin[i][6] != 0 || sessionStorage['admin'] == 1) {
 
-                    in_out = 'OUT'
-                    if(result.items[j].areyouin == 1)                    
-                        in_out = 'IN'
-                    
-                    if(result.items[j].seen == 1) {//Show yellow border if user has seen it
+                    //List all event participants, except the logged in user
+                    invited += areyouin[i][2];
+                    while( j < invited ) {
 
-                        if(result.items[j].playerid != sessionStorage['playerID'] && result.items[j].Events_eventID == areyouin[i][0])
-                        participant_list += "<div><img class='seen' style='display:inline-block; vertical-align:middle;' width='40' height='40' src='https://r-youin.com/images/" + result.items[j].photourl + "'>&nbsp" + result.items[j].name + "&nbsp<div style='color:#22aadd; font-size: large; display:inline-block; width:20%; text-align:center; float: right; padding-right: 1em; padding-top: 1em; font-weight: bold;'>" + in_out + "</div></div>";
-                    }
-                    else {
-                        if(result.items[j].playerid != sessionStorage['playerID'] && result.items[j].Events_eventID == areyouin[i][0])
-                            participant_list += "<div><img class='unseen' style='display:inline-block; vertical-align:middle;' width='40' height='40' src='https://r-youin.com/images/" + result.items[j].photourl + "'>&nbsp" + result.items[j].name + "&nbsp<div style='color:#22aadd; font-size: large; display:inline-block; width:20%; text-align:center; float: right; padding-right: 1em; padding-top: 1em; font-weight: bold;'>" + in_out + "</div></div>";                           
-                    }
-                    
-                    j++;
-                }
-
-                $("#event_content_id" ).append(
-                     
-                 //Event div
-                "<div style='margin-top: 20px; margin-bottom: 40px;' id='Event_" + areyouin[i][0]  + "'>"
-
-
-                    //Rigth panel///////////////////////////////////////////////////////////////////////////////////
-                    + "<div style='width: 70%;' data-role='panel' id='eventPanel" + areyouin[i][0]  + "'data-position='right' data-position-fixed='true' data-display='overlay' class='ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate'>"
-                        + "<h2 style='padding-bottom: 1em; text-align: center;'>Event participants</h2>"
-                        + "<div>" + participant_list + "</div>"                         
-                    + "</div>"
-
-                    //Event main view///////////////////////////////////////////////////////////////////////////////
-                    + "<div data-role='header' style='height:auto; width: auto; margin-bottom: 5px; margin-top: 5px;'>"
+                        in_out = 'OUT'
+                        if(result.items[j].areyouin == 1)                    
+                            in_out = 'IN'
                         
-                        + "<div style='text-align:center; padding-bottom: 2em; margin-top: 1em; background: #252525; height: auto;'>"
+                        if(result.items[j].seen == 1) {//Show yellow border if user has seen it
 
-                            + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='background: #39414b; margin-top: -15px;'>Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
-                            + "<h1 style='font-size: 130%; margin-bottom: -10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
-                            + "<h1 style='font-size: 120%; margin-bottom: -10px;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
-                            + "<h1 style='font-size: 100%; margin-bottom: -10px;'>Event Location: " + areyouin[i][3] + "</h1>"                            
-
-                        + "</div>"    
+                            if(result.items[j].playerid != sessionStorage['playerID'] && result.items[j].Events_eventID == areyouin[i][0])
+                            participant_list += "<div><img class='seen' style='display:inline-block; vertical-align:middle;' width='40' height='40' src='https://r-youin.com/images/" + result.items[j].photourl + "'>&nbsp" + result.items[j].name + "&nbsp<div style='color:#22aadd; font-size: large; display:inline-block; width:20%; text-align:center; float: right; padding-right: 1em; padding-top: 1em; font-weight: bold;'>" + in_out + "</div></div>";
+                        }
+                        else {
+                            if(result.items[j].playerid != sessionStorage['playerID'] && result.items[j].Events_eventID == areyouin[i][0])
+                                participant_list += "<div><img class='unseen' style='display:inline-block; vertical-align:middle;' width='40' height='40' src='https://r-youin.com/images/" + result.items[j].photourl + "'>&nbsp" + result.items[j].name + "&nbsp<div style='color:#22aadd; font-size: large; display:inline-block; width:20%; text-align:center; float: right; padding-right: 1em; padding-top: 1em; font-weight: bold;'>" + in_out + "</div></div>";                           
+                        }
                         
-                        + "<div style='padding-top: 0px; background: #39414b;' data-role='button' class='ui-content')>"
+                        j++;
+                    }
 
-                            + "<div style='text-align:center; padding-bottom: 0em; /*background: #252525;*/ height: 40px;'>"
-                                
-                                + "<img style='display:inline-block; vertical-align:middle; padding-top: 8px;' width='40' height='40' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
-
-                                + "<h2 style='display:inline-block; height: 100%; vertical-align:top; margin-left: 1em; margin-right: 1em; font-size: 100%;'> " + sessionStorage['pname'] + "</h2>"
-
-                                //In/Out slider
-                                + "<form id='eform_" + areyouin[i][6] + "' style='display:inline-block; height: 100%; vertical-align:middle; margin-top: 5px;' >"
-                                    + "<select name='slider_" + areyouin[i][0] + "' id='sliderid_" + areyouin[i][0] + "' data-role='slider' onchange='updateAYI(" + areyouin[i][6] + ", " + areyouin[i][0] + ")'>"
-                                        + "<option value='out'>out</option>"
-                                        + "<option value='in'>in</option>"
-                                    + "</select>"
-                                + "</form>"
-
-                            + "</div>"    
+                    $("#event_content_id" ).append(
+                        
+                    //Event div
+                    "<div style='margin-top: 20px; margin-bottom: 40px;' id='Event_" + areyouin[i][0]  + "'>"
 
 
-                            + "<a style='width:150px; height: 20px; float: right; margin-top: 2em; margin-bottom: -5px;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][0] + ">See participants >></a>"
+                        //Rigth panel///////////////////////////////////////////////////////////////////////////////////
+                        + "<div style='width: 70%;' data-role='panel' id='eventPanel" + areyouin[i][0]  + "'data-position='right' data-position-fixed='true' data-display='overlay' class='ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate'>"
+                            + "<h2 style='padding-bottom: 1em; text-align: center;'>Event participants</h2>"
+                            + "<div>" + participant_list + "</div>"                         
                         + "</div>"
 
-                        //+ "<div style='padding-bottom: 1px;  background: #39414b; height: 1px;'</di>"
+                        //Event main view///////////////////////////////////////////////////////////////////////////////
+                        + "<div data-role='header' style='height:auto; width: auto; margin-bottom: 5px; margin-top: 5px;'>"
+                            
+                            + "<div style='text-align:center; padding-bottom: 2em; margin-top: 1em; background: #252525; height: auto;'>"
 
-                    + "</div>"
-                ).enhanceWithin();
-                
-                //Set that user has seen the event
-                updateUserSeen(areyouin[i][6]);
+                                + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='background: #39414b; margin-top: -15px;'>Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
+                                + "<h1 style='font-size: 130%; margin-bottom: -10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
+                                + "<h1 style='font-size: 120%; margin-bottom: -10px;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
+                                + "<h1 style='font-size: 100%; margin-bottom: -10px;'>Event Location: " + areyouin[i][3] + "</h1>"                            
+
+                            + "</div>"    
+                            
+                            + "<div style='padding-top: 0px; background: #39414b;' data-role='button' class='ui-content')>"
+
+                                + "<div style='text-align:center; padding-bottom: 0em; /*background: #252525;*/ height: 40px;'>"
+                                    
+                                    + "<img style='display:inline-block; vertical-align:middle; padding-top: 8px;' width='40' height='40' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
+
+                                    + "<h2 style='display:inline-block; height: 100%; vertical-align:top; margin-left: 1em; margin-right: 1em; font-size: 100%;'> " + sessionStorage['pname'] + "</h2>"
+
+                                    //In/Out slider
+                                    + displayToggle(areyouin[i][0], areyouin[i][6])
+
+                                    // + "<form id='eform_" + areyouin[i][6] + "' style='display:inline-block; height: 100%; vertical-align:middle; margin-top: 5px;' >"
+                                    //     + "<select name='slider_" + areyouin[i][0] + "' id='sliderid_" + areyouin[i][0] + "' data-role='slider' onchange='updateAYI(" + areyouin[i][6] + ", " + areyouin[i][0] + ")'>"
+                                    //         + "<option value='out'>out</option>"
+                                    //         + "<option value='in'>in</option>"
+                                    //     + "</select>"
+                                    // + "</form>"
+
+                                + "</div>"    
+
+
+                                + "<a style='width:150px; height: 20px; float: right; margin-top: 2em; margin-bottom: -5px;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][0] + ">See participants >></a>"
+                            + "</div>"
+
+                            //+ "<div style='padding-bottom: 1px;  background: #39414b; height: 1px;'</di>"
+
+                        + "</div>"
+                    ).enhanceWithin();
+                    
+                    //Set that user has seen the event
+                    updateUserSeen(areyouin[i][6]);
+                }
 
                 participant_list = '';
                 i++;                    
@@ -332,3 +344,30 @@ function updateUserSeen(eventplayerid) {
     
     }
 
+//Display toggle only if invited for the event, admins see all events
+function displayToggle(event, eventplayer) {
+
+    //User has not been invited, but is admin
+    if(sessionStorage['admin'] == 1 && eventplayer == 0) {
+     
+        return "<form id='eform_" + eventplayer + "' style='display:none; height: 100%; vertical-align:middle; margin-top: 5px;' >"
+            + "<select name='slider_" + event + "' id='sliderid_" + event + "' data-role='slider' >"
+                + "<option value='out'>out</option>"
+                + "<option value='in'>in</option>"
+            + "</select>"
+        + "</form>"
+    }
+
+    //User has been invited -> show toggle
+    if(eventplayer != 0) {
+        
+           return "<form id='eform_" + eventplayer + "' style='display:inline-block; height: 100%; vertical-align:middle; margin-top: 5px;' >"
+               + "<select name='slider_" + event + "' id='sliderid_" + event + "' data-role='slider' onchange='updateAYI(" + eventplayer + ", " + event + ")'>"
+                   + "<option value='out'>out</option>"
+                   + "<option value='in'>in</option>"
+               + "</select>"
+           + "</form>"
+       }
+
+
+}
