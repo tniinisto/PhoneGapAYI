@@ -133,9 +133,9 @@ function getEvents(teamid) {
 
                                 + "<div style='text-align:center; padding-bottom: 0em; /*background: #252525;*/ height: 40px;'>"
                                     
-                                    + "<img style='display:inline-block; vertical-align:middle; padding-top: 8px;' width='40' height='40' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
+                                    // + "<img style='display:inline-block; vertical-align:middle; padding-top: 8px;' width='40' height='40' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
 
-                                    + "<h2 style='display:inline-block; height: 100%; vertical-align:top; margin-left: 1em; margin-right: 1em; font-size: 100%;'> " + sessionStorage['pname'] + "</h2>"
+                                    // + "<h2 style='display:inline-block; height: 100%; vertical-align:top; margin-left: 1em; margin-right: 1em; font-size: 100%;'> " + sessionStorage['pname'] + "</h2>"
 
                                     //In/Out slider
                                     + displayToggle(areyouin[i][0], areyouin[i][6])
@@ -348,7 +348,7 @@ function updateUserSeen(eventplayerid) {
 function displayToggle(event, eventplayer) {
 
     //User has not been invited, but is admin
-    if(sessionStorage['admin'] == 1 && eventplayer == 0) {
+    if((sessionStorage['admin'] == 1 || sessionStorage['registrar'] == 1) && eventplayer == 0) {
      
         return "<form id='eform_" + eventplayer + "' style='display:none; height: 100%; vertical-align:middle; margin-top: 5px;' >"
             + "<select name='slider_" + event + "' id='sliderid_" + event + "' data-role='slider' >"
@@ -361,7 +361,11 @@ function displayToggle(event, eventplayer) {
     //User has been invited -> show toggle
     if(eventplayer != 0) {
         
-           return "<form id='eform_" + eventplayer + "' style='display:inline-block; height: 100%; vertical-align:middle; margin-top: 5px;' >"
+           return  "<img style='display:inline-block; vertical-align:middle; padding-top: 8px;' width='40' height='40' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
+           
+           + "<h2 style='display:inline-block; height: 100%; vertical-align:top; margin-left: 1em; margin-right: 1em; font-size: 100%;'> " + sessionStorage['pname'] + "</h2>"
+
+           + "<form id='eform_" + eventplayer + "' style='display:inline-block; height: 100%; vertical-align:middle; margin-top: 5px;' >"
                + "<select name='slider_" + event + "' id='sliderid_" + event + "' data-role='slider' onchange='updateAYI(" + eventplayer + ", " + event + ")'>"
                    + "<option value='out'>out</option>"
                    + "<option value='in'>in</option>"
