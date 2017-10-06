@@ -192,6 +192,9 @@ function getEvents(teamid) {
             //Create events on ui //////////////////////////////////////////////////////////////////////////////////
 
 
+            //Start event changes polling
+            waitForEventUpdate('1900-01-01 10:10:10');
+
         },
 
         error: function () {
@@ -394,4 +397,68 @@ function displayToggle(event, eventplayer) {
        }
 
 
+}
+
+
+
+//var eventparameter = "1900-01-01 10:10:10";
+//sessionStorage['firstTimeEvent'] = 1; //This is set on login to 1
+
+//Event change checking
+function waitForEventUpdate(eventparameter) {
+
+    $.ajax({
+        type: "GET",
+        //url: "getChat.php?timestamp=" + parameter,
+        url: serviceURL + "eventCheck.php",
+        data: { timestamp: JSON.stringify(eventparameter) },
+        async: true,
+        cache: false,
+        //timeout: 40000,
+        //dataType: 'json',
+        //processData: false,
+        success: function (data) {
+            var json = eval('(' + data + ')');
+
+            //Testing
+            //if (json['timestamp'] != "") {
+            //    //alert("jep: " + json['msg']);
+            //alert("success param timestamp: " + timestamp);
+            //alert("success timestamp: " + json['timestamp']);
+            //}
+
+            //Get events only if php not timed out...
+            if (json['timeout'] == 0) {
+                alert("success timeout false: " + json['timeout']);
+                
+                eventparameter = json['timestamp'];
+                //getEventsAsync(0);
+               
+                //Show notifications after first eventCheck and if another player has done something
+                if (sessionStorage['firstTimeEvent'] == 0 && sessionStorage['playerID'] != json['playerid']) {
+                    //getEventsAsync(0);
+                    //PlaySound();
+                    //Notify on desktop
+                    // var theTitle = 'Event changed';
+                    // var theBody = 'An event status has changed in ' + sessionStorage['teamName'];
+                    // notifyMe(theTitle, theBody);
+                    sessionStorage['firstTimeEvent'] = 0;
+                }
+                else
+                    sessionStorage['firstTimeEvent'] = 0;
+            }
+            else {
+                eventparameter = json['timestamp'];
+                sessionStorage['firstTimeEvent'] = 0;
+            }
+
+            setTimeout('waitForEventUpdate()', 15000); //15s
+        },
+
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            //alert("error: " + textStatus + " (" + errorThrown + ")");
+            setTimeout('waitForEventUpdate()', 15000);
+        }
+    });
+            
 }

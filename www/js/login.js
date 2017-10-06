@@ -82,7 +82,7 @@ $(window).load(function() {
                                     //Get team's events TODO: check that license is valid
                                     getEvents( $("#select-native-1 option:selected" ).val() );
 
-                                    //Shoe events page
+                                    //Show events page
                                     $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {
                                         //transition: 'flip',
                                         changeHash: false,
@@ -90,6 +90,8 @@ $(window).load(function() {
                                         showLoadMsg: true
                                     });
 
+									//Set events firstime polling
+									sessionStorage['firstTimeEvent'] = 1;
                                 });
                             }
 
@@ -121,7 +123,10 @@ $(window).load(function() {
                                     changeHash: false,
                                     reverse: true,
                                     showLoadMsg: true
-                                });                             
+								});     
+								
+								//Set events firstime polling
+								sessionStorage['firstTimeEvent'] = 1;								
                             }
                         },
 
