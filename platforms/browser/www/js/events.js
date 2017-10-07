@@ -300,7 +300,8 @@ function updateAYI(eventplayerid, toggleValue) {
     $.ajax({type: "POST",
     url: serviceURL + 'updateAYI.php',
     dataType : 'json',
-    data: {'eventplayerid': eventplayerid, 'ayi': areyouin, 'playerid': sessionStorage['playerID'], 'teamid': sessionStorage['teamID'], 'timezone': sessionStorage['timezone'] },
+    //data: {'eventplayerid': eventplayerid, 'ayi': areyouin, 'playerid': sessionStorage['playerID'], 'teamid': sessionStorage['teamID'], 'timezone': sessionStorage['timezone'] },
+    data: {'eventplayerid': eventplayerid, 'ayi': areyouin, 'playerid': sessionStorage['playerID'], 'teamid': sessionStorage['teamID'] },
 
         success:function(result) {
             //console.warn('updateAYI success');
@@ -354,7 +355,7 @@ function updateUserSeen(eventplayerid) {
         data: {'eventplayerid': eventplayerid},
     
             success:function(result) {
-                console.warn('updateUserSeen success');            
+                //console.warn('updateUserSeen success');            
     
             },
     
