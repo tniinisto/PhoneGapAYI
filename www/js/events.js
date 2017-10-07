@@ -300,7 +300,7 @@ function updateAYI(eventplayerid, toggleValue) {
     $.ajax({type: "POST",
     url: serviceURL + 'updateAYI.php',
     dataType : 'json',
-    data: {'eventplayerid': eventplayerid, 'ayi': areyouin, 'playerid': sessionStorage['playerID'], 'teamid': sessionStorage['teamID'] },
+    data: {'eventplayerid': eventplayerid, 'ayi': areyouin, 'playerid': sessionStorage['playerID'], 'teamid': sessionStorage['teamID'], 'timezone': sessionStorage['timezone'] },
 
         success:function(result) {
             //console.warn('updateAYI success');
@@ -452,7 +452,7 @@ function waitForEventUpdate(eventparameter) {
                 sessionStorage['firstTimeEvent'] = 0;
             }
 
-            alert("success timeout happened: " + json['timeout']);
+            //alert("success timeout happened: " + json['timeout']);
             setTimeout('waitForEventUpdate(' + eventparameter + ')', 15000); //15s
         },
 

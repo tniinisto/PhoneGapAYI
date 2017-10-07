@@ -79,7 +79,9 @@ $(window).load(function() {
 									sessionStorage['admin'] =  result.items[$("#select-native-1 option:selected" ).index()].teamAdmin;
 									//Save registrar status to session
 									sessionStorage['registrar'] =  result.items[$("#select-native-1 option:selected" ).index()].registrar;
-																		
+                                    //Save team's timezone to session
+                                    sessionStorage['timezone'] =  result.items[$("#select-native-1 option:selected" ).index()].timezone;
+                                																		
 
                                     //Get team's events TODO: check that license is valid
                                     getEvents( $("#select-native-1 option:selected" ).val() );
@@ -114,7 +116,9 @@ $(window).load(function() {
 								//Save admin status to session
 								sessionStorage['admin'] =  result.items[0].teamAdmin;
 								//Save registrar status to session
-								sessionStorage['registrar'] =  result.items[0].registrar;
+                                sessionStorage['registrar'] =  result.items[0].registrar;
+                                //Save team's timezone to session
+								sessionStorage['timezone'] =  result.items[0].timezone;
 									
                                 $('#ayilogin_label').css("display", "none");
 
