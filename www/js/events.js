@@ -283,7 +283,7 @@ function getFromToTime(from, to) {
     return time;
 }
 
-//Update AYI status to db and refresh the events status text
+//Update AYI status to db and refresh the events status text and update events last update time
 function updateAYI(eventplayerid, toggleValue) {
 
     //console.warn('updateAYI clicked: ', ayi, ' toggle value: ', toggleValue);
@@ -300,7 +300,7 @@ function updateAYI(eventplayerid, toggleValue) {
     $.ajax({type: "POST",
     url: serviceURL + 'updateAYI.php',
     dataType : 'json',
-    data: {'eventplayerid': eventplayerid, 'ayi': areyouin},
+    data: {'eventplayerid': eventplayerid, 'ayi': areyouin, 'playerid': sessionStorage['playerID'], 'teamid': sessionStorage['teamID'] },
 
         success:function(result) {
             //console.warn('updateAYI success');
@@ -429,7 +429,7 @@ function waitForEventUpdate(eventparameter) {
 
             //Get events only if php not timed out...
             if (json['timeout'] == 0) {
-                alert("success timeout false: " + json['timeout']);
+                alert("success timeout did not happen: " + json['timeout']);
                 
                 eventparameter = json['timestamp'];
                 //getEventsAsync(0);
@@ -452,6 +452,7 @@ function waitForEventUpdate(eventparameter) {
                 sessionStorage['firstTimeEvent'] = 0;
             }
 
+            alert("success timeout happened: " + json['timeout']);
             setTimeout('waitForEventUpdate(' + eventparameter + ')', 15000); //15s
         },
 
