@@ -411,7 +411,7 @@ function waitForEventUpdate(eventparameter) {
         type: "GET",
         //url: "getChat.php?timestamp=" + parameter,
         url: serviceURL + "eventCheck.php",
-        data: { timestamp: JSON.stringify(eventparameter), timezone: JSON.stringify( sessionStorage['timezone']) },
+        data: { timestamp: JSON.stringify(eventparameter), timezone: JSON.stringify( sessionStorage['timezone']), teamid: JSON.stringify( sessionStorage['teamID']), playerid: JSON.stringify( sessionStorage['playerID']) },
         async: true,
         cache: false,
         //timeout: 40000,
