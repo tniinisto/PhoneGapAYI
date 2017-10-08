@@ -2,7 +2,7 @@
 var serviceURL = "https://dev-areyouin.azurewebsites.net/pgmobile/services/";
 
 
-function getEvents(teamid) {
+function getEvents(teamid, afterlogin=0) {
 
     $.ajax({type: "POST",
     url: serviceURL + 'events.php',
@@ -11,6 +11,8 @@ function getEvents(teamid) {
 
         success:function(result){
 
+            //Clear #event_content_id div contents
+            $("#event_content_id").html("");
 
             //Calculate participants who have marked in for it and create table per event///////////////////////////
             //Max length set to 100 events ! ///////////////////////////////////////////////////////////////////////
@@ -63,7 +65,7 @@ function getEvents(teamid) {
                     }
                 })
 
-                //Last event's invited participant count
+                //Last event's invited participant count                
                 areyouin[i][2] += participants;
                 
             })
@@ -192,8 +194,9 @@ function getEvents(teamid) {
             //Create events on ui //////////////////////////////////////////////////////////////////////////////////
 
 
-            //Start event changes polling
-            waitForEventUpdate('1900-01-01 10:10:10');
+            //Start event changes polling if coming from login, otherwise waitForEventUpdate calls itself automatically
+            if(afterlogin == 1)
+                waitForEventUpdate('1900-01-01 10:10:10');
 
         },
 
@@ -429,13 +432,14 @@ function waitForEventUpdate(eventparameter) {
 
             //Get events only if php not timed out...
             if (json['timeout'] == 0) {
-                alert("success timeout did not happen: " + json['timeout']);
+                //alert("success timeout did not happen: " + json['timeout']);
                 
                 eventparameter = json['timestamp'];
                 //getEventsAsync(0);
                
                 //Show notifications after first eventCheck and if another player has done something
                 if (sessionStorage['firstTimeEvent'] == 0 && sessionStorage['playerID'] != json['playerid']) {
+                    getEvents(sessionStorage['teamID']);
                     //getEventsAsync(0);
                     //PlaySound();
                     //Notify on desktop
@@ -453,12 +457,14 @@ function waitForEventUpdate(eventparameter) {
             }
 
             //alert("success timeout happened: " + json['timeout']);
-            setTimeout('waitForEventUpdate(' + eventparameter + ')', 15000); //15s
+            //setTimeout('waitForEventUpdate(' + eventparameter + ')', 15000); //15s
+            waitForEventUpdate(eventparameter);
         },
 
         error: function (XMLHttpRequest, textStatus, errorThrown) {
             //alert("error: " + textStatus + " (" + errorThrown + ")");
-            setTimeout('waitForEventUpdate(' + eventparameter + ')', 15000);
+            //setTimeout('waitForEventUpdate(' + eventparameter + ')', 15000);
+            waitForEventUpdate(eventparameter);
         }
     });
             

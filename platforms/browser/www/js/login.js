@@ -84,7 +84,7 @@ $(window).load(function() {
                                 																		
 
                                     //Get team's events TODO: check that license is valid
-                                    getEvents( $("#select-native-1 option:selected" ).val() );
+                                    getEvents( $("#select-native-1 option:selected" ).val(), 1);
 
                                     //Show events page
                                     $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {
@@ -123,7 +123,7 @@ $(window).load(function() {
                                 $('#ayilogin_label').css("display", "none");
 
 								//Get team's events, check that license is valid
-                                getEvents( result.items[0].teamID );
+                                getEvents( result.items[0].teamID, 1);
                                 
                                 //Shoe events page
                                 $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {
