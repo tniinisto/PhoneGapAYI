@@ -439,13 +439,16 @@ function waitForEventUpdate(eventparameter) {
                
                 //Show notifications after first eventCheck and if another player has done something
                 if (sessionStorage['firstTimeEvent'] == 0 && sessionStorage['playerID'] != json['playerid']) {
+
+                    //$.getScript("notification.js", function() {});
+                    giveNotification();
                     getEvents(sessionStorage['teamID']);
-                    //getEventsAsync(0);
-                    //PlaySound();
+
                     //Notify on desktop
                     // var theTitle = 'Event changed';
                     // var theBody = 'An event status has changed in ' + sessionStorage['teamName'];
                     // notifyMe(theTitle, theBody);
+
                     sessionStorage['firstTimeEvent'] = 0;
                 }
                 else

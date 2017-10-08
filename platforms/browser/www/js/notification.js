@@ -31,9 +31,11 @@
 
 //document.addEventListener('deviceready', function () {
 
-    $(window).load(function() {
+    //$(window).load(function() {
 
-        setTimeout( function() {
+    function giveNotification() {
+
+        // setTimeout( function() {
         
             if ('Notification' in window) {
                 Notification.requestPermission(function (permission) {
@@ -42,7 +44,7 @@
                 if (permission === "granted") {
                     var notification = new Notification('R\'YouIN', {
                         tag: 'notification', 
-                        body: 'R\'YouIN notifications look like this',
+                        body: 'Event status has changed',
                         //sound: "file://js/tone.wav",
                         icon: "images/events-icon.png"
                     }); 
@@ -58,8 +60,8 @@
                 });
         };
 
-        }, 5000);
+        // }, 5000);
 
-    });
+    };
 
 //});
