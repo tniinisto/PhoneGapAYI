@@ -5,6 +5,11 @@ var logininfo;
 
 $(window).load(function() {
     //setTimeout(getLogin, 100);
+
+        if(window.localStorage.length != 0) {
+            $("#ayiloginid").val(window.localStorage.getItem("user_id"));
+            $("#ayipassword").val(window.localStorage.getItem("user_pass"));
+        }
     
         $("#loginbutton").click(function(e){
             e.preventDefault();
@@ -35,6 +40,13 @@ $(window).load(function() {
                                 $('#ayilogin_label').css("display", "block"); //login failed, please check your credentials
                             } else
 
+                           
+                            //Save user credentials
+                            //localStorage['user_id'] = $("#ayiloginid").val();
+                            //localStorage['user_pass'] = $("#ayipassword").val();
+                            window.localStorage.setItem("user_id", $("#ayiloginid").val());
+                            window.localStorage.setItem("user_pass",  $("#ayipassword").val());
+                                                       
                             //Multiple teams
                             if(result.items[0].count > 1) {
                                 //alert("multiple teams");
@@ -125,7 +137,7 @@ $(window).load(function() {
 								//Get team's events, check that license is valid
                                 getEvents( result.items[0].teamID, 1);
                                 
-                                //Shoe events page
+                                //Show events page
                                 $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {
                                     //transition: 'flip',
                                     changeHash: false,
