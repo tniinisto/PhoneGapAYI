@@ -31,9 +31,10 @@
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
 
+    <plugin name="cordova-plugin-secure-storage" source="npm" spec="~1.2.1" />
+
     <!-- Notification plugin -->    
     <!-- <plugin name="cordova-plugin-background-mode" source="npm" /> -->
-    <plugin name="phonegap-plugin-local-notification" source="npm" />
 
     <!-- White list -->
     <access origin="https://r-youin.com"/>
