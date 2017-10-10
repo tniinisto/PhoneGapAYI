@@ -151,7 +151,7 @@ function getEvents(teamid, afterlogin=0) {
                                     + "<div data-role='content'>"
                                         + "<h1 style='font-size: 100%; margin-bottom: -10px; display: inline-block;'>Event Location: " + areyouin[i][3] + " </h1>"
                                         + "<a id='modal_map' href='#areyouin-map-page' data-transition='flip' data-shadow='false' style='margin-left: 5px;'>"
-                                            + "<img style='vertical-align: middle;' src='images/GoogleMapsIcon.png' alt='maps' height='20' width='20' onclick='initMap(" + areyouin[i][8] + ")'>"
+                                            + "<img style='vertical-align: middle;' src='images/GoogleMapsIcon.png' alt='maps' height='20' width='20' onclick='initMap(" + areyouin[i][8] + "," + areyouin[i][9] + ")'>"
                                         + "</a>"
                                     + "</div>"
 
@@ -484,13 +484,13 @@ function waitForEventUpdate(eventparameter) {
 
 
 
-function initMap(position) {
+function initMap(lon, lat) {
     
     $("#map_content_id").html("");
 
     $("#map_content_id" ).append(
         
-        "<h1>Position: " + position + "</h1>"
+        "<h1>Position: lon: " + lon + "<br> lat: " +  lat + "</h1>"
         + "<a id='backpacker' data-role='button' data-theme='b' data-rel='back' class='ui-link ui-btn ui-btn-b ui-shadow ui-corner-all' role=button>Back</a>"
     );
 }
