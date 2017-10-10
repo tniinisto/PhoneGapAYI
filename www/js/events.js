@@ -144,7 +144,14 @@ function getEvents(teamid, afterlogin=0) {
                                     + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='background: #39414b; margin-top: -15px;'>Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
                                     + "<h1 style='font-size: 130%; margin-bottom: -10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
                                     + "<h1 style='font-size: 120%; margin-bottom: -10px;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
-                                    + "<h1 style='font-size: 100%; margin-bottom: -10px;'>Event Location: " + areyouin[i][3] + "</h1>"                            
+
+                                    //Location div
+                                    + "<div data-role='content'>"
+                                        + "<h1 style='font-size: 100%; margin-bottom: -10px; display: inline-block;'>Event Location: " + areyouin[i][3] + " </h1>"
+                                        + "<a id='modal_map' href='maps.html' data-transition='flip' data-shadow='false' style='margin-left: 5px;'>"
+                                            + "<img style='vertical-align: middle;' src='images/GoogleMapsIcon.png' alt='maps' height='20' width='20'>"
+                                        + "</a>"
+                                    + "</div>"
 
                                 + "</div>"    
                                 
@@ -472,3 +479,5 @@ function waitForEventUpdate(eventparameter) {
     });
             
 }
+
+

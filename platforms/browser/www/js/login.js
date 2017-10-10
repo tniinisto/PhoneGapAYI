@@ -101,7 +101,7 @@ $(window).load(function() {
                                     //Show events page
                                     $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {
                                         //transition: 'flip',
-                                        changeHash: false,
+                                        changeHash: true,
                                         reverse: true,
                                         showLoadMsg: true
                                     });
@@ -140,7 +140,7 @@ $(window).load(function() {
                                 //Show events page
                                 $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {
                                     //transition: 'flip',
-                                    changeHash: false,
+                                    changeHash: true,
                                     reverse: true,
                                     showLoadMsg: true
 								});     
