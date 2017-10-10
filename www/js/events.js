@@ -40,7 +40,8 @@ function getEvents(teamid, afterlogin=0) {
                         areyouin[i][3] = data.location;
                         areyouin[i][4] = data.startTime;
                         areyouin[i][5] = data.endTime;
-                        areyouin[i][7] = data.private;   
+                        areyouin[i][7] = data.private;
+                        areyouin[i][8] = data.pos;
                         if(data.playerid == sessionStorage['playerID']) {
                             areyouin[i][6] = data.EventPlayerID;
                             areyouin[i][7] = 2;
@@ -58,6 +59,7 @@ function getEvents(teamid, afterlogin=0) {
                         areyouin[i][4] = data.startTime;
                         areyouin[i][5] = data.endTime;
                         areyouin[i][7] = data.private;
+                        areyouin[i][8] = data.pos;
                         if(data.playerid == sessionStorage['playerID']) {
                             areyouin[i][6] = data.EventPlayerID;
                             areyouin[i][7] = 2;
@@ -145,11 +147,11 @@ function getEvents(teamid, afterlogin=0) {
                                     + "<h1 style='font-size: 130%; margin-bottom: -10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
                                     + "<h1 style='font-size: 120%; margin-bottom: -10px;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
 
-                                    //Location div
+                                    //Location div                                    
                                     + "<div data-role='content'>"
                                         + "<h1 style='font-size: 100%; margin-bottom: -10px; display: inline-block;'>Event Location: " + areyouin[i][3] + " </h1>"
-                                        + "<a id='modal_map' href='maps.html' data-transition='flip' data-shadow='false' style='margin-left: 5px;'>"
-                                            + "<img style='vertical-align: middle;' src='images/GoogleMapsIcon.png' alt='maps' height='20' width='20'>"
+                                        + "<a id='modal_map' href='#areyouin-map-page' data-transition='flip' data-shadow='false' style='margin-left: 5px;'>"
+                                            + "<img style='vertical-align: middle;' src='images/GoogleMapsIcon.png' alt='maps' height='20' width='20' onclick='initMap(" + areyouin[i][8] + ")'>"
                                         + "</a>"
                                     + "</div>"
 
@@ -480,4 +482,16 @@ function waitForEventUpdate(eventparameter) {
             
 }
 
+
+
+function initMap(position) {
+    
+    $("#map_content_id").html("");
+
+    $("#map_content_id" ).append(
+        
+        "<h1>Position: " + position + "</h1>"
+        + "<a id='backpacker' data-role='button' data-theme='b' data-rel='back' class='ui-link ui-btn ui-btn-b ui-shadow ui-corner-all' role=button>Back</a>"
+    );
+}
 

@@ -4,22 +4,23 @@
 <head>
  	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"> 
-	<title>Chat</title> 
+	<title>Location</title> 
 	<!--<link rel="stylesheet"  href="http://code.jquery.com/mobile/1.0a4/jquery.mobile-1.0a4.min.css" />-->  
 	<!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4/jquery.mobile-1.0a4.min.js"></script>--> 
 
     <!--Jquery mobile 1.4.5-->
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
-    <script type="text/javascript" charset="utf-8" src="main.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="main.js"> </script> -->
  
     <!--<script type="text/javascript" src="../js/jquery.validate.min.js"></script>-->
 
     <!-- main css -->
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <!-- <link href="style.css" rel="stylesheet" type="text/css"> -->
+
+    <!-- <script type="text/javascript" charset="utf-8" src="js/main.js"> </script> -->
 
 </head>
     
@@ -32,33 +33,29 @@
 			    <h1>Event location</h1>
 		    </div>
 
-		    <div data-role="content" data-theme="c">
+		    <div id='event_map' data-role="content" data-theme="c">
 
-                <p>Maps coming to here...</p>
-                <!-- <a style="text-decoration: none;" href="https://maps.google.fi/maps?q=33.7573, -118.1422" target="_blank">
-                    <img style="vertical-align: middle;" src="images/GoogleMapsIcon.png" alt="maps" height="18" width="18">
-                </a> -->
+                <!-- <p id='demo'>Maps coming to here. Here is the position</p> -->
 
-			    
                 <a id="backpacker" data-role="button" data-theme="b" data-rel="back">Back</a>
 
-		    </div>
+            </div>
+            
 	    </div>
 
-        <!-- <script> 
+        <!-- <script>
+                
+            function getUrlVars() {
+                // var vars = {};
+                // var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                // vars[key] = value;
+                // });
+    
+                document.getElementById("demo").innerHTML = 'jepaa';
 
-            //Show events page
-            // function toEventsPage() {
-                            
-            //     $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {
-            //         transition: 'flip',
-            //         changeHash: false,
-            //         reverse: true,
-            //         showLoadMsg: true
-            //     });
-
-            // }               
-
+                //return vars;
+            }
+                
         </script> -->
 
     </body>
