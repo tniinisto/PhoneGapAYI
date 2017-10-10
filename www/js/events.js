@@ -131,7 +131,7 @@ function getEvents(teamid, afterlogin=0) {
 
 
                             //Rigth panel///////////////////////////////////////////////////////////////////////////////////
-                            + "<div style='width: 70%;' data-role='panel' id='eventPanel" + areyouin[i][0]  + "'data-position='right' data-position-fixed='true' data-display='overlay' class='ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate'>"
+                            + "<div style='width: 250px;' data-role='panel' id='eventPanel" + areyouin[i][0]  + "'data-position='right' data-position-fixed='true' data-display='overlay' class='ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate'>"
                                 + "<h2 style='padding-bottom: 1em; text-align: center;'>Event participants</h2>"
                                 + "<div>" + participant_list + "</div>"                         
                             + "</div>"
