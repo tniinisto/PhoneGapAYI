@@ -484,13 +484,13 @@ function waitForEventUpdate(eventparameter) {
 
 
 
-function initMap(lon, lat) {
+function initMap(lat, lon) {
     
     $("#map_content_id").html("");
 
     $("#map_content_id" ).append(
         
-        "<h1>Position: lon: " + lon + "<br> lat: " +  lat + "</h1>"
+        "<h1>Position: lat: " + lat + "<br> lon: " +  lon + "</h1>"
         + "<a id='backpacker' data-role='button' data-theme='b' data-rel='back' class='ui-link ui-btn ui-btn-b ui-shadow ui-corner-all' role=button>Back</a>"
     );
 }
