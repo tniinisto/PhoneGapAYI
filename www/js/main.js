@@ -1103,7 +1103,7 @@ var map;
 function initializeMap() {
 
 //Geolocation/////////////////////////////////////////////////
-var nlat = 0, nlon = 0;
+var nlat = 60, nlon = 20;
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(success, error);
@@ -1124,7 +1124,7 @@ var nlat = 0, nlon = 0;
 
 
     //Google maps/////////////////////////////////////////////////
-    var mapCanvas = document.getElementById('Location_map');
+    var mapCanvas = document.getElementById('event_map');
 
     if (nlat != 0) {
         var mapOptions = {

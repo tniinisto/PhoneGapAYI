@@ -126,66 +126,111 @@ function getEvents(teamid, afterlogin=0) {
                             j++;
                         }
 
-                        $("#event_content_id" ).append(
-                            
-                        //Event div
-                        "<div style='margin-top: 20px; margin-bottom: 40px;' id='Event_" + areyouin[i][0]  + "'>"
+                        if( areyouin[i][3].indexOf('No location set') < 0) {
 
-
-                            //Rigth panel///////////////////////////////////////////////////////////////////////////////////
-                            + "<div style='width: 250px;' data-role='panel' id='eventPanel" + areyouin[i][0]  + "'data-position='right' data-position-fixed='true' data-display='overlay' class='ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate'>"
-                                + "<h2 style='padding-bottom: 1em; text-align: center;'>Event participants</h2>"
-                                + "<div>" + participant_list + "</div>"                         
-                            + "</div>"
-
-                            //Event main view///////////////////////////////////////////////////////////////////////////////
-                            + "<div data-role='header' style='height:auto; width: auto; margin-bottom: 5px; margin-top: 5px;'>"
+                            $("#event_content_id" ).append(
                                 
-                                + "<div style='text-align:center; padding-bottom: 2em; margin-top: 1em; background: #252525; height: auto;'>"
-
-                                    + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='background: #39414b; margin-top: -15px;'>Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
-                                    + "<h1 style='font-size: 130%; margin-bottom: -10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
-                                    + "<h1 style='font-size: 120%; margin-bottom: -10px;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
-
-                                    //Location div                                    
-                                    + "<div data-role='content'>"
-                                        + "<h1 style='font-size: 100%; margin-bottom: -10px; display: inline-block;'>Event Location: " + areyouin[i][3] + " </h1>"
-                                        + "<a id='modal_map' href='#areyouin-map-page' data-transition='flip' data-shadow='false' style='margin-left: 5px;'>"
-                                            + "<img style='vertical-align: middle;' src='images/GoogleMapsIcon.png' alt='maps' height='20' width='20' onclick='initMap(" + areyouin[i][8] + "," + areyouin[i][9] + ")'>"
-                                        + "</a>"
-                                    + "</div>"
-
-                                + "</div>"    
-                                
-                                + "<div style='padding-top: 0px; background: #39414b;' data-role='button' class='ui-content')>"
-
-                                    + "<div style='text-align:center; padding-bottom: 0em; /*background: #252525;*/ height: 40px;'>"
-                                        
-                                        // + "<img style='display:inline-block; vertical-align:middle; padding-top: 8px;' width='40' height='40' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
-
-                                        // + "<h2 style='display:inline-block; height: 100%; vertical-align:top; margin-left: 1em; margin-right: 1em; font-size: 100%;'> " + sessionStorage['pname'] + "</h2>"
-
-                                        //In/Out slider
-                                        + displayToggle(areyouin[i][0], areyouin[i][6])
-
-                                        // + "<form id='eform_" + areyouin[i][6] + "' style='display:inline-block; height: 100%; vertical-align:middle; margin-top: 5px;' >"
-                                        //     + "<select name='slider_" + areyouin[i][0] + "' id='sliderid_" + areyouin[i][0] + "' data-role='slider' onchange='updateAYI(" + areyouin[i][6] + ", " + areyouin[i][0] + ")'>"
-                                        //         + "<option value='out'>out</option>"
-                                        //         + "<option value='in'>in</option>"
-                                        //     + "</select>"
-                                        // + "</form>"
-
-                                    + "</div>"    
+                            //Event div
+                            "<div style='margin-top: 20px; margin-bottom: 40px;' id='Event_" + areyouin[i][0]  + "'>"
 
 
-                                    + "<a style='width:150px; height: 20px; float: right; margin-top: 2em; margin-bottom: -5px;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][0] + ">See participants >></a>"
+                                //Rigth panel///////////////////////////////////////////////////////////////////////////////////
+                                + "<div style='width: 250px;' data-role='panel' id='eventPanel" + areyouin[i][0]  + "'data-position='right' data-position-fixed='true' data-display='overlay' class='ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate'>"
+                                    + "<h2 style='padding-bottom: 1em; text-align: center;'>Event participants</h2>"
+                                    + "<div>" + participant_list + "</div>"                         
                                 + "</div>"
 
-                                //+ "<div style='padding-bottom: 1px;  background: #39414b; height: 1px;'</di>"
+                                //Event main view///////////////////////////////////////////////////////////////////////////////
+                                + "<div data-role='header' style='height:auto; width: auto; margin-bottom: 5px; margin-top: 5px;'>"
+                                    
+                                    + "<div style='text-align:center; padding-bottom: 2em; margin-top: 1em; background: #252525; height: auto;'>"
 
-                            + "</div>"
-                        ).enhanceWithin();
-                        
+                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='background: #39414b; margin-top: -15px;'>Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
+                                        + "<h1 style='font-size: 130%; margin-bottom: -10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
+                                        + "<h1 style='font-size: 120%; margin-bottom: -10px;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
+
+                                        //Location div                                    
+                                        + "<div data-role='content'>"
+                                            + "<h1 style='font-size: 100%; margin-bottom: -10px; display: inline-block;'>Event Location: " + areyouin[i][3] + " </h1>"
+                                            + "<a id='modal_map' href='#areyouin-map-page' data-transition='flip' data-shadow='false' style='margin-left: 5px;'>"
+                                                + "<img style='vertical-align: middle; margin-left: 15px' src='images/GoogleMapsIcon.png' alt='maps' height='40' width='40' onclick='initMap(" + areyouin[i][8] + "," + areyouin[i][9] + ")'>"
+                                            + "</a>"
+                                        + "</div>"
+
+                                    + "</div>"    
+                                    
+                                    + "<div style='padding-top: 0px; background: #39414b;' data-role='button' class='ui-content')>"
+
+                                        + "<div style='text-align:center; padding-bottom: 0em; /*background: #252525;*/ height: 40px;'>"
+                                            
+                                            //In/Out slider
+                                            + displayToggle(areyouin[i][0], areyouin[i][6])
+
+                                        + "</div>"    
+
+
+                                        + "<a style='width:150px; height: 20px; float: right; margin-top: 2em; margin-bottom: -5px;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][0] + ">See participants >></a>"
+                                    + "</div>"
+
+                                    //+ "<div style='padding-bottom: 1px;  background: #39414b; height: 1px;'</di>"
+
+                                + "</div>"
+                            ).enhanceWithin();
+
+                        } else {
+
+                            
+                            $("#event_content_id" ).append(
+                                
+                            //Event div
+                            "<div style='margin-top: 20px; margin-bottom: 40px;' id='Event_" + areyouin[i][0]  + "'>"
+
+
+                                //Rigth panel///////////////////////////////////////////////////////////////////////////////////
+                                + "<div style='width: 250px;' data-role='panel' id='eventPanel" + areyouin[i][0]  + "'data-position='right' data-position-fixed='true' data-display='overlay' class='ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate'>"
+                                    + "<h2 style='padding-bottom: 1em; text-align: center;'>Event participants</h2>"
+                                    + "<div>" + participant_list + "</div>"                         
+                                + "</div>"
+
+                                //Event main view///////////////////////////////////////////////////////////////////////////////
+                                + "<div data-role='header' style='height:auto; width: auto; margin-bottom: 5px; margin-top: 5px;'>"
+                                    
+                                    + "<div style='text-align:center; padding-bottom: 2em; margin-top: 1em; background: #252525; height: auto;'>"
+
+                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='background: #39414b; margin-top: -15px;'>Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
+                                        + "<h1 style='font-size: 130%; margin-bottom: -10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
+                                        + "<h1 style='font-size: 120%; margin-bottom: -10px;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
+
+                                        //Location div                                    
+                                        + "<div data-role='content'>"
+                                            + "<h1 style='font-size: 100%; margin-bottom: -10px; display: inline-block;'>Event Location: " + areyouin[i][3] + " </h1>"
+                                            //+ "<a id='modal_map' href='#areyouin-map-page' data-transition='flip' data-shadow='false' style='margin-left: 5px;'>"
+                                                //+ "<img style='vertical-align: middle; margin-left: 15px' src='images/GoogleMapsIcon.png' alt='maps' height='40' width='40' onclick='initMap(" + areyouin[i][8] + "," + areyouin[i][9] + ")'>"
+                                            //+ "</a>"
+                                        + "</div>"
+
+                                    + "</div>"    
+                                    
+                                    + "<div style='padding-top: 0px; background: #39414b;' data-role='button' class='ui-content')>"
+
+                                        + "<div style='text-align:center; padding-bottom: 0em; /*background: #252525;*/ height: 40px;'>"
+                                            
+                                            //In/Out slider
+                                            + displayToggle(areyouin[i][0], areyouin[i][6])
+
+                                        + "</div>"    
+
+
+                                        + "<a style='width:150px; height: 20px; float: right; margin-top: 2em; margin-bottom: -5px;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][0] + ">See participants >></a>"
+                                    + "</div>"
+
+                                    //+ "<div style='padding-bottom: 1px;  background: #39414b; height: 1px;'</di>"
+
+                                + "</div>"
+                            ).enhanceWithin();
+
+                        }   
+
                         //Set that user has seen the event
                         updateUserSeen(areyouin[i][6]);
                     }
@@ -210,7 +255,7 @@ function getEvents(teamid, afterlogin=0) {
         },
 
         error: function () {
-            alert("error");
+            alert("error"); 
         }
 
     });
@@ -485,13 +530,32 @@ function waitForEventUpdate(eventparameter) {
 
 
 function initMap(lat, lon) {
-    
-    $("#map_content_id").html("");
 
-    $("#map_content_id" ).append(
+    setTimeout(function() {
         
-        "<h1>Position: lat: " + lat + "<br> lon: " +  lon + "</h1>"
-        + "<a id='backpacker' data-role='button' data-theme='b' data-rel='back' class='ui-link ui-btn ui-btn-b ui-shadow ui-corner-all' role=button>Back</a>"
-    );
+        var mapOptions = {
+            zoom: 12,
+            center: new google.maps.LatLng(lat, lon),
+            mapTypeId: 'roadmap'
+        }
+    
+        var map = new google.maps.Map(document.getElementById("map_content_id"), mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(lat, lon), 
+            map: map
+        });
+
+        $("#map_content_id_button").html("");
+        $("#map_content_id_button" ).append(
+        
+        //   + "<br><h1>Position: lat: " + lat + "<br> lon: " +  lon + "</h1>"
+            "<a id='backpacker' data-role='button' data-theme='b' data-rel='back' class='ui-link ui-btn ui-btn-b ui-shadow ui-corner-all' role=button>Back</a>"
+            
+        ).enhanceWithin();
+
+    }, 500);
+
+
 }
 
