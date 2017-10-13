@@ -136,6 +136,9 @@ $(window).load(function() {
 
 								//Get team's events, check that license is valid
                                 getEvents( result.items[0].teamID, 1);
+
+                                //Get chat comments
+                                getComments();
                                 
                                 //Show events page
                                 $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {

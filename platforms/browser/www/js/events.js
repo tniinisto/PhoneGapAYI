@@ -94,7 +94,7 @@ function getEvents(teamid, afterlogin=0) {
                                                     
                     + "</div>"  
                 
-                ).enhanceWithin();;
+                ).enhanceWithin();
 
             } else
 
@@ -151,7 +151,7 @@ function getEvents(teamid, afterlogin=0) {
 
                                         //Location div                                    
                                         + "<div data-role='content'>"
-                                            + "<h1 style='font-size: 100%; margin-top: 25px; margin-bottom: -10px; display: inline-block;'>Event Location: " + areyouin[i][3] + " </h1>"
+                                            + "<h1 style='font-size: 100%; maring-top: 15px; margin-bottom: -10px; display: inline-block;'>Event Location: " + areyouin[i][3] + " </h1>"
                                             + "<a id='modal_map' href='#areyouin-map-page' data-transition='flip' data-shadow='false' style='margin-left: 5px;'>"
                                                 + "<img style='vertical-align: middle; margin-left: 5px; margin-top: 5px; ' src='images/GoogleMapsIcon.png' alt='maps' height='40' width='40' onclick='initMap(" + areyouin[i][8] + "," + areyouin[i][9] + ")'>"
                                             + "</a>"
