@@ -26,17 +26,17 @@
     <body>
 
         <!--<div data-role="page">-->
-	    <div data-role="page" id="areyouin-modal-page" data-theme="c" data-url="areyouin-modal-page" data-rel="dialog" data-close-btn="none">
+	    <div data-role="page" id="areyouin-modal-page" data-theme="b" data-url="areyouin-modal-page" data-rel="dialog" data-close-btn="none">
         <!--</div> data-close-btn="none">-->
 		    <div data-role="header" data-theme="b" data-position="inline">
 			    <h1>New comment</h1>
 		    </div>
 
-		    <div data-role="content" data-theme="c">
+		    <div data-role="content" data-theme="b">
 			    <!--<h1>Write new comment</h1>
 			    <p>This is a regular page, styled as a dialog. To create a dialog, just link to a normal page and include a transition and <code>data-rel="dialog"</code> attribute.</p>-->
 
-                <form id="chatform" class="validate-form" onsubmit="addRow();" name="chatform" method="GET" target="frame_chat">
+                <form id="chatform" class="validate-form" onsubmit="insertComment()" name="chatform" method="GET" target="#">
                     
                     <div data-role="fieldcontainer">
                         <label for="comment_input">Comment: </label>
@@ -44,12 +44,7 @@
                     </div>
                     
                     <input type="submit" value="Send" name="sendbutton" id="sendbutton"/>
-                    
-                    <!--<input type="submit" value="Send" name="sendbutton" id="sendbutton" onclick="history.go(-1)"  class="button">-->
-                    <!--<button id="comment_submit" type="submit" name="send">Send</button>-->
-                    <!--<button id="comment_submit" type="submit" name="send" value="send" onclick="$('#backpacker').trigger('click');">Send</button>-->
-                    <!--<button id="comment_submit" type="submit" name="send" value="send" data-rel="back" onclick="$('.ui-dialog').dialog('close');">Send</button>-->
-                    <!--<a id="backpacker2" href="index.html" type="submit" data-rel="back" data-role="button" onclick="$('#sendbutton').trigger('click');">Send</a>-->
+
                 </form>
                 
                 <!--<script>
@@ -64,6 +59,56 @@
 	    </div>
 
         <script>
+
+            //Form validation
+            $('#chatform').validate({
+                rules: {
+                    comment_input: {
+                        required: true,
+                        minlength: 1
+                    }
+                },
+                messages: {
+                    comment_input: {
+                        required: "Enter chat comment"
+                    }
+                },
+                errorPlacement: function (error, element) {
+                    error.appendTo(element.parent().prev());
+                },
+                submitHandler: function (form) {
+                    $(':mobile-pagecontainer').pagecontainer('change', '#success', {
+                        reload: false
+                    });
+                    return false;
+                }
+            });
+
+            function insertComment() {
+
+                var serviceURL = "https://dev-areyouin.azurewebsites.net/pgmobile/services/";
+
+                $.ajax({type: "GET",
+                url: serviceURL + 'insertComment.php',
+                dataType : 'json',
+                data: {'comment': $('#comment_input').val(), 'teamid': sessionStorage['teamID'], 'playerid': sessionStorage['playerID']},
+
+                success:function(result) {
+
+                    //Clear form
+                    //$("comments").html("");
+
+                },
+
+                error: function () {
+                    alert("comments error"); 
+                }
+
+            });
+
+            }
+            
+            
             //$('#sendbutton').addClass('ui-disabled');
 
             //Document ready
@@ -121,31 +166,6 @@
             //    alert("close this!");
             //    // tasks to do 
             //});
-
-            //Form validation
-            $('#chatform').validate({
-                rules: {
-                    comment_input: {
-                        required: true,
-                        minlength: 1
-                    }
-                },
-                messages: {
-                    comment_input: {
-                        required: "Enter chat comment"
-                    }
-                },
-                errorPlacement: function (error, element) {
-                    error.appendTo(element.parent().prev());
-                },
-                submitHandler: function (form) {
-                    $(':mobile-pagecontainer').pagecontainer('change', '#success', {
-                        reload: false
-                    });
-                    return false;
-                }
-            });
-
 
             //$("#comment_input").keyup(function (e) {
             //    var value = document.getElementById('comment_input').value;
