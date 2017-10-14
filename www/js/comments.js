@@ -33,19 +33,19 @@ function getComments() {
                     $("#comments" ).append(
                         "<ul data-role='listview' data-inset='true'>"
                         +"<li style='margin: 2px; background: #39414b'>"
-                            + "<img style='margin: 8px;' src='https://r-youin.com/images/" + data.photourl + "'>"
-                            + "<h2>Broken Bells</h2>"
-                            + "<p>Broken Bells</p></a>"
+                            + "<img style='margin: 8px; width: 50px; height: 50px;' src='https://r-youin.com/images/" + data.photourl + "'>"
+                            + "<p style='font-size: 90%;'>"  + data.publishTime.toString().substring(0, 16) + "</p></a>"
+                            + "<div style='font-size: 105%; text-transform: none; white-space: normal;'>"  + data.comment + "</div>"
                         + "</li>"
                     ).enhanceWithin();
                 } 
                 else {
                     $("#comments" ).append(
                         "<li style='margin: 2px; background: #39414b'>"
-                            + "<img style='margin: 8px;' src='https://r-youin.com/images/" + data.photourl + "'>"
-                            + "<h2>Broken Bells</h2>"
-                            + "<p>Broken Bells</p></a>"
-                        + "</li>"
+                            + "<img style='margin: 8px; width: 50px; height: 50px;' src='https://r-youin.com/images/" + data.photourl + "'>"
+                            + "<p style='font-size: 90%;'>"  + data.publishTime.toString().substring(0, 16) + "</p></a>"
+                            + "<div style='font-size: 105%'; text-transform: none; white-space: normal;'>"  + data.comment + "</div>"
+                            + "</li>"
                     ).enhanceWithin();
                 }
 
