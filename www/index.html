@@ -9,9 +9,9 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-    
+
     <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:">
-    
+
     <!-- Good default declaration:
     * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
     * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
@@ -41,9 +41,9 @@
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="js/index.css" />
     <link rel="stylesheet" type="text/css" href="js/style.css" />
-    <link rel="stylesheet" type="text/css" href="js/media-queries.css" />        
-    
-    <title>R'YouIN</title>  
+    <link rel="stylesheet" type="text/css" href="js/media-queries.css" />
+
+    <title>R'YouIN</title>
 
 </head>
 
@@ -51,11 +51,11 @@
 
 	<!-- Login page -->
     <div data-role="page" id="areyouin-login-page" data-theme="b" data-url="areyouin-login-page">
-        <div data-role="header" data-theme="b"  data-position="fixed" data-tap-toggle="false">	        
+        <div data-role="header" data-theme="b"  data-position="fixed" data-tap-toggle="false">
             <h1><span style="display: inline; font-size: 1.7em; text-transform: none; font-weight: bold;">R'YouIN </span><img id="msg_icon1" class="msg_icon_style noshow" alt="New messages" src="../images/new_chat.png"></img></h1>
             <h1 id="logininfo">Please login</h1>
         </div>
-    
+
         <div id="login_credentials" data-role="login_content">
 
             <form id="loginform" name="loginform">
@@ -67,7 +67,7 @@
                 <div class="">
                     <label id="ayipassword_label" for="ayipassword" style="color: white; width: auto;">Password</label>
                     <input type="password" id="ayipassword" name="ayipassword" placeholder="" class='required'>
-                </div>                           
+                </div>
 
                 <div>
                     <label id="ayilogin_label" style="color: white; width: auto; margin-top:2em; display:none">login failed, please check your credentials</label>
@@ -76,7 +76,7 @@
                 <button type="submit" form="loginform" name="loginbutton" id="loginbutton" style="margin-top:2em;">Login</button>
 
             </form>
-        
+
         </div>
 
         <script>
@@ -86,8 +86,8 @@
                     var pass = $.trim($('#ayipassword').val());
 
                     // Check if fields or field is empty
-                    if (name  === '' ||  pass === '') {       
-                        
+                    if (name  === '' ||  pass === '') {
+
                         if(name === '') {
                             $('#ayiloginid_label').text('Enter User ID');
                             $('#ayiloginid_label').css('color', '#ffca00');
@@ -100,7 +100,7 @@
                         if (pass === ''){
                             $('#ayipassword_label').text('Enter Password');
                             $('#ayipassword_label').css('color', '#ffca00');
-                        }                            
+                        }
                         else {
                             $('#ayipassword_label').text('PASSWORD');
                             $('#ayipassword_label').css('color', 'white');
@@ -115,14 +115,14 @@
 
             }
 
-        </script>        
+        </script>
 
     </div>
     <!-- /Login -->
 
     <!--Team selection page -->
     <div data-role="page" id="login-team-selection" data-theme="b" data-url="login-team-selection">
-        <div data-role="header" data-theme="b"  data-position="fixed" data-tap-toggle="false">	        
+        <div data-role="header" data-theme="b"  data-position="fixed" data-tap-toggle="false">
             <h1><span style="display: inline; font-size: 1.7em; text-transform: none; font-weight: bold;">R'YouIN </span></h1>
             <h1 id="teamselectioninfo">Team selection</h1>
         </div>
@@ -134,7 +134,7 @@
                 <!-- <label id="ayiteam_label" style="color: white; width: auto; margin-left: 2em; margin-top:2em;">Select your team</label> -->
                 <!--    <label for="select-native-1">Select team:</label>-->
                     <select name="select-native-1" id="select-native-1" class="ui-icon-circle-triangle-s">
-                
+
                         <option value="1">Select your team</option>
                      
                     </select>
@@ -144,28 +144,28 @@
 
             </form>
 
-        </div>    
+        </div>
 
     </div>
     <!--Team selection page -->
 
 	<!-- Events -->
 	 <div data-role="page" id="areyouin-events-page" data-theme="b" data-url="areyouin-events-page">
-	    <div data-role="header" data-theme="b"  data-position="fixed" data-tap-toggle="false">	        
+	    <div data-role="header" data-theme="b"  data-position="fixed" data-tap-toggle="false">
             <h1><span style="display: inline; font-size: 1.7em; text-transform: none; font-weight: bold;">R'YouIN </span><img id="msg_icon1" class="msg_icon_style noshow" alt="New messages" src="../images/new_chat.png"></img></h1>
             <h1 id="logininfo_e"> </h1>
 	        <a href="#left-panel-events" data-theme="b" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc" >Open left panel</a>
 	    </div>
-	    
+
 	    <div data-role="event_content_id" id="event_content_id">
 
                 <!-- TESTING <div id="EventID_99">
-                    
+
                     Right panel
-                    <div style="width: 70%;" data-role="panel" id="eventPanel_99" data-position="right" data-position-fixed="true" data-display="overlay" class="ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate"> 
+                    <div style="width: 70%;" data-role="panel" id="eventPanel_99" data-position="right" data-position-fixed="true" data-display="overlay" class="ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate">
                         <h2>participants</h2>
                         <p>You can close the panel by clicking outside the panel, pressing the Esc key or by swiping.</p>
-                    </div> 
+                    </div>
 
                     Main event view
                     <div data-role="header" style="height:auto; width: auto; margin-bottom: 5px; margin-top: 5px;">
@@ -184,7 +184,7 @@
                 </div> -->
 
 	    </div>
-	    
+
         <!--Left menu panel-->
 	    <div data-role="panel" id="left-panel-events" data-display="overlay" data-theme="b">
 	        <p style="font-size: 22px; font-weight: 70;">Menu</p>
@@ -194,7 +194,7 @@
                 <div class="menu_text">Events</div>
             </a>
 
-	        <a href="#areyouin-chat-page" data-role="button" data-theme="b" data-icon="chat" data-iconpos="" data-shadow="" data-iconshadow="" class="icon-chat menu-layout" 
+	        <a href="#areyouin-chat-page" data-role="button" data-theme="b" data-icon="chat" data-iconpos="" data-shadow="" data-iconshadow="" class="icon-chat menu-layout"
                style="background-color: #2A2A2A; border-radius: 0; color: #FFF; text-shadow: none; height: 40px;">
                 <div class="menu_text" style="padding-left: 10px;">Chat</div>
             </a>
@@ -207,7 +207,7 @@
 
 
         <script>
-            
+
             function LoginPage() {
                 $("#logininfo").text("");
 
@@ -216,7 +216,7 @@
                         changeHash: true,
                         reverse: true,
                         showLoadMsg: true
-                });                
+                });
 
                 location.reload();
             }
@@ -225,25 +225,25 @@
                 //localStorage.clear();
                 sessionStorage.clear();
             }
-        
-        </script>  
+
+        </script>
 
 
-    </div> 
+    </div>
     <!-- /Events -->
 
 
     <!-- Chat -->
 	 <div data-role="page" id="areyouin-chat-page" data-theme="b" data-url="areyouin-chat-page">
-	    <div data-role="header" data-theme="b"  data-position="fixed" data-tap-toggle="false">	        
+	    <div data-role="header" data-theme="b"  data-position="fixed" data-tap-toggle="false">
             <h1><span style="display: inline; font-size: 1.7em; text-transform: none; font-weight: bold;">R'YouIN </span><img id="msg_icon2" class="msg_icon_style noshow" alt="New messages" src="../images/new_chat.png"></img></h1>
             <h1 id="logininfo_c"> </h1>
 	        <a href="#left-panel-chat" data-theme="b" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc" >Open left panel</a>
 	    </div>
-	    
-	    <div data-role="content">           
-            <a id="modal_comment" href="modal.html" data-role="button" data-rel="dialog" data-transition="flip" data-theme="b" style="margin-top: -5px;">New comment</a>
-            <div id="chat_content_id"> </div>
+
+	    <div data-role="content">
+            <a id="comment" href="#areyouin-comment-page" data-role="button" data-transition="flip" data-theme="b" style="margin-top: -5px;">New comment</a>
+            <!-- <div id="chat_content_id"> </div> -->
 	    </div>
 
         <!--Left menu panel-->
@@ -265,16 +265,16 @@
                 <div class="menu_text">Logout</div>
             </a>
 	    </div>
-    </div> 
+    </div>
     <!-- /Chat -->
 
     <!-- Map -->
     <div data-role="page" id="areyouin-map-page" data-theme="b" data-url="areyouin-map-page">
-            <div data-role="header" data-theme="b"  data-position="fixed" data-tap-toggle="false">	        
-                <h1><span style="display: inline; font-size: 1.7em; text-transform: none; font-weight: bold;">R'YouIN </span></h1>    
-                <h1 id="logininfo">Event location</h1>            
+            <div data-role="header" data-theme="b"  data-position="fixed" data-tap-toggle="false">
+                <h1><span style="display: inline; font-size: 1.7em; text-transform: none; font-weight: bold;">R'YouIN </span></h1>
+                <h1 id="logininfo">Event location</h1>
             </div>
-            
+
                 <div id="map_content_id" style='height:400px; width: auto; margin: 15px;' >
                     <!-- <p>Map data here...</p> -->
                 </div>
@@ -282,8 +282,38 @@
                 <div id="map_content_id_button" style='height:400px; width:auto; text-align: center; margin: 15px;'>
                     <!-- <p>Back button here...</p> -->
                 </div>
-    
+    </div>
     <!-- /Map -->
+
+    <!-- Comment insert page -->
+    <div data-role="page" id="areyouin-comment-page" data-theme="b" data-url="areyouin-comment-page">
+        <div data-role="header" data-theme="b"  data-position="fixed" data-tap-toggle="false">
+            <h1><span style="display: inline; font-size: 1.7em; text-transform: none; font-weight: bold;">R'YouIN </span></h1>
+            <h1 id="logininfo">New comment</h1>
+        </div>
+
+        <div data-role="content" data-theme="b">
+            <!-- <h1>Write new comment</h1> -->
+
+            <form id="chatform" class="validate-form" onsubmit="insertComment()" name="chatform" method="GET" target="#">
+
+                <div data-role="fieldcontainer">
+                    <label for="comment_input">Comment: </label>
+                    <textarea maxlength="500" id="comment_input" name="comment_input" placeholder="" style="height:  100px;" required></textarea>
+                </div>
+
+                <input type="submit" value="Send" name="sendbutton" id="sendbutton"/>
+
+            </form>
+
+            <!-- <iframe name="frame_chat" style="display: none;"></iframe> -->
+
+            <a id="backpacker" data-role="button" data-rel="back" data-theme="b">Back</a> 
+
+        <!-- </div> -->
+    </div>
+    <!-- /Comment insert page -->
+
 
 
 

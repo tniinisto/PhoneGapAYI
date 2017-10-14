@@ -84,29 +84,29 @@
                 }
             });
 
-            function insertComment() {
+            // function insertComment() {
 
-                var serviceURL = "https://dev-areyouin.azurewebsites.net/pgmobile/services/";
+            //     var serviceURL = "https://dev-areyouin.azurewebsites.net/pgmobile/services/";
 
-                $.ajax({type: "GET",
-                url: serviceURL + 'insertComment.php',
-                dataType : 'json',
-                data: {'comment': $('#comment_input').val(), 'teamid': sessionStorage['teamID'], 'playerid': sessionStorage['playerID']},
+            //     $.ajax({type: "GET",
+            //     url: serviceURL + 'insertComment.php',
+            //     dataType : 'json',
+            //     data: {'comment': $('#comment_input').val(), 'teamid': sessionStorage['teamID'], 'playerid': sessionStorage['playerID']},
 
-                success:function(result) {
+            //     success:function(result) {
 
-                    //Clear form
-                    //$("comments").html("");
+            //         //Clear form
+            //         //$("comments").html("");
 
-                },
+            //     },
 
-                error: function () {
-                    alert("comments error"); 
-                }
+            //     error: function () {
+            //         alert("comments error"); 
+            //     }
 
-            });
+            // });
 
-            }
+            // }
             
             
             //$('#sendbutton').addClass('ui-disabled');
