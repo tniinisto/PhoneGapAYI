@@ -13,28 +13,32 @@ function getComments() {
 
 
 
-            //$.each(result, function (key, data) {
+            //Clear #areyouin-chat-page div contents
+            $("comments").html("");
 
-            $("#areyouin-chat-page" ).append("<div id='comments' style='padding: 10px;'> <ul data-role='listview' data-inset='true'>"
+            $("#areyouin-chat-page" ).append("<div id='comments' style='padding: 10px;'> <ul data-role='listview' data-inset='true'>");
 
-                // var i = 0;
+                var i = 0;
+                while(i < 20) {                
 
-                // while(i < 21) {                
+                //$.each(result, function (key, data) {
 
-                    // $("#areyouin-chat-page" ).append(
-                        + "<li>"
-                            + "<img src='images/chat-icon.png'>"
+                    // var photo = 'player11.png';
+                    var photo = result.items[i].photourl;
+
+                    $("#areyouin-chat-page" ).append(
+                        "<li>"
+                            + "<img src='https://r-youin.com/images/" + photo + "'>"
                             + "<h2>Broken Bells</h2>"
                             + "<p>Broken Bells</p></a>"
                         + "</li>"
-                    // ).enhanceWithin();
-                    + "</ul></div>"
-                    // i++;
-                    
-                // }
-            ).enhanceWithin();
+                    )
 
-            // $("#areyouin-chat-page" ).append("</ul></div>").enhanceWithin();
+                    i++;                    
+
+                }
+            
+            $("#areyouin-chat-page" ).append("</ul></div>").enhanceWithin();
 
         },
 

@@ -98,6 +98,9 @@ $(window).load(function() {
                                     //Get team's events TODO: check that license is valid
                                     getEvents( $("#select-native-1 option:selected" ).val(), 1);
 
+                                    //Get chat comments
+                                    getComments();
+
                                     //Show events page
                                     $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {
                                         //transition: 'flip',
