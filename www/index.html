@@ -293,7 +293,7 @@
         </div>
 
         <div data-role="content" data-theme="b">
-            <h1>Write new comment</h1>
+            <!-- <h1>Write new comment</h1> -->
 
             <form id="chatform" class="validate-form" onsubmit="insertComment()" name="chatform" method="GET" target="#">
 
@@ -302,7 +302,7 @@
                     <textarea maxlength="500" id="comment_input" name="comment_input" placeholder="" style="height:  100px;" required></textarea>
                 </div>
 
-                <input type="button" value="Send" name="c_sendbutton" id="c_sendbutton" onclick="insertComment()"/>
+                <input type="button" value="Send" name="c_sendbutton" id="c_sendbutton" onclick="validateForm()"/>
 
             </form>
 
@@ -311,6 +311,7 @@
             <a id="backpacker" data-role="button" data-rel="back" data-theme="b">Back</a> 
 
         <!-- </div> -->
+
     </div>
     <!-- /Comment insert page -->
 

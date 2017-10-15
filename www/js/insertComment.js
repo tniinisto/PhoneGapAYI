@@ -23,3 +23,22 @@ function insertComment() {
     });
     
 }   
+
+
+//Form validation
+function validateForm() {
+    
+    if($("#comment_input").val() != '') {
+
+        $('#comment_input').css('border-color', '#1d1d1d');
+        insertComment();
+
+    }
+    else {
+
+        $('#comment_input').css('border-color', 'red');
+    
+    }
+
+}
+
