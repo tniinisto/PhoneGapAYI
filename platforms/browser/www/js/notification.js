@@ -64,4 +64,36 @@
 
     };
 
+
+    function msgNotification() {
+        
+                // setTimeout( function() {
+                
+                    if ('Notification' in window) {
+                        Notification.requestPermission(function (permission) {
+        
+                        //If the user accepts, let’s create a notification
+                        if (permission === "granted") {
+                            var notification = new Notification('R\'YouIN', {
+                                tag: 'notification', 
+                                body: 'New message received',
+                                //sound: "file://js/tone.wav",
+                                icon: "images/chat-icon.png"
+                            }); 
+                            
+                            navigator.notification.beep(1);
+        
+                            notification.onshow  = function() { console.warn('show'); };
+                            notification.onclose = function() { console.log('close'); };
+                            notification.onclick = function() { console.log('click'); };
+                            
+                        }
+        
+                        });
+                };
+        
+                // }, 5000);
+        
+            };
+
 //});

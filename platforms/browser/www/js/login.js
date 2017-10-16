@@ -99,7 +99,8 @@ $(window).load(function() {
                                     getEvents( $("#select-native-1 option:selected" ).val(), 1);
 
                                     //Get chat comments
-                                    getComments();
+                                    getComments(1);
+
 
                                     //Show events page
                                     $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {
@@ -141,7 +142,7 @@ $(window).load(function() {
                                 getEvents( result.items[0].teamID, 1);
 
                                 //Get chat comments
-                                getComments();
+                                getComments(1);
                                 
                                 //Show events page
                                 $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {
