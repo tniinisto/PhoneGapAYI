@@ -25,7 +25,6 @@ function insertComment() {
     
 }   
 
-
 //Form validation
 function validateForm() {
     
