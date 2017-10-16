@@ -61,6 +61,7 @@ function getComments(afterlogin=0) {
             else { //After that check if there are new messages
                 if(window.localStorage.getItem('lastseenmsg').toString().localeCompare(result.items[0].publishTime.toString()) != 0)
                     msgNotification();
+                    window.localStorage.setItem("lastseenmsg", result.items[0].publishTime);
             }
 
             //Start polling

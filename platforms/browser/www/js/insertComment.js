@@ -3,7 +3,7 @@ var serviceURL = "https://dev-areyouin.azurewebsites.net/pgmobile/services/";
 
 function insertComment() {
     
-    console.warn('comment input: ', $('#comment_input').val());
+    //console.warn('comment input: ', $('#comment_input').val());
 
         $.ajax({type: "GET",
         url: serviceURL + 'insertComment.php',
@@ -13,6 +13,7 @@ function insertComment() {
         success:function(result) {
 
             //&console.warn('areyouin: ', result);
+            window.localStorage.setItem("lastseenmsg", result.timestamp);
 
         },
 
