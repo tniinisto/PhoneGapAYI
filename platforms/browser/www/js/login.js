@@ -75,8 +75,8 @@ $(window).load(function() {
                                     e.preventDefault();
 
                                     var admin_info = ''
-                                    if(result.items[$("#select-native-1 option:selected" ).index()].teamAdmin == 1)
-                                        var admin_info = ' - admin'
+                                    if(result.items[$("#select-native-1 option:selected" ).index()].teamAdmin == 1 || result.items[$("#select-native-1 option:selected" ).index()].registrar == 1)
+                                        admin_info = ' [admin]'
   
                                     //alert("select button clicked");
                                     $("#logininfo").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Login page
@@ -123,8 +123,8 @@ $(window).load(function() {
                             else if(result.items[0].count == 1) { 
 
                                 var admin_info = ''
-                                if(result.items[0].teamAdmin == 1)
-                                    var admin_info = ' - admin'
+                                if(result.items[0].teamAdmin == 1 || result.items[0].registrar == 1)
+                                    admin_info = ' [admin]'
 
                                 $("#logininfo").text(result.items[0].name + ' team ' + result.items[0].teamName); //Login page
                                 $("#logininfo_e").text(result.items[0].name + ' team ' + result.items[0].teamName + admin_info); //Events page
