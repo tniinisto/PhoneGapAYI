@@ -82,6 +82,7 @@ function getEvents(teamid, afterlogin=0) {
             invited = 0;
             eventcount = 0;
             participant_list = '';
+            count = 1;
 
             //Check if there are no events scheduled
             if(areyouin[0][0] == 0) {
@@ -152,7 +153,7 @@ function getEvents(teamid, afterlogin=0) {
                                     
                                     + "<div style='text-align:center; padding-bottom: 2em; margin-top: 1em; background: #252525; height: auto;'>"
 
-                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='background: #39414b; margin-top: -15px;'>" + private_info + " Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
+                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='background: #39414b; margin-top: -15px;'>" + private_info + " Event #" + count + " Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
                                         + "<h1 style='font-size: 130%; margin-bottom: -10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
                                         + "<h1 style='font-size: 120%; margin-bottom: -10px;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
 
@@ -166,7 +167,7 @@ function getEvents(teamid, afterlogin=0) {
 
                                     + "</div>"    
                                     
-                                    + "<div style='padding-top: 0px; background: #39414b;' data-role='button' class='ui-content')>"
+                                    + "<div style='padding-top: 0px; background: #39414b; text-align: center;' data-role='button' class='ui-content')>"
 
                                         + "<div style='text-align:center; padding-bottom: 0em; /*background: #252525;*/ height: 40px;'>"
                                             
@@ -176,7 +177,7 @@ function getEvents(teamid, afterlogin=0) {
                                         + "</div>"    
 
 
-                                        + "<a style='width:150px; height: 20px; float: right; margin-top: 2em; margin-bottom: -5px;' data-role='button' data-icon='star' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][0] + "><img style='display:inline-block; vertical-align:middle; margin-left: -5px; margin-top: -6px; margin-right: 2px;' width='30' height='30' src='js/images/group_icon.png'> See participants </a>"
+                                        + "<a style='width:90%; height: 20px; margin-top: 2em; margin-bottom: -5px;' data-role='button' data-icon='star' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][0] + "><img style='display:inline-block; vertical-align:middle; margin-left: -5px; margin-top: -6px; margin-right: 2px;' width='30' height='30' src='js/images/group_icon.png'> See participants </a>"
                                     + "</div>"
 
                                     //+ "<div style='padding-bottom: 1px;  background: #39414b; height: 1px;'</di>"
@@ -204,7 +205,7 @@ function getEvents(teamid, afterlogin=0) {
                                     
                                     + "<div style='text-align:center; padding-bottom: 2em; margin-top: 1em; background: #252525; height: auto;'>"
 
-                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='background: #39414b; margin-top: -15px;'>" + private_info + " Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
+                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='background: #39414b; margin-top: -15px;'>" + private_info + " Event #" + count + " Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
                                         + "<h1 style='font-size: 130%; margin-bottom: -10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
                                         + "<h1 style='font-size: 120%; margin-bottom: -10px;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
 
@@ -218,7 +219,7 @@ function getEvents(teamid, afterlogin=0) {
 
                                     + "</div>"    
                                     
-                                    + "<div style='padding-top: 0px; background: #39414b;' data-role='button' class='ui-content')>"
+                                    + "<div style='padding-top: 0px; background: #39414b; text-align: center;' data-role='button' class='ui-content')>"
 
                                         + "<div style='text-align:center; padding-bottom: 0em; /*background: #252525;*/ height: 40px;'>"
                                             
@@ -228,7 +229,7 @@ function getEvents(teamid, afterlogin=0) {
                                         + "</div>"    
 
 
-                                        + "<a style='width:150px; height: 20px; float: right; margin-top: 2em; margin-bottom: -5px;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][0] + "><img style='display:inline-block; vertical-align:middle; margin-left: -5px; margin-top: -6px; margin-right: 2px;' width='30' height='30' src='js/images/group_icon.png'> See participants </a>"
+                                        + "<a style='width:90%; height: 20px; margin-top: 2em; margin-bottom: -5px;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][0] + "><img style='display:inline-block; vertical-align:middle; margin-left: -5px; margin-top: -6px; margin-right: 2px;' width='30' height='30' src='js/images/group_icon.png'> See participants </a>"
                                     + "</div>"
 
                                     //+ "<div style='padding-bottom: 1px;  background: #39414b; height: 1px;'</di>"
@@ -243,8 +244,8 @@ function getEvents(teamid, afterlogin=0) {
                     }
 
                     participant_list = '';
-                    i++;                    
-
+                    i++;                  
+                    count++;
                 }
 
                 //Set users in/out value per event
