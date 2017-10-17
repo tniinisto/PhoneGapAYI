@@ -169,7 +169,7 @@ function getEvents(teamid, afterlogin=0) {
                                         + "</div>"    
 
 
-                                        + "<a style='width:150px; height: 20px; float: right; margin-top: 2em; margin-bottom: -5px;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][0] + ">See participants >></a>"
+                                        + "<a style='width:150px; height: 20px; float: right; margin-top: 2em; margin-bottom: -5px;' data-role='button' data-icon='star' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][0] + "><img style='display:inline-block; vertical-align:middle; margin-left: -5px; margin-top: -6px; margin-right: 2px;' width='30' height='30' src='js/images/group_icon.png'> See participants </a>"
                                     + "</div>"
 
                                     //+ "<div style='padding-bottom: 1px;  background: #39414b; height: 1px;'</di>"
@@ -221,7 +221,7 @@ function getEvents(teamid, afterlogin=0) {
                                         + "</div>"    
 
 
-                                        + "<a style='width:150px; height: 20px; float: right; margin-top: 2em; margin-bottom: -5px;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][0] + ">See participants >></a>"
+                                        + "<a style='width:150px; height: 20px; float: right; margin-top: 2em; margin-bottom: -5px;' class='ui-btn ui-btn-inline ui-corner-all ui-shadow' href=#eventPanel" + areyouin[i][0] + "><img style='display:inline-block; vertical-align:middle; margin-left: -5px; margin-top: -6px; margin-right: 2px;' width='30' height='30' src='js/images/group_icon.png'> See participants </a>"
                                     + "</div>"
 
                                     //+ "<div style='padding-bottom: 1px;  background: #39414b; height: 1px;'</di>"
