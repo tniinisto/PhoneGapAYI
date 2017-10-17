@@ -102,7 +102,14 @@ function getEvents(teamid, afterlogin=0) {
 
                 while( areyouin[i][0] != 0 ) {
     
-                    //Show private event only for invited users, 0 = public, 2 = private and user is invited, user is admin
+                    //Save private event info to variable to show
+                    var private_info = ''
+                    if(areyouin[i][7] == 1 || areyouin[i][7] == 2)
+                        private_info = "<span style='font-size: 50%; text-transform: none;'>private</span>";
+                    else    
+                        private_info = '';
+
+                    //Show private event only for invited users => 0 = public event, 2 = private event and user is invited, show always for admins and registrar
                     if(areyouin[i][7] == 0 || areyouin[i][7] == 2 || areyouin[i][6] != 0 || sessionStorage['admin'] == 1 || sessionStorage['registrar'] == 1) {
 
                         //List all event participants, except the logged in user
@@ -145,7 +152,7 @@ function getEvents(teamid, afterlogin=0) {
                                     
                                     + "<div style='text-align:center; padding-bottom: 2em; margin-top: 1em; background: #252525; height: auto;'>"
 
-                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='background: #39414b; margin-top: -15px;'>Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
+                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='background: #39414b; margin-top: -15px;'>" + private_info + " Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
                                         + "<h1 style='font-size: 130%; margin-bottom: -10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
                                         + "<h1 style='font-size: 120%; margin-bottom: -10px;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
 
@@ -197,7 +204,7 @@ function getEvents(teamid, afterlogin=0) {
                                     
                                     + "<div style='text-align:center; padding-bottom: 2em; margin-top: 1em; background: #252525; height: auto;'>"
 
-                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='background: #39414b; margin-top: -15px;'>Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
+                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='background: #39414b; margin-top: -15px;'>" + private_info + " Event Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
                                         + "<h1 style='font-size: 130%; margin-bottom: -10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
                                         + "<h1 style='font-size: 120%; margin-bottom: -10px;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
 
