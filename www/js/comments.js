@@ -32,7 +32,8 @@ function getComments(afterlogin=0) {
                         "<ul id='comments_list' data-role='listview' data-inset='true'>"
                         +"<li style='margin: 2px; background: #39414b'>"
                             + "<img style='margin: 8px; width: 50px; height: 50px;' src='https://r-youin.com/images/" + data.photourl + "'>"
-                            + "<p style='font-size: 90%;'>"  + data.publishTime.toString().substring(0, 16) + "</p>"
+                            //+ "<p style='font-size: 90%;'>"  + data.name + "</p>"
+                            + "<p style='font-size: 90%; text-transform: none;'>"  + data.name + ' on ' + data.publishTime.toString().substring(0, 16) + "</p>"
                             + "<div style='font-size: 105%; text-transform: none; white-space: normal;'>"  + data.comment + "</div>"
                         + "</li>"
                     ).enhanceWithin();
@@ -41,7 +42,8 @@ function getComments(afterlogin=0) {
                     $("#comments" ).append(
                         "<li style='margin: 2px; background: #39414b'>"
                             + "<img style='margin: 8px; width: 50px; height: 50px;' src='https://r-youin.com/images/" + data.photourl + "'>"
-                            + "<p style='font-size: 90%;'>"  + data.publishTime.toString().substring(0, 16) + "</p>"
+                            //+ "<p style='font-size: 90%;'>"  + data.name + "</p>"
+                            + "<p style='font-size: 90%; text-transform: none;'>"  + data.name + ' on ' + data.publishTime.toString().substring(0, 16) + "</p>"
                             + "<div style='font-size: 105%'; text-transform: none; white-space: normal;'>"  + data.comment + "</div>"
                             + "</li>"
                     ).enhanceWithin();
