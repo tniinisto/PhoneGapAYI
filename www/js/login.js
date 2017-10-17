@@ -74,10 +74,14 @@ $(window).load(function() {
                                 $("#teambutton").click(function(e){
                                     e.preventDefault();
 
+                                    var admin_info = ''
+                                    if(result.items[$("#select-native-1 option:selected" ).index()].teamAdmin == 1)
+                                        var admin_info = ' - admin'
+  
                                     //alert("select button clicked");
                                     $("#logininfo").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Login page
-                                    $("#logininfo_e").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Events page
-                                    $("#logininfo_c").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text()); //Chat page
+                                    $("#logininfo_e").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text() + admin_info); //Events page
+                                    $("#logininfo_c").text(result.items[0].name + ' team ' + $("#select-native-1 option:selected" ).text() + admin_info); //Chat page
 
 									//Save playerID to session
 									sessionStorage['playerID'] =  result.items[0].playerID;
@@ -117,9 +121,14 @@ $(window).load(function() {
 
                             //One team
                             else if(result.items[0].count == 1) { 
+
+                                var admin_info = ''
+                                if(result.items[0].teamAdmin == 1)
+                                    var admin_info = ' - admin'
+
                                 $("#logininfo").text(result.items[0].name + ' team ' + result.items[0].teamName); //Login page
-                                $("#logininfo_e").text(result.items[0].name + ' team ' + result.items[0].teamName); //Events page
-                                $("#logininfo_c").text(result.items[0].name + ' team ' + result.items[0].teamName); //Chat page
+                                $("#logininfo_e").text(result.items[0].name + ' team ' + result.items[0].teamName + admin_info); //Events page
+                                $("#logininfo_c").text(result.items[0].name + ' team ' + result.items[0].teamName + admin_info); //Chat page
 
 								//Save playerID to session
 								sessionStorage['playerID'] =  result.items[0].playerID;
