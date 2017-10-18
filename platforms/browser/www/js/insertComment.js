@@ -15,6 +15,8 @@ function insertComment() {
             //&console.warn('areyouin: ', result);
             window.localStorage.setItem("lastseenmsg", result.timestamp);
 
+            setTimeout('getComments()', 500);
+
         },
 
         error: function () {
