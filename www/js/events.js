@@ -153,13 +153,13 @@ function getEvents(teamid, afterlogin=0) {
                                     
                                     + "<div style='text-align:center; padding-bottom: 1em; margin-top: 1em; background: #252525; height: auto;'>"
 
-                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='font-size: 170%; background: #39414b; margin-top: -15px;'>" + private_info + " Event #" + count + " Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
-                                        + "<h1 style='font-size: 130%; margin-bottom: -10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
-                                        + "<h1 style='font-size: 120%; margin-bottom: -10px;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
+                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='font-size: 170%; background: #39414b; margin-top: -10px;'>" + private_info + " Event #" + count + " Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
+                                        + "<h1 style='font-size: 130%; margin-bottom: -20px; margin-top: 10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
+                                        + "<h1 style='font-size: 120%;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
 
                                         //Location div                                    
-                                        + "<div data-role='content'>"
-                                            + "<h1 style='font-size: 100%; maring-top: 15px; margin-bottom: -10px; display: inline-block;'>Event Location: " + areyouin[i][3] + " </h1>"
+                                        + "<div style='margin-top: -5px;' data-role='content'>"
+                                            + "<h1 style='font-size: 100%; maring-top: 15px; margin-bottom: -10px; display: inline-block;'>At " + areyouin[i][3] + " </h1>"
                                             + "<a id='modal_map' href='#areyouin-map-page' data-transition='flip' data-shadow='false' style='margin-left: 5px;'>"
                                                 + "<img style='vertical-align: middle; margin-left: 5px; margin-top: 5px; ' src='images/GoogleMapsIcon.png' alt='maps' height='40' width='40' onclick='initMap(" + areyouin[i][8] + "," + areyouin[i][9] + ")'>"
                                             + "</a>"
@@ -167,7 +167,7 @@ function getEvents(teamid, afterlogin=0) {
 
                                     + "</div>"    
                                     
-                                    + "<div style='padding-top: 0px; background: #39414b; text-align: center;' data-role='button' class='ui-content')>"
+                                    + "<div style='padding-top: 0px; background: #39414b; text-align: center; margin-top: -5px;' data-role='button' class='ui-content')>"
 
                                         + "<div style='text-align:center; padding-bottom: 0em; /*background: #252525;*/ height: 40px;'>"
                                             
@@ -205,13 +205,13 @@ function getEvents(teamid, afterlogin=0) {
                                     
                                     + "<div style='text-align:center; padding-bottom: 1em; margin-top: 1em; background: #252525; height: auto;'>"
 
-                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='font-size: 170%; background: #39414b; margin-top: -15px;'>" + private_info + " Event #" + count + " Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
-                                        + "<h1 style='font-size: 130%; margin-bottom: -10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
-                                        + "<h1 style='font-size: 120%; margin-bottom: -10px;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
+                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='font-size: 170%; background: #39414b; margin-top: -10px;'>" + private_info + " Event #" + count + " Status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
+                                        + "<h1 style='font-size: 130%; margin-bottom: -20px; margin-top: 10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
+                                        + "<h1 style='font-size: 120%;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
 
                                         //Location div                                    
                                         + "<div data-role='content'>"
-                                            + "<h1 style='font-size: 100%; margin-bottom: -10px; display: inline-block;'>Event Location: " + areyouin[i][3] + " </h1>"
+                                            + "<h1 style='font-size: 100%; margin-bottom: -10px; margin-top: -15px; display: inline-block;'>" + areyouin[i][3] + " </h1>"
                                             //+ "<a id='modal_map' href='#areyouin-map-page' data-transition='flip' data-shadow='false' style='margin-left: 5px;'>"
                                                 //+ "<img style='vertical-align: middle; margin-left: 15px' src='images/GoogleMapsIcon.png' alt='maps' height='40' width='40' onclick='initMap(" + areyouin[i][8] + "," + areyouin[i][9] + ")'>"
                                             //+ "</a>"
@@ -219,7 +219,7 @@ function getEvents(teamid, afterlogin=0) {
 
                                     + "</div>"    
                                     
-                                    + "<div style='padding-top: 0px; background: #39414b; text-align: center;' data-role='button' class='ui-content')>"
+                                    + "<div style='padding-top: 0px; background: #39414b; text-align: center; margin-top: -5px;' data-role='button' class='ui-content')>"
 
                                         + "<div style='text-align:center; padding-bottom: 0em; /*background: #252525;*/ height: 40px;'>"
                                             
