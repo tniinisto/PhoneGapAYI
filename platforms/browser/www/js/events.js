@@ -124,11 +124,11 @@ function getEvents(teamid, afterlogin=0) {
                             if(result.items[j].seen == 1) {//Show yellow border if user has seen it
 
                                 if(result.items[j].playerid != sessionStorage['playerID'] && result.items[j].Events_eventID == areyouin[i][0])
-                                participant_list += "<div><img class='seen' style='display:inline-block; vertical-align:middle;' width='40' height='40' src='https://r-youin.com/images/" + result.items[j].photourl + "'>&nbsp" + result.items[j].name + "&nbsp<div style='color:#22aadd; font-size: large; display:inline-block; width:20%; text-align:center; float: right; padding-right: 1em; padding-top: 1em; font-weight: bold;'>" + in_out + "</div></div>";
+                                participant_list += "<div style='margin-bottom: -5px;'><img class='seen' style='display:inline-block; vertical-align:middle;' width='30' height='30' src='https://r-youin.com/images/" + result.items[j].photourl + "'>&nbsp &nbsp" + result.items[j].name + "&nbsp<div style='color:#22aadd; font-size: 100%; display:inline-block; width:20%; text-align:center; float: right; padding-right: 1em; padding-top: 1em; font-weight: bold;'>" + in_out + "</div></div>";
                             }
                             else {
                                 if(result.items[j].playerid != sessionStorage['playerID'] && result.items[j].Events_eventID == areyouin[i][0])
-                                    participant_list += "<div><img class='unseen' style='display:inline-block; vertical-align:middle;' width='40' height='40' src='https://r-youin.com/images/" + result.items[j].photourl + "'>&nbsp" + result.items[j].name + "&nbsp<div style='color:#22aadd; font-size: large; display:inline-block; width:20%; text-align:center; float: right; padding-right: 1em; padding-top: 1em; font-weight: bold;'>" + in_out + "</div></div>";                           
+                                    participant_list += "<div style='margin-bottom: -5px;'><img class='unseen' style='display:inline-block; vertical-align:middle;' width='30' height='30' src='https://r-youin.com/images/" + result.items[j].photourl + "'>&nbsp &nbsp" + result.items[j].name + "&nbsp<div style='color:#22aadd; font-size: 100%; display:inline-block; width:20%; text-align:center; float: right; padding-right: 1em; padding-top: 1em; font-weight: bold;'>" + in_out + "</div></div>";                           
                             }
                             
                             j++;

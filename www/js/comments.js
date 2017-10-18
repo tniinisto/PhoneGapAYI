@@ -34,7 +34,7 @@ function getComments(afterlogin=0) {
                             + "<img style='margin: 8px; width: 50px; height: 50px;' src='https://r-youin.com/images/" + data.photourl + "'>"
                             //+ "<p style='font-size: 90%;'>"  + data.name + "</p>"
                             + "<p style='font-size: 90%; text-transform: none;'>"  + data.name + ' on ' + data.publishTime.toString().substring(0, 16) + "</p>"
-                            + "<div style='font-size: 105%; text-transform: none; white-space: normal;'>"  + data.comment + "</div>"
+                            + "<div style='font-size: 110%; text-transform: none; white-space: normal;'>"  + data.comment + "</div>"
                         + "</li>"
                     ).enhanceWithin();
                 } 
@@ -44,7 +44,7 @@ function getComments(afterlogin=0) {
                             + "<img style='margin: 8px; width: 50px; height: 50px;' src='https://r-youin.com/images/" + data.photourl + "'>"
                             //+ "<p style='font-size: 90%;'>"  + data.name + "</p>"
                             + "<p style='font-size: 90%; text-transform: none;'>"  + data.name + ' on ' + data.publishTime.toString().substring(0, 16) + "</p>"
-                            + "<div style='font-size: 105%'; text-transform: none; white-space: normal;'>"  + data.comment + "</div>"
+                            + "<div style='font-size: 110%'; text-transform: none; white-space: normal;'>"  + data.comment + "</div>"
                             + "</li>"
                     ).enhanceWithin();
                 }
