@@ -149,11 +149,11 @@ function getEvents(teamid, afterlogin=0) {
                                 + "</div>"
 
                                 //Event main view///////////////////////////////////////////////////////////////////////////////
-                                + "<div data-role='header' style='height:auto; width: auto; margin-bottom: 5px; margin-top: 5px;'>"
+                                + "<div data-role='header' style='background: none; height:auto; width: auto; margin-bottom: 5px; margin-top: 5px; border-color: #252525;'>"
                                     
-                                    + "<div style='text-align:center; padding-bottom: 1em; margin-top: 1em; background: #252525; height: auto;'>"
+                                    + "<div style='text-align:center; padding-bottom: 1em; margin-top: 1em; background: #252525; height: auto; '>"
 
-                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='font-size: 170%; background: #39414b; margin-top: -10px; color: #CEB425;'>" + private_info + " Event #" + count + " status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
+                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='background: linear-gradient(-90deg, #39414b, #90add2); font-size: 170%; margin-top: -10px; /*color: #CEB425;*/'>" + private_info + " Event #" + count + " status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
                                         + "<h1 style='font-size: 130%; margin-bottom: -20px; margin-top: 10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
                                         + "<h1 style='font-size: 120%;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
 
@@ -201,11 +201,11 @@ function getEvents(teamid, afterlogin=0) {
                                 + "</div>"
 
                                 //Event main view///////////////////////////////////////////////////////////////////////////////
-                                + "<div data-role='header' style='height:auto; width: auto; margin-bottom: 5px; margin-top: 5px;'>"
+                                + "<div data-role='header' style='background: none; height:auto; width: auto; margin-bottom: 5px; margin-top: 5px; border-color: #252525;'>"
                                     
                                     + "<div style='text-align:center; padding-bottom: 1em; margin-top: 1em; background: #252525; height: auto;'>"
 
-                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='font-size: 170%; background: #39414b; margin-top: -10px; color: #CEB425;'>" + private_info + " Event #" + count + " status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
+                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='background: linear-gradient(-90deg, #39414b, #90add2); font-size: 170%; margin-top: -10px; /*color: #CEB425;*/'>" + private_info + " Event #" + count + " status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
                                         + "<h1 style='font-size: 130%; margin-bottom: -20px; margin-top: 10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
                                         + "<h1 style='font-size: 120%;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
 
