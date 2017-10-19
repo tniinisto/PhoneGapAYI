@@ -108,6 +108,7 @@
 	<splash density="port-xxhdpi" src="res/screens/android/drawable-port-xxhdpi-screen.png" />
 	<splash density="port-xxxhdpi" src="res/screens/android/drawable-port-xxxhdpi-screen.png" />
 </platform>
+
 <platform name="ios">
 	<icon height="57" platform="ios" src="res/icons/ios/icon.png" width="57" />
 	<icon height="114" platform="ios" src="res/icons/ios/icon@2x.png" width="114" />
