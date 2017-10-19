@@ -86,7 +86,9 @@ $(window).load(function() {
 									//Save playerID to session
 									sessionStorage['playerID'] =  result.items[0].playerID;
 									//Save teamID to session
-									sessionStorage['teamID'] =  result.items[$("#select-native-1 option:selected" ).index()].teamID;
+                                    sessionStorage['teamID'] =  result.items[$("#select-native-1 option:selected" ).index()].teamID;
+                                    //Save teamName to session
+								    sessionStorage['teamName'] =  result.items[$("#select-native-1 option:selected" ).index()].teamName;    
 									//Save name to session
 									sessionStorage['pname'] =  result.items[0].name;
 									//Save photourl to session
@@ -133,7 +135,9 @@ $(window).load(function() {
 								//Save playerID to session
 								sessionStorage['playerID'] =  result.items[0].playerID;
 								//Save teamID to session
-								sessionStorage['teamID'] =  result.items[0].teamID;
+                                sessionStorage['teamID'] =  result.items[0].teamID;
+								//Save teamName to session
+								sessionStorage['teamName'] =  result.items[0].teamName;                                
 								//Save name to session
 								sessionStorage['pname'] =  result.items[0].name;
 								//Save photourl to session
