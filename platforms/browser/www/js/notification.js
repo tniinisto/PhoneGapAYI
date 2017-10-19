@@ -44,7 +44,7 @@
                 if (permission === "granted") {
                     var notification = new Notification('R\'YouIN', {
                         tag: 'notification', 
-                        body: 'Event status has changed',
+                        body: 'Event status change on ' + sessionStorage['teamName'],
                         //sound: "file://js/tone.wav",
                         icon: "images/events-icon.png"
                     }); 
@@ -76,7 +76,7 @@
                         if (permission === "granted") {
                             var notification = new Notification('R\'YouIN', {
                                 tag: 'notification', 
-                                body: 'New message received',
+                                body: 'New message received on: ' + sessionStorage['teamName'],
                                 //sound: "file://js/tone.wav",
                                 icon: "images/chat-icon.png"
                             }); 
