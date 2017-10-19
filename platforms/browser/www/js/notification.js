@@ -76,7 +76,7 @@
                         if (permission === "granted") {
                             var notification = new Notification('R\'YouIN', {
                                 tag: 'notification', 
-                                body: 'New message received on: ' + sessionStorage['teamName'],
+                                body: 'New message received on ' + sessionStorage['teamName'],
                                 //sound: "file://js/tone.wav",
                                 icon: "images/chat-icon.png"
                             }); 
