@@ -136,6 +136,7 @@
 	<splash height="960" platform="ios" src="res/screens/ios/Default@2x~iphone.png" width="640" />
 	<splash height="480" platform="ios" src="res/screens/ios/Default~iphone.png" width="320" />
 </platform>
+
     
     <platform name="wp8">
         <icon height="99" platform="wp8" src="www/res/icon/wp8/ApplicationIcon.png" width="99" />
