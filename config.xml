@@ -33,9 +33,9 @@
 
     <plugin name="cordova-plugin-secure-storage" source="npm" />
 
-    <!-- Notification plugin -->    
-    <plugin name="cordova-plugin-local-notifications" source="npm" />
     <!-- No support -->
+    <!-- Notification plugin -->    
+    <!-- <plugin name="cordova-plugin-local-notifications" source="npm" /> -->
     <!-- <gap:plugin name="de.appplant.cordova.plugin.local-notification" /> -->
 
     <!-- White list -->
