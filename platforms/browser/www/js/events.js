@@ -167,25 +167,25 @@ function getEvents(teamid, afterlogin=0) {
                                 //Event main view///////////////////////////////////////////////////////////////////////////////
                                 + "<div data-role='header' style='background: none; height:auto; width: auto; margin-bottom: 5px; margin-top: 5px; border-color: #252525;'>"
                                     
-                                    + "<div style='text-align:center; padding-bottom: 1em; margin-top: 1em; background: #252525; height: auto; '>"
+                                    + "<div style='text-align:center; padding-bottom: 1em; margin-top: 1em; background: #252525; height: auto; width: auto;'>"
 
-                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='background: linear-gradient(-90deg, #39414b, #90add2); font-size: 170%; margin-top: -10px; /*color: #CEB425;*/'>" + private_info + " Event #" + count + " status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
-                                        + "<h1 style='font-size: 130%; margin-bottom: -20px; margin-top: 10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
-                                        + "<h1 style='font-size: 120%;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
+                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='width: auto; background: linear-gradient(-90deg, #39414b, #90add2); font-size: 170%; margin-top: -10px; /*color: #CEB425;*/'>" + private_info + " Event #" + count + " status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
+                                        + "<h1 width: auto; style='font-size: 130%; margin-bottom: -20px; margin-top: 10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
+                                        + "<h1 width: auto; style='font-size: 120%;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
 
                                         //Location div                                    
-                                        + "<div style='margin-top: -5px;' data-role='content'>"
-                                            + "<h1 style='font-size: 100%; maring-top: 15px; margin-bottom: -10px; display: inline-block;'>At " + areyouin[i][3] + " </h1>"
-                                            + "<a id='modal_map' href='#areyouin-map-page' data-transition='flip' data-shadow='false' style='margin-left: 5px;'>"
+                                        + "<div style='width: auto; margin-top: -5px;' data-role='content'>"
+                                            + "<h1 style='width: auto; font-size: 100%; maring-top: 15px; margin-bottom: -10px; display: inline-block;'>At " + areyouin[i][3] + " </h1>"
+                                            + "<a id='modal_map' href='#areyouin-map-page' data-transition='flip' data-shadow='false' style='width: auto; margin-left: 5px;'>"
                                                 + "<img style='vertical-align: middle; margin-left: 5px; margin-top: 5px; ' src='images/GoogleMapsIcon.png' alt='maps' height='40' width='40' onclick='initMap(" + areyouin[i][8] + "," + areyouin[i][9] + ")'>"
                                             + "</a>"
                                         + "</div>"
 
                                     + "</div>"    
                                     
-                                    + "<div style='padding-top: 0px; background: #39414b; text-align: center; margin-top: -5px;' data-role='button' class='ui-content')>"
+                                    + "<div style='width: auto; padding-top: 0px; background: #39414b; text-align: center; margin-top: -5px; width: auto;' data-role='button' class='ui-content')>"
 
-                                        + "<div style='text-align:center; padding-bottom: 0em; /*background: #252525;*/ height: 40px;'>"
+                                        + "<div style='width: auto; text-align:center; padding-bottom: 0em; /*background: #252525;*/ height: 40px;'>"
                                             
                                             //In/Out slider
                                             + displayToggle(areyouin[i][0], areyouin[i][6])
@@ -217,17 +217,17 @@ function getEvents(teamid, afterlogin=0) {
                                 + "</div>"
 
                                 //Event main view///////////////////////////////////////////////////////////////////////////////
-                                + "<div data-role='header' style='background: none; height:auto; width: auto; margin-bottom: 5px; margin-top: 5px; border-color: #252525;'>"
+                                + "<div data-role='header' style='width: auto; background: none; height:auto; width: auto; margin-bottom: 5px; margin-top: 5px; border-color: #252525;'>"
                                     
-                                    + "<div style='text-align:center; padding-bottom: 1em; margin-top: 1em; background: #252525; height: auto;'>"
+                                    + "<div style='text-align:center; padding-bottom: 1em; margin-top: 1em; background: #252525; height: auto; width: auto;'>"
 
-                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='background: linear-gradient(-90deg, #39414b, #90add2); font-size: 170%; margin-top: -10px; /*color: #CEB425;*/'>" + private_info + " Event #" + count + " status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
-                                        + "<h1 style='font-size: 130%; margin-bottom: -20px; margin-top: 10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
-                                        + "<h1 style='font-size: 120%;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
+                                        + "<h1 id='eventstatus_" + areyouin[i][0] + "' style='width: auto; background: linear-gradient(-90deg, #39414b, #90add2); font-size: 170%; margin-top: -10px; /*color: #CEB425;*/'>" + private_info + " Event #" + count + " status: " + areyouin[i][1] + " / " + areyouin[i][2] +  "</h1>"
+                                        + "<h1 style='width: auto; font-size: 130%; margin-bottom: -20px; margin-top: 10px;'>On " + getWeekday(areyouin[i][4]) + "</h1>" 
+                                        + "<h1 style='width: auto; font-size: 120%;'>From " + getFromToTime(areyouin[i][4], areyouin[i][5]) + "</h1>"
 
                                         //Location div                                    
                                         + "<div data-role='content'>"
-                                            + "<h1 style='font-size: 100%; margin-bottom: -10px; margin-top: -15px; display: inline-block;'>" + areyouin[i][3] + " </h1>"
+                                            + "<h1 style='width: auto; font-size: 100%; margin-bottom: -10px; margin-top: -15px; display: inline-block;'>" + areyouin[i][3] + " </h1>"
                                             //+ "<a id='modal_map' href='#areyouin-map-page' data-transition='flip' data-shadow='false' style='margin-left: 5px;'>"
                                                 //+ "<img style='vertical-align: middle; margin-left: 15px' src='images/GoogleMapsIcon.png' alt='maps' height='40' width='40' onclick='initMap(" + areyouin[i][8] + "," + areyouin[i][9] + ")'>"
                                             //+ "</a>"
@@ -235,9 +235,9 @@ function getEvents(teamid, afterlogin=0) {
 
                                     + "</div>"    
                                     
-                                    + "<div style='padding-top: 0px; background: #39414b; text-align: center; margin-top: -5px;' data-role='button' class='ui-content')>"
+                                    + "<div style='padding-top: 0px; background: #39414b; text-align: center; margin-top: -5px; width: auto;' data-role='button' class='ui-content')>"
 
-                                        + "<div style='text-align:center; padding-bottom: 0em; /*background: #252525;*/ height: 40px;'>"
+                                        + "<div style='width: auto; text-align:center; padding-bottom: 0em; /*background: #252525;*/ height: 40px;'>"
                                             
                                             //In/Out slider
                                             + displayToggle(areyouin[i][0], areyouin[i][6])
