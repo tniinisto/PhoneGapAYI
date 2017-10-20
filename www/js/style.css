@@ -1395,12 +1395,15 @@ New message icon
 
 
 #areyouin-events-page {
-    margin-left: -20px;
+    /* margin-left: -20px;
     margin-right: -20px;
     padding-left: 20px;
     padding-right: 20px;
     position:fixed;
     overflow-x:hidden;
-    /* top:0; */
-    z-index:1;
+    top:0;
+	z-index:1; */
+	max-width: 100%;
+    overflow-x: hidden;	
+
 }
