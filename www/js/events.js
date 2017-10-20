@@ -85,7 +85,7 @@ function getEvents(teamid, afterlogin=0) {
             count = 1;
 
             //Set event div width
-            $("#event_content_id" ).width($(window).width());
+            $("#event_content_id" ).width($(document).width());
 
             //Check if there are no events scheduled
             if(areyouin[0][0] == 0) {
