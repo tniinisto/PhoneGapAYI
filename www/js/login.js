@@ -157,9 +157,6 @@ $(window).load(function() {
                                 //Get chat comments
                                 getComments(1);
                                 
-                                //Test notification
-                                msgNotification();
-
                                 //Show events page
                                 $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {
                                     //transition: 'flip',
