@@ -34,7 +34,7 @@
     <plugin name="cordova-plugin-secure-storage" source="npm" />
 
     <!-- Notification plugin -->    
-    <plugin name="cordova-plugin-background-mode" source="npm" />
+    <plugin name="cordova-plugin-local-notifications" source="npm" />
 
     <!-- White list -->
     <access origin="https://r-youin.com"/>
