@@ -41,7 +41,7 @@
                 Notification.requestPermission(function (permission) {
 
                 //If the user accepts, let’s create a notification
-                if (permission === "granted") {
+                if (permission == "granted") {
                     var notification = new Notification('R\'YouIN', {
                         tag: 'notification', 
                         body: 'Event status change on ' + sessionStorage['teamName'],
@@ -73,7 +73,7 @@
                         Notification.requestPermission(function (permission) {
         
                         //If the user accepts, let’s create a notification
-                        if (permission === "granted") {
+                        if (permission == "granted") {
                             var notification = new Notification('R\'YouIN', {
                                 tag: 'notification', 
                                 body: 'New message received on ' + sessionStorage['teamName'],
