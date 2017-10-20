@@ -149,6 +149,8 @@ function getEvents(teamid, afterlogin=0) {
 
                         if( areyouin[i][3].indexOf('No location set') < 0) { //Location set////////////////////////
 
+                            $("#event_content_id" ).width($(window).width());
+
                             $("#event_content_id" ).append(
                                 
                             //Event div
