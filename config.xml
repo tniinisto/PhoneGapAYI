@@ -37,7 +37,7 @@
     <!-- Notification plugin -->    
     <!-- <plugin name="cordova-plugin-local-notifications" source="npm" /> -->
     <!-- <plugin name="de.appplant.cordova.plugin.local-notification"  source="npm" /> -->
-    <plugin name="cordova-plugin-local-notification"  source="npm" />
+    <plugin name="phonegap-plugin-local-notification" source="npm" />
 
     <!-- White list -->
     <access origin="https://r-youin.com"/>
