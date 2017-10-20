@@ -95,7 +95,7 @@ function getEvents(teamid, afterlogin=0) {
                     
                     $("#event_content_id" ).append(
 
-                        "<div style='text-align:center; padding-bottom: 2em; margin-top: 1em; background: #39414b; height: auto; padding-top: 1em;'>"
+                        "<div style='text-align:center; padding-bottom: 2em; margin-top: 1em; background: #39414b; height: auto; width: auto; padding-top: 1em;'>"
                         
                             + "<h1 style='font-size: 110%; font-weight: bold; color: lightgrey;' id='eventstatus_0' style='background: #39414b; margin-top: -15px;'>No events scheduled at the moment...</h1>"
                             + "<a style='    padding: 50px; float: left; text-transform: none; text-decoration: underline; font-size: 130%; color: lightgrey;' href='https://r-youin.com/default.php'> Schedule a new event from R'YouIN web management</a>"
@@ -155,7 +155,7 @@ function getEvents(teamid, afterlogin=0) {
                             $("#event_content_id" ).append(
                                 
                             //Event div
-                            "<div style='margin-top: 20px; margin-bottom: 40px;' id='Event_" + areyouin[i][0]  + "'>"
+                            "<div style='margin-top: 20px; margin-bottom: 40px;  width: auto;' id='Event_" + areyouin[i][0]  + "'>"
 
 
                                 //Rigth panel///////////////////////////////////////////////////////////////////////////////////
@@ -207,7 +207,7 @@ function getEvents(teamid, afterlogin=0) {
                             $("#event_content_id" ).append(
                                 
                             //Event div
-                            "<div style='margin-top: 20px; margin-bottom: 40px;' id='Event_" + areyouin[i][0]  + "'>"
+                            "<div style='margin-top: 20px; margin-bottom: 40px;  width: auto;' id='Event_" + areyouin[i][0]  + "'>"
 
 
                                 //Rigth panel///////////////////////////////////////////////////////////////////////////////////
