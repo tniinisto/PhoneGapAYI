@@ -199,6 +199,8 @@ function getEvents(teamid, afterlogin=0) {
                                     //+ "<div style='padding-bottom: 1px;  background: #39414b; height: 1px;'</di>"
 
                                 + "</div>"
+                            + "</div>"
+
                             ).enhanceWithin();
 
                         } else { //No location set ///////////////////////////
@@ -251,6 +253,8 @@ function getEvents(teamid, afterlogin=0) {
                                     //+ "<div style='padding-bottom: 1px;  background: #39414b; height: 1px;'</di>"
 
                                 + "</div>"
+                            + "</div>"
+                            
                             ).enhanceWithin();
 
                         }   
