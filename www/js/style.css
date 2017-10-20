@@ -1399,8 +1399,8 @@ New message icon
     margin-right: -20px;
     padding-left: 20px;
     padding-right: 20px;
-    position:fixed;
+    /* position:fixed; */
     overflow-x:hidden;
-    top:0;
-    z-index:1;
+    /* top:0; */
+    /* z-index:1; */
 }
