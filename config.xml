@@ -36,8 +36,8 @@
     <!-- No support -->
     <!-- Notification plugin -->    
     <!-- <plugin name="cordova-plugin-local-notifications" source="npm" /> -->
-    <!-- <gap:plugin name="de.appplant.cordova.plugin.local-notification" /> -->
-    <gap:plugin name="de.appplant.cordova.plugin.local-notification" version="0.8.1" />
+    <plugin name="de.appplant.cordova.plugin.local-notification"  source="npm" />
+    
 
     <!-- White list -->
     <access origin="https://r-youin.com"/>
