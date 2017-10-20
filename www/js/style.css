@@ -1395,14 +1395,13 @@ New message icon
 
 
 html, body {
-    margin-left: -20px;
-    margin-right: -20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+    /* padding-left: 1px;
+    padding-right: 1px; */
     /* position:fixed; */
-    overflow-x:hidden;
     /* top:0; */
-	z-index:1;
+	/* z-index:1; */
     overflow-x: hidden;	
 
 }
