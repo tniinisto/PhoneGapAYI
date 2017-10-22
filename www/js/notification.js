@@ -42,9 +42,12 @@
 
                 //If the user accepts, let’s create a notification
                 if (permission == "granted") {
+
+                    var info = 'Event status changed in team ' + sessionStorage['teamName'];
+
                     var notification = new Notification('R\'YouIN', {
                         tag: 'notification', 
-                        body: 'Event status changed',
+                        body: info,
                         //sound: "file://js/tone.wav",
                         icon: "images/events-icon.png"
                     }); 
@@ -71,12 +74,15 @@
                 
                     if ('Notification' in window) {
                         Notification.requestPermission(function (permission) {
-        
-                        //If the user accepts, let’s create a notification
+
+                        //If the user accepts, let’s create a notification                       
                         if (permission == "granted") {
+
+                            var info = 'New message in team ' + sessionStorage['teamName'];                          
+
                             var notification = new Notification('R\'YouIN', {
                                 tag: 'notification', 
-                                body: 'New message received',
+                                body: info,
                                 //sound: "file://js/tone.wav",
                                 icon: "images/chat-icon.png"
                             }); 
