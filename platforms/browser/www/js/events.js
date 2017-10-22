@@ -87,21 +87,25 @@ function getEvents(teamid, afterlogin=0) {
             //Set event div to document width -> no affect!
             // $("#event_content_id" ).width($(document).width());
 
-            //Admin & Registrar on license expire
-            if(sessionStorage['admin'] == 1 || sessionStorage['registrar'] == 1) {
+            //Admin & Registrar on license expire///////////////////////////////////////////////////////////////////
+            var licenseValid = new Date(sessionStorage['license']);            
+            var today = new Date();            
+            today.setDate(today.getDate() - 5);
+
+            if(licenseValid < today && (sessionStorage['admin'] == 1 || sessionStorage['registrar'] == 1)) {
                 
                 $("#event_content_id" ).append(
                     
-                    "<div style='text-align:center; padding-bottom: 2em; margin-top: 1em; background: #39414b; height: auto; width: auto; padding-top: 1em;'>"
+                    "<div style='text-align:center; padding-bottom: 2em; margin-top: 1em; background: #b37a0f; height: auto; width: auto; padding-top: 1em;'>"
                     
-                        + "<h1 style='font-size: 110%; font-weight: bold; color: lightgrey;' id='eventstatus_0' style='background: #39414b; margin-top: -15px;'>Team's license is about to expire</h1>"
-                        //+ "<a style='padding: 50px; float: left; text-transform: none; text-decoration: underline; font-size: 130%; color: lightgrey;' href='https://r-youin.com/default.php'> Team's license is about to expire</a>"
+                        + "<h1 style='font-size: 110%; font-weight: bold; color: lightgrey;' id='eventstatus_0' style='background: #39414b; margin-top: -15px;'>Team's license is about to expire. <br> Valid to: " + licenseValid.toISOString().slice(0,10) +"</h1>"
+                        + "<a style='text-transform: none; text-decoration: underline; font-size: 100%; color: lightgrey;' href='https://r-youin.com/default.php'>You can renew it from R'YouIN web management</a>"
 
                     + "</div>"  
                 
                 ).enhanceWithin();                   
             }                    
-
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
             //Check if there are no events scheduled
             if(areyouin[0][0] == 0) {
@@ -114,7 +118,7 @@ function getEvents(teamid, afterlogin=0) {
                         "<div style='text-align:center; padding-bottom: 2em; margin-top: 1em; background: #39414b; height: auto; width: auto; padding-top: 1em;'>"
                         
                             + "<h1 style='font-size: 110%; font-weight: bold; color: lightgrey;' id='eventstatus_0' style='background: #39414b; margin-top: -15px;'>No events scheduled at the moment...</h1>"
-                            + "<a style='    padding: 50px; float: left; text-transform: none; text-decoration: underline; font-size: 130%; color: lightgrey;' href='https://r-youin.com/default.php'> Schedule a new event from R'YouIN web management</a>"
+                            + "<a style='padding: 50px; float: left; text-transform: none; text-decoration: underline; font-size: 130%; color: lightgrey;' href='https://r-youin.com/default.php'> Schedule a new event from R'YouIN web management</a>"
                                                         
                         + "</div>"  
                     
