@@ -1217,7 +1217,8 @@ vertical-align: middle;
     margin-top: -17px;
     border-radius: 0px;
     -moz-border-radius: 0px;
-    -webkit-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	image-rendering: pixelated;
 }
 
 /************************************************************************************
