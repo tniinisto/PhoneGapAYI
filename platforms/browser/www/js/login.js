@@ -99,6 +99,8 @@ $(window).load(function() {
 									sessionStorage['registrar'] =  result.items[$("#select-native-1 option:selected" ).index()].registrar;
                                     //Save team's timezone to session
                                     sessionStorage['timezone'] =  result.items[$("#select-native-1 option:selected" ).index()].timezone;
+                                    //Save team's license to session
+								    sessionStorage['license'] =  result.items[$("#select-native-1 option:selected" ).index()].licensevalid;
                                 																		
 
                                     //Get team's events TODO: check that license is valid
@@ -147,7 +149,9 @@ $(window).load(function() {
 								//Save registrar status to session
                                 sessionStorage['registrar'] =  result.items[0].registrar;
                                 //Save team's timezone to session
-								sessionStorage['timezone'] =  result.items[0].timezone;
+                                sessionStorage['timezone'] =  result.items[0].timezone;
+                                //Save team's license to session
+								sessionStorage['license'] =  result.items[0].licensevalid;
 									
                                 $('#ayilogin_label').css("display", "none");
 
