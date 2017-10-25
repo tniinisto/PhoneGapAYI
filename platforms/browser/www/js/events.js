@@ -90,7 +90,7 @@ function getEvents(teamid, afterlogin=0) {
             //Admin & Registrar on license expire///////////////////////////////////////////////////////////////////
             var licenseValid = new Date(sessionStorage['license']);            
             var today = new Date();            
-            today.setDate(today.getDate() - 5);
+            today.setDate(today.getDate() + 5);
 
             if(licenseValid < today && (sessionStorage['admin'] == 1 || sessionStorage['registrar'] == 1)) {
                 
