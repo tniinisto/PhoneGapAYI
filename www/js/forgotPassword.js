@@ -8,19 +8,19 @@ function forgotPassword(mail) {
         alert("Check entered mail address format!");
     }
     else {
-        
+
         $.ajax({type: "GET",
             url: serviceURL + 'forgotPassword.php',
             dataType : 'json',
             data: {'mail': mail},
 
             success:function(result) {
-                alert("Success, mail sent")
+                alert("Success, mail sent: " + result)
 
             },
 
-            error: function () {
-                alert("error on mail send"); 
+            error: function (result) {
+                alert("error on mail send: " + result); 
             }
 
         });

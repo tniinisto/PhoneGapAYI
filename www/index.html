@@ -292,8 +292,10 @@
                             <input type='text' id='forgot_password' name='password_forgotten' value='' required></input>
                         </p>
             
-                        <p style="padding-left: 10px; color:white;">Email containing your new password will be sent to you in a moment.</p>
-            
+                        <p id="pass_good" style="padding-left: 10px; padding-top: 20px; color:white;">Email containing your new password will be sent to you in a moment.</p>
+
+                        <p id="pass_fail" style="padding-left: 10px; padding-top: 20px; color:white;">Email address not valid, please check address and try again.</p>
+                        
                         <!--Button-->                                               
                         <div class='buttonHolder' style='margin-top:15px;'>
             
@@ -302,77 +304,11 @@
                             <a href="#" data-role="button" data-theme="b" data-icon="" data-iconpos="" data-shadow="" data-iconshadow="" class="icon-logout menu-layout" onclick="forgotPassword($('#forgot_password').val())"> Send </a>                            
             
                         </div>
-
-                        <!-- <script>
-                            
-                            //Forgotten password/////////////////////////////////////////////////////
-                            function forgotPassword(mail) {
-
-                                if(!checkForgotEmail(mail)) {
-                                    alert("Check entered mail address format!");
-                                }
-                                else {
-                                    var serviceURL = "https://dev-areyouin.azurewebsites.net/pgmobile/services/";
-                                    $.ajax({type: "GET",
-                                        url: serviceURL + 'forgotPassword.php',
-                                        dataType : 'json',
-                                        data: {'mail': mail},
-
-                                        success:function(result) {
-                                            alert("Success, mail sent")
-
-                                        },
-
-                                        error: function () {
-                                            alert("error on mail send"); 
-                                        }
-
-                                    });
-                                }
-                            }
-
-                            // function forgotPassword(mail) {
-                            //     //Validate entered mail address with regexp
-                            //     if(!checkForgotEmail(mail)) {
-                            //         alert("Check entered mail address format!");
-                            //     }
-                            //     else {
-                            //         if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-                            //             xmlhttp = new XMLHttpRequest();
-                            //         }
-                            //         else {// code for IE6, IE5
-                            //             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                            //         }
-                            //         xmlhttp.onreadystatechange = function () {
-                            //             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                            //                 //stopSpinner();
-                            //                 //Close modal dialog
-                            //                 window.location.replace('#');
-                            //                 if (xmlhttp.responseText.indexOf('1') > -1)
-                            //                     alert("Your password has been changed, check your email!");
-                            //                 else
-                            //                     alert("R'YouIN did not find your mail from the system! Check the mail you entered and try again.");
-                            //             }
-                            //         }
-                            //         //startLoginSpinner();
-                            //         var variables = "mail=" + mail;
-                            //         xmlhttp.open("GET", "forgotPassword.php?" + variables, true);
-                            //         xmlhttp.send();
-                            //     }
-                            // }
-                    
-                            //Validate address 
-                            function checkForgotEmail(mail) {
-                                var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
-                                return pattern.test(mail);
-                            }
-                    
-                        </script>                         -->
                         
                     </form>
             </div>
 
-            <div id="pass_content_id_button" style='height:400px; width:auto; text-align: center; margin: 15px;'>
+            <div id="pass_content_id_button" style='height:400px; width:auto; text-align: center; margin-left: 10px; margin-right: 10px; margin-top: 100px;'>
                 <a id="backpacker_pass" data-role="button" data-theme="b" data-rel="back" class="ui-link ui-btn ui-btn-b ui-shadow ui-corner-all" role="button">Back</a>
             </div>
     </div>
