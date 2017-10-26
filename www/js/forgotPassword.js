@@ -5,7 +5,8 @@ var serviceURL = "https://dev-areyouin.azurewebsites.net/pgmobile/services/";
 function forgotPassword(mail) {
     
     if(!checkForgotEmail(mail)) {
-        alert("Check entered mail address format!");
+        //alert("Check entered mail address format!");
+        $("#pass_fail").css("display", "block");
     }
     else {
 
@@ -15,12 +16,21 @@ function forgotPassword(mail) {
             data: {'mail': mail},
 
             success:function(result) {
-                alert("Success, mail sent: " + result)
-
+                //alert("Success, mail sent: " + result.responseText)
+                
+                if(result.responseText.indexOf('success') !== -1)
+                    $("#pass_good").css("display", "block");
+                else
+                    $("#pass_fail").css("display", "block");
             },
 
             error: function (result) {
-                alert("error on mail send: " + result); 
+                //alert("error on mail send: " + result.responseText); 
+
+                if(result.responseText.indexOf('success') !== -1)
+                    $("#pass_good").css("display", "block");
+                else
+                    $("#pass_fail").css("display", "block");
             }
 
         });

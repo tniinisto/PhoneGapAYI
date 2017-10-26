@@ -280,7 +280,7 @@
             <h1 id="logininfo" style='text-transform: none;'>Order new password</h1>
         </div>
 
-            <div id="pass_content_id" style='height:200px; width: auto; margin: 15px;' >
+            <div id="pass_content_id" style='height:150px; width: auto; margin: 15px;' >
                     <form id='password_forgot_form' name='passwordForm' method='post' action='' onsubmit=''>
                             
                         <p style='margin: 10px;'>
@@ -292,9 +292,9 @@
                             <input type='text' id='forgot_password' name='password_forgotten' value='' required></input>
                         </p>
             
-                        <p id="pass_good" style="padding-left: 10px; padding-top: 20px; color:white;">Email containing your new password will be sent to you in a moment.</p>
+                        <p id="pass_good" style="padding-left: 10px; padding-top: 20px; color:white; display: none;">Email containing your new password will be sent to you in a moment.</p>
 
-                        <p id="pass_fail" style="padding-left: 10px; padding-top: 20px; color:white;">Email address not valid, please check address and try again.</p>
+                        <p id="pass_fail" style="padding-left: 10px; padding-top: 20px; color:white; display: none;">Email address not valid, please check address and try again.</p>
                         
                         <!--Button-->                                               
                         <div class='buttonHolder' style='margin-top:15px;'>
@@ -303,13 +303,15 @@
 
                             <a href="#" data-role="button" data-theme="b" data-icon="" data-iconpos="" data-shadow="" data-iconshadow="" class="icon-logout menu-layout" onclick="forgotPassword($('#forgot_password').val())"> Send </a>                            
             
+                            <a id="backpacker_pass" data-role="button" data-theme="b" data-rel="back" class="ui-link ui-btn ui-btn-b ui-shadow ui-corner-all" role="button">Back</a>
+
                         </div>
                         
                     </form>
             </div>
 
-            <div id="pass_content_id_button" style='height:400px; width:auto; text-align: center; margin-left: 10px; margin-right: 10px; margin-top: 100px;'>
-                <a id="backpacker_pass" data-role="button" data-theme="b" data-rel="back" class="ui-link ui-btn ui-btn-b ui-shadow ui-corner-all" role="button">Back</a>
+            <!-- <div id="pass_content_id_button" style='width:auto; text-align: center; margin-left: 10px; margin-right: 10px; margin-top: 60px;'> -->
+                
             </div>
     </div>
 
