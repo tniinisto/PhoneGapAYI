@@ -1,5 +1,5 @@
 
-var serviceURL = "https://dev-areyouin.azurewebsites.net/pgmobile/services/";
+var serviceURL = "https://r-youin.com/pgmobile/services/";
 
 function insertComment() {
     
