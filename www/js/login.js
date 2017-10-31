@@ -66,6 +66,10 @@ $(window).load(function() {
                                         }
                                 
                                 $("#select-native-1").html(listItems);
+                                
+                                //Set first team as selected
+                                $("#select-native-1").val($("#select-native-1 option:first").val()).change();
+
 
                                 $('#ayiloginid_label').css("display", "none");
                                 $('#login_credentials').css("display", "none");                             
