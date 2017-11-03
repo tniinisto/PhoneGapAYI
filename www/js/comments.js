@@ -58,12 +58,14 @@ function getComments(afterlogin=0) {
 
 
             //Set last seen init value once on the first time if key does not exist
-            if (localStorage.getItem("lastseenmsg") === null)
-                window.localStorage.setItem("lastseenmsg", result.items[0].publishTime);
+            if (localStorage.getItem(sessionStorage['teamID'] + "lastseenmsg") === null)
+                window.localStorage.setItem(sessionStorage['teamID'] + "lastseenmsg", result.items[0].publishTime);
             else { //After that check if there are new messages
-                if(window.localStorage.getItem('lastseenmsg').toString().localeCompare(result.items[0].publishTime.toString()) != 0)
+                if(window.localStorage.getItem(sessionStorage['teamID'] + "lastseenmsg").toString().localeCompare(result.items[0].publishTime.toString()) != 0)
                     msgNotification();
-                    window.localStorage.setItem("lastseenmsg", result.items[0].publishTime);
+
+                window.localStorage.setItem(sessionStorage['teamID'] + "lastseenmsg", result.items[0].publishTime);
+
             }
 
             //Start polling

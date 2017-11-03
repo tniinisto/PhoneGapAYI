@@ -13,7 +13,7 @@ function insertComment() {
         success:function(result) {
 
             //&console.warn('areyouin: ', result);
-            window.localStorage.setItem("lastseenmsg", result.timestamp);
+            window.localStorage.setItem(sessionStorage['teamID'] + "lastseenmsg", result.timestamp);
 
             //Get comments list after insert successed
             getComments();
