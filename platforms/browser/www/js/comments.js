@@ -61,7 +61,7 @@ function getComments(afterlogin=0) {
             if (localStorage.getItem(sessionStorage['teamID'] + "lastseenmsg") === null)
                 window.localStorage.setItem(sessionStorage['teamID'] + "lastseenmsg", result.items[0].publishTime);
             else { //After that check if there are new messages
-                if(window.localStorage.getItem(sessionStorage['teamID'] + "lastseenmsg").toString().localeCompare(result.items[0].publishTime.toString()) != 0)
+                if(window.localStorage.getItem(sessionStorage['teamID'] + "lastseenmsg").toString().localeCompare(result.items[0].publishTime.toString()) != 0 && sessionStorage['playerID'] != result.items[0].Players_playerID)
                     msgNotification();
 
                 window.localStorage.setItem(sessionStorage['teamID'] + "lastseenmsg", result.items[0].publishTime);
