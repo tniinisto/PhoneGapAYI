@@ -248,7 +248,6 @@
 
 	    <div data-role="content">
             <a id="comment" href="#areyouin-comment-page" data-role="button" data-transition="flip" data-theme="b" style="margin-top: -5px;">New comment</a>
-            <!-- <div id="chat_content_id"> </div> -->
 	    </div>
 
         <!--Left menu panel-->
@@ -265,6 +264,11 @@
                 <div class="menu_text" style="padding-left: 10px;">Chat</div>
             </a>
 
+            <!-- <a href="#areyouin-chart-page" data-role="button" data-theme="b" data-icon="chart" data-iconpos="" data-shadow="" data-iconshadow="" class="icon-chart menu-layout"
+                style="background-color: #2A2A2A; border-radius: 0; color: #FFF; text-shadow: none; height: 40px;">
+                <div class="menu_text" style="padding-left: 45px;">Activity</div>
+            </a>                 -->
+
             <a href="#" data-role="button" data-theme="b" data-icon="logout" data-iconpos="" data-shadow="" data-iconshadow="" class="icon-logout menu-layout" onclick="LoginPage(); logout();"
                 style="background-color: #2A2A2A; border-radius: 0; color: #FFF; text-shadow: none; height: 40px;">
                 <div class="menu_text">Logout</div>
@@ -276,18 +280,17 @@
      <!-- Chart -->
 	 <div data-role="page" id="areyouin-chart-page" data-theme="b" data-url="areyouin-chart-page">
         <div data-role="header" data-theme="b"  data-position="fixed" data-tap-toggle="false">
-            <h1><span style="display: inline; font-size: 1.7em; text-transform: none; font-weight: bold;">R'YouIN </span><img id="msg_icon2" class="msg_icon_style noshow" alt="New messages" src="../images/new_chat.png"></img></h1>
+            <h1><span style="display: inline; font-size: 1.7em; text-transform: none; font-weight: bold;">R'YouIN </span></h1>
             <h1 id="logininfo_c" style='text-transform: none;'> </h1>
-            <a href="#left-panel-chat" data-theme="b" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc" style='border-color: #39414b;' >Open left panel</a>
+            <a href="#left-panel-chart" data-theme="b" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc" style='border-color: #39414b;' >Open left panel</a>
         </div>
 
         <div data-role="content">
-            <a id="comment" href="#areyouin-comment-page" data-role="button" data-transition="flip" data-theme="b" style="margin-top: -5px;">New comment</a>
-            <!-- <div id="chat_content_id"> </div> -->
+            <a id="chart" href="#areyouin-events-page" data-role="button" data-transition="flip" data-theme="b" style="margin-top: -5px;">Back</a>
         </div>
 
         <!--Left menu panel-->
-        <div data-role="panel" id="left-panel-chat" data-display="overlay" data-theme="b">
+        <div data-role="panel" id="left-panel-chart" data-display="overlay" data-theme="b">
             <p style="font-size: 22px; font-weight: 70;">Menu</p>
 
             <a href="#areyouin-events-page" data-role="button" data-theme="b" data-icon="events" data-iconpos="" data-shadow="" data-iconshadow="" class="icon-events menu-layout"
@@ -300,10 +303,10 @@
                 <div class="menu_text" style="padding-left: 10px;">Chat</div>
             </a>
 
-            <a href="#areyouin-chart-page" data-role="button" data-theme="b" data-icon="graph" data-iconpos="" data-shadow="" data-iconshadow="" class="icon-chat menu-layout"
-            style="background-color: #2A2A2A; border-radius: 0; color: #FFF; text-shadow: none; height: 40px;">
-            <div class="menu_text" style="padding-left: 10px;">Activity</div>
-            </a>
+            <!-- <a href="#areyouin-chart-page" data-role="button" data-theme="b" data-icon="chart" data-iconpos="" data-shadow="" data-iconshadow="" class="icon-chart menu-layout"
+                style="background-color: #2A2A2A; border-radius: 0; color: #FFF; text-shadow: none; height: 40px;">
+                <div class="menu_text" style="padding-left: 45px;">Activity</div>
+            </a>  -->
 
             <a href="#" data-role="button" data-theme="b" data-icon="logout" data-iconpos="" data-shadow="" data-iconshadow="" class="icon-logout menu-layout" onclick="LoginPage(); logout();"
                 style="background-color: #2A2A2A; border-radius: 0; color: #FFF; text-shadow: none; height: 40px;">
