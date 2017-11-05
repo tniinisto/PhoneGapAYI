@@ -45,6 +45,27 @@
     <link rel="stylesheet" type="text/css" href="js/style.css" />
     <link rel="stylesheet" type="text/css" href="js/media-queries.css" />
 
+
+    <!-- Google chart --> <!-- load Google chart AJAX API -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        //Charts datatable
+        var dataTable;
+
+        //load the Google Visualization API and the chart
+        google.load('visualization', '1', { 'packages': ['corechart'] });
+
+        //set callback
+        //google.setOnLoadCallback(createChart);
+
+        //Draw on window resize, don't animate
+        // $(window).resize(function () {
+        //     createChart(0);
+        // });
+
+    </script>
+    <!-- load Google chart AJAX API -->
+
     <title>R'YouIN</title>
 
 </head>
@@ -285,6 +306,9 @@
             <a href="#left-panel-chart" data-theme="b" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc" style='border-color: #39414b;' >Open left panel</a>
         </div>
 
+        <!-- The chart diagram div -->
+        <div id="chartContent" style='text-align: center;'></div>
+
         <div data-role="content">
             <a id="chart" href="#areyouin-events-page" data-role="button" data-transition="flip" data-theme="b" style="margin-top: -5px;">Back</a>
         </div>
@@ -313,7 +337,7 @@
                 <div class="menu_text">Logout</div>
             </a>
         </div>
-</div>
+    </div>
     <!-- /Chart -->
 
     <!-- Map -->
@@ -422,6 +446,7 @@
     <script src="js/comments.js"></script>
     <script src="js/insertComment.js"></script>
     <script src="js/forgotPassword.js"></script>
+    <script src="js/chart.js"></script>
 
 </body>
 
