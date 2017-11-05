@@ -114,7 +114,7 @@ $(window).load(function() {
                                     getComments(1);
 
                                     //Get chart
-                                    getChart();
+                                    //getChart();
 
 
                                     //Show events page
@@ -169,7 +169,7 @@ $(window).load(function() {
                                 getComments(1);
 
                                 //Get chart
-                                getChart();
+                                //getChart();
                                 
                                 //Show events page
                                 $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {

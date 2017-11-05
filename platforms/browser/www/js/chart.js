@@ -15,7 +15,7 @@ function getChart() {
             var dataTable = new google.visualization.DataTable();
             dataTable.addColumn('string', 'Month');
             dataTable.addColumn('number', 'You');
-            dataTable.addColumn('number', 'Events');
+            dataTable.addColumn('number', 'Events set');
     
             //dataTable.addRow(['Elokuu', 1, 1]);
     
@@ -36,16 +36,18 @@ function getChart() {
             //define options for visualization
             //if (animate == 1) {
                 var options = {
-                    //width: 600,
-                    //height: 500,
+                    //width: 300,
+                    height: 450,
+                    //left: 10,
+                    //chartArea:{left:20, top:20,width:"70%",height:"700"},                    
                     is3D: true,
-                    title: 'Events & Your activity',
+                    title: 'Team Events & Your activity',
                     vAxis: { title: 'Events' },
                     hAxis: { title: 'Month',
                             slantedText: 'true', slantedTextAngle: 75 },
                     seriesType: 'bars',
                     series: { 0: { type: 'line'} },
-                    legend: { position: 'right' },
+                    legend: { position: 'top' },
                     animation: {
                         duration: 1000,
                         easing: 'out',
