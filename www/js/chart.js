@@ -7,7 +7,7 @@ function getEvents(teamid, afterlogin=0) {
     $.ajax({type: "POST",
     url: serviceURL + 'getChart.php',
     dataType : 'json',
-    data: {'teamid': teamid, 'playerid': sessionStorage['playerID']},
+    data: {'teamid': sessionStorage['teamID'], 'playerid': sessionStorage['playerID']},
 
         success:function(result){
 
