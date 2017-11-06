@@ -64,11 +64,11 @@ function getChart() {
             //  function drawChart() {
             //      document.getElementById('chartContent').innerHTML = "";
              
-            // if(result.length > 0)
-            //     setTimeout(function () {
-            //         drawChart(result);
-            //     }, 100);
-            // else
+            if(result.length > 0)
+                setTimeout(function () {
+                    drawChart(result);
+                }, 100);
+            else
                 $("#chartContent").append( "<h2>Team has no statistics yet...</h2>" );
                          
         },
