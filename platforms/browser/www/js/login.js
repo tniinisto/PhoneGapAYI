@@ -113,10 +113,6 @@ $(window).load(function() {
                                     //Get chat comments
                                     getComments(1);
 
-                                    //Get chart
-                                    //getChart();
-
-
                                     //Show events page
                                     $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {
                                         //transition: 'flip',
@@ -167,9 +163,6 @@ $(window).load(function() {
 
                                 //Get chat comments
                                 getComments(1);
-
-                                //Get chart
-                                //getChart();
                                 
                                 //Show events page
                                 $(':mobile-pagecontainer').pagecontainer('change', '#areyouin-events-page', {

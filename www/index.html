@@ -252,9 +252,7 @@
             }
 
             function createChartClick() {
-                setTimeout(function () {
-                    getChart();
-                }, 50);
+                getChart();
             }        
  
         </script>
@@ -452,6 +450,13 @@
     <script src="js/insertComment.js"></script>
     <script src="js/forgotPassword.js"></script>
     <script src="js/chart.js"></script>
+
+    <script>
+        //Draw on window resize
+        $(window).resize(function () {
+            getChart();
+        });
+    </script>
 
 </body>
 
