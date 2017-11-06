@@ -64,14 +64,17 @@ function getChart() {
             //  function drawChart() {
             //      document.getElementById('chartContent').innerHTML = "";
              
-            setTimeout(function () {
-                drawChart(result);
-            }, 100);
+            // if(result.length > 0)
+            //     setTimeout(function () {
+            //         drawChart(result);
+            //     }, 100);
+            // else
+                $("#chartContent").append( "<h2>Team has no statistics yet...</h2>" );
                          
         },
 
         error: function () {
-            alert("error"); 
+            //alert("error"); 
         }
 
     });
