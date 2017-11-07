@@ -67,7 +67,7 @@ function getChart() {
             if(result.length > 0)
                 setTimeout(function () {
                     drawChart(result);
-                }, 100);
+                }, 200);
             else {
                 $("#chartContent").empty();
                 $("#chartContent").append( "<h2 style='text-align: center;'>Team has no statistics yet...</h2>" );
