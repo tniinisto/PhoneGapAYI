@@ -354,15 +354,28 @@
 	 <div data-role="page" id="areyouin-web-page" data-theme="b" data-url="areyouin-web-page">
         <div data-role="header" data-theme="b"  data-position="fixed" data-tap-toggle="false">
             <h1><span style="display: inline; font-size: 1.7em; text-transform: none; font-weight: bold;">R'YouIN </span></h1>
-            <h1 id="logininfo_c" style='text-transform: none;'> </h1>
+            <h1 id="web_c" style='text-transform: none;'> </h1>
             <a href="#left-panel-chart" data-theme="b" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc" style='border-color: #39414b;' >Open left panel</a>
         </div>
 
         <!-- The web content div -->
-        <div id="webContent" style="padding: 10px;"></div>
+        <div id="webContent" style="padding: 10px;">
 
-        <div data-role="content">
-            <a id="web_mgnt" href="#areyouin-events-page" data-role="button" data-transition="flip" data-theme="b" style="margin-top: -5px;">Back to events</a>
+                <div data-role="content">
+                        <!-- <a id="web_mgnt" data-role="button" data-transition="flip" data-theme="b" style="margin-top: -5px;" onClick="do_sso_login();">SSO</a> -->
+                        <!-- <a id="sso_link" data-shadow='false' style="color: white; text-decoration: underline; text-transform: none;" href="https://r-youin.com/logincheck.php" id="ssoLogin" target="_blank">SSO</a>  -->
+
+                        <form action="https://r-youin.com/logincheck.php" method="post" target="_blank">
+                            <input type="hidden" name="ayiloginName" value="emmanuel" />
+                            <input type="hidden" name="ayipassword" value="puonti" />
+                            <button>Web management</button>
+                        </form>         
+        
+                <div data-role="content">
+                    <a id="web_mgnt" href="#areyouin-events-page" data-role="button" data-transition="flip" data-theme="b" style="margin-top: -5px;">Back to events</a>
+                </div>
+                
+                                                        
         </div>
 
         <!--Left menu panel-->
@@ -500,6 +513,7 @@
     <script src="js/insertComment.js"></script>
     <script src="js/forgotPassword.js"></script>
     <script src="js/chart.js"></script>
+    
 
     <script>
         //Draw on window resize
@@ -507,6 +521,7 @@
             getChart();
         });
     </script>
+    
 
 </body>
 
