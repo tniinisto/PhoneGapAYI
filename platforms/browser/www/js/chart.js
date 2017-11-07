@@ -68,9 +68,10 @@ function getChart() {
                 setTimeout(function () {
                     drawChart(result);
                 }, 100);
-            else
-                $("#chartContent").append( "<h2>Team has no statistics yet...</h2>" );
-                         
+            else {
+                $("#chartContent").empty();
+                $("#chartContent").append( "<h2 style='text-align: center;'>Team has no statistics yet...</h2>" );
+            }       
         },
 
         error: function () {
