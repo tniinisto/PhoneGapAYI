@@ -1188,9 +1188,24 @@ Jquery mobile override
 	padding-left: 115px;
 	vertical-align: middle;
 }  
+
 .ui-icon-chart {
     display: block;
     background: url(images/graph.png) 50% 50% no-repeat;        
+    background-size: 40px 40px;
+    height: 20px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+		
+	margin: -2px !important;
+	margin-left: -165px!important;
+	padding-left: 115px;
+	vertical-align: middle;
+}  
+
+.ui-icon-web {
+    display: block;
+    background: url(images/service.png) 50% 50% no-repeat;        
     background-size: 40px 40px;
     height: 20px;
     box-shadow: none;
