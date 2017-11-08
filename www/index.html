@@ -365,18 +365,26 @@
                         <!-- <a id="web_mgnt" data-role="button" data-transition="flip" data-theme="b" style="margin-top: -5px;" onClick="do_sso_login();">SSO</a> -->
                         <!-- <a id="sso_link" data-shadow='false' style="color: white; text-decoration: underline; text-transform: none;" href="https://r-youin.com/logincheck.php" id="ssoLogin" target="_blank">SSO</a>  -->
 
-                        <form action="https://r-youin.com/logincheck.php" method="post" target="_blank">
-                            <input type="hidden" name="ayiloginName" value="emmanuel" />
-                            <input type="hidden" name="ayipassword" value="puonti" />
-                            <button>Web management</button>
+                        <form action="https://r-youin.com/logincheck.php" method="post" target="_blank" style='margin: 13px;'>
+                            <input id="sso_username" type="hidden" name="ayiloginName"/>
+                            <input id="sso_userpass" type="hidden" name="ayipassword"/>
+                            <button onclick="setSSOcredentials();">MOVE TO WEB MANAGEMENT</button>
                         </form>         
         
                 <div data-role="content">
                     <a id="web_mgnt" href="#areyouin-events-page" data-role="button" data-transition="flip" data-theme="b" style="margin-top: -5px;">Back to events</a>
                 </div>
-                
-                                                        
+                                                                        
+            <script>
+                function setSSOcredentials() {
+                    $("#sso_username").val(window.localStorage.getItem("user_id"));
+                    $("#sso_userpass").val(window.localStorage.getItem("user_pass"));  
+                }
+            </script>
+        
         </div>
+
+
 
         <!--Left menu panel-->
         <div data-role="panel" id="left-panel-chart" data-display="overlay" data-theme="b">
