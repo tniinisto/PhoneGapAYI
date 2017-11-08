@@ -44,7 +44,8 @@
     <!-- White list -->
     <access origin="https://r-youin.com" subdomains="true"/>
 
-    <plugin name="org.apache.cordova.inappbrowser" spec="0.2.4" source="pgb" />
+    
+    <plugin name="cordova-plugin-inappbrowser" source="npm" spec="^1.7.1" />
 
 <icon src="icon.png" />
 
