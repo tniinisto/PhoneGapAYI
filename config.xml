@@ -7,13 +7,14 @@
     <author email="puonti@r-youin.com" href="https://r-youin.com">
         Puonti Solutions
     </author>
+
     <content src="index.html" />
+    
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
-
-    <preference name="OpenAllWhitelistURLsInWebView" value="No" />
+    <!-- <preference name="OpenAllWhitelistURLsInWebView" value="No" /> -->
     
-    <!-- <allow-navigation href="*" /> -->
+    <allow-navigation href="*" />
 
     <!--<plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />-->
     <!--<plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" />-->
@@ -38,7 +39,7 @@
 
     <plugin name="cordova-plugin-secure-storage" source="npm" />
 
-    <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.7.1" />
+    <!-- <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.7.1" /> -->
 
     <plugin name="phonegap-plugin-local-notification" source="npm" />
 
