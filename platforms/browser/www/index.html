@@ -363,10 +363,10 @@
 
                 <div data-role="content">
 
-                    <form id="sso_form" action="" method="post" target="_system" style='margin: 13px;'>                                                    
+                    <form id="sso_form" action="https://r-youin.com/logincheck.php" method="post" target="_blank" style='margin: 13px;'>                                                    
                         <input id="sso_username" type="hidden" name="ayiloginName"/>
-                        <input id="sso_userpass" type="hidden" name="ayipassword"/>
-                        <button onclick="setSSOcredentials(); loadURL('https://r-youin.com/logincheck.php');">MOVE TO WEB MANAGEMENT</button>
+                        <input id="sso_userpass" type="hidden" name="ayipassword"/>                        
+                        <button onclick="setSSOcredentials();">MOVE TO WEB MANAGEMENT</button>
                     </form>          
 
                 <div data-role="content">
@@ -380,10 +380,11 @@
                     $("#sso_userpass").val(window.localStorage.getItem("user_pass"));  
                 }
 
-                function loadURL(url){
-                    navigator.app.loadUrl(url, { openExternal:true });
-                    return false;
-                } 
+                // function loadURL(){
+                //     var url = 'https://r-youin.com/logincheck.php?' + 'ayiloginName=' + window.localStorage.getItem("user_id") + '&ayipassword=' + window.localStorage.getItem("user_pass");
+                //     navigator.app.loadUrl(url, { openExternal:true });
+                //     return false;
+                // } 
 
             </script>
         
