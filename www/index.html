@@ -362,15 +362,14 @@
         <div id="webContent" style="padding: 10px;">
 
                 <div data-role="content">
-                        <!-- <a id="web_mgnt" data-role="button" data-transition="flip" data-theme="b" style="margin-top: -5px;" onClick="do_sso_login();">SSO</a> -->
-                        <!-- <a id="sso_link" data-shadow='false' style="color: white; text-decoration: underline; text-transform: none;" href="https://r-youin.com/logincheck.php" id="ssoLogin" target="_blank">SSO</a>  -->
 
-                        <form action="https://r-youin.com/logincheck.php" method="post" target="_blank" href="https://r-youin.com/logincheck.php" style='margin: 13px;'>                            
-                            <input id="sso_username" type="hidden" name="ayiloginName"/>
-                            <input id="sso_userpass" type="hidden" name="ayipassword"/>
-                            <button onclick="setSSOcredentials();">MOVE TO WEB MANAGEMENT</button>
-                        </form>         
-        
+                    <form id="sso_form" action="https://r-youin.com/logincheck.php" method="post" target="_blank" style='margin: 13px;'>                                                    
+                        <input id="sso_username" type="hidden" name="ayiloginName"/>
+                        <input id="sso_userpass" type="hidden" name="ayipassword"/>
+                        <!-- <button onclick="setSSOcredentials();">MOVE TO WEB MANAGEMENT</button> -->
+                        <a href="javascript:;" target="_blank" onclick="setSSOcredentials(); parentNode.submit();">MOVE TO WEB MANAGEMENT href</a>
+                    </form>          
+
                 <div data-role="content">
                     <a id="web_mgnt" href="#areyouin-events-page" data-role="button" data-transition="flip" data-theme="b" style="margin-top: -5px;">Back to events</a>
                 </div>
