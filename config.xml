@@ -10,7 +10,10 @@
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
-    <allow-navigation href="*" />
+
+    <preference name="OpenAllWhitelistURLsInWebView" value="No" />
+    
+    <!-- <allow-navigation href="*" /> -->
 
     <!--<plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />-->
     <!--<plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" />-->
@@ -44,7 +47,7 @@
     <!-- White list -->
     <access origin="https://r-youin.com" subdomains="true"/>    
     <!-- <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.7.1" /> -->
-    <preference name="OpenAllWhitelistURLsInWebView" value="No" />
+
 
 <icon src="icon.png" />
 
