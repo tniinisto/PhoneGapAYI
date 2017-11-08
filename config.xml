@@ -10,6 +10,8 @@
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
+    <allow-navigation href="*" />
+
     <!--<plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />-->
     <!--<plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" />-->
     <!--<plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0" />-->
@@ -40,9 +42,7 @@
     <plugin name="phonegap-plugin-local-notification" source="npm" />
 
     <!-- White list -->
-    <access origin="https://r-youin.com"/>
-
-    
+    <access origin="https://r-youin.com" subdomains="true"/>
 
 <icon src="icon.png" />
 
