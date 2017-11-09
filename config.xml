@@ -39,8 +39,8 @@
 
     <plugin name="cordova-plugin-secure-storage" source="npm" />
 
-    <!-- <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.7.1" /> -->
-
+    <plugin name="cordova-plugin-inappbrowser" source="npm" />
+    
     <plugin name="phonegap-plugin-local-notification" source="npm" />
 
     <!-- White list -->
