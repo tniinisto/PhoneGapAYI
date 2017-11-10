@@ -359,7 +359,7 @@
         </div>
 
         <!-- The web content div -->
-        <div id="webContent" style="padding: 10px;">
+        <div id="webContent" style="padding: 10px; text-align: center;">
 
                 <div data-role="content">
 
@@ -369,11 +369,13 @@
                         <!-- <button onclick="setSSOcredentials();">MOVE TO WEB MANAGEMENT</button>                         -->
                     </form>                     
 
-                <a href="javascript:;" onclick="setSSOcredentials(); loadURL();">MOVE TO WEB MANAGEMENT</a>                        
-
-                <div data-role="content">
-                    <a id="web_mgnt" href="#areyouin-events-page" data-role="button" data-transition="flip" data-theme="b" style="margin-top: -5px;">Back to events</a>
+                <div id="toWebLink" data-role="content">
+                    <button><a href="javascript:;" onclick="setSSOcredentials(); loadURL();">TO WEB MANAGEMENT</a></button>                        
                 </div>
+
+                <!-- <div data-role="content">
+                    <a id="web_mgnt" href="#areyouin-events-page" data-role="button" data-transition="flip" data-theme="b" style="margin-top: -5px;">Back to events</a>
+                </div> -->
                                                                         
             <script>
     
