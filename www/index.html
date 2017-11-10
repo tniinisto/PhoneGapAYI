@@ -120,9 +120,10 @@
             <!-- <a id="registerTeam" data-shadow='false' style="color: white; text-decoration: underline; text-transform: none;" href="https://r-youin.com/register/index.html" id="registerTeam" target="_blank">Register a new team</a> -->
             <a id="registerTeam" data-shadow='false' style="color: white; text-decoration: underline; text-transform: none;" href="javascript:;" onclick="loadRegisterURL();">Register a new team</a>       
             <br>
-            <a id="aboutLink" data-shadow='false' style="color: white; text-decoration: underline; text-transform: none; font-size:80%; margin-top: 20px;" href="http://puonti-solutions.business.site/" target="_blank" id="aboutLink">&copy Puonti Solutions</a>
+            <br>
+            <!-- <a id="aboutLink" data-shadow='false' style="color: white; text-decoration: underline; text-transform: none; font-size:80%; margin-top: 20px;" href="http://puonti-solutions.business.site/" target="_blank" id="aboutLink">&copy Puonti Solutions</a> -->
+            <a id="aboutLink" data-shadow='false' style="color: white; text-decoration: underline; text-transform: none;" href="javascript:;" onclick="loadAboutURL();">&copy Puonti Solutions</a>       
         </div>
-
 
         <script>
 
@@ -132,6 +133,11 @@
 
                 }            
 
+                function loadAboutURL() {
+                    var url = 'https://r-youin.com/register/index.html';
+                    window.open(encodeURI(url), '_blank', 'location=yes, closebuttoncaption=Close');
+
+                }            
 
                 function checkFields() {
 
