@@ -39,12 +39,12 @@
 
     <plugin name="cordova-plugin-secure-storage" source="npm" />
 
-    <!-- <plugin name="cordova-plugin-inappbrowser" source="npm" /> -->
+    <plugin name="cordova-plugin-inappbrowser" source="npm" />
     
     <plugin name="phonegap-plugin-local-notification" source="npm" />
 
     <!-- White list -->
-    <!-- <access origin="https://r-youin.com" subdomains="true"/>     -->
+    <access origin="https://r-youin.com" subdomains="true"/>    
 
 
 
