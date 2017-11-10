@@ -363,12 +363,14 @@
 
                 <div data-role="content">
 
-                    <form id="sso_form" action="https://r-youin.com/logincheck.php" method="post" target="_blank" location='yes' style='margin: 13px;'>                                                    
+                    <form id="sso_form" action="https://r-youin.com/pg_logincheck.php" method="get" target="_blank" style='margin: 13px;'>                                                    
                         <input id="sso_username" type="hidden" name="ayiloginName"/>
                         <input id="sso_userpass" type="hidden" name="ayipassword"/>                        
-                        <button onclick="setSSOcredentials();">MOVE TO WEB MANAGEMENT</button>
-                    </form>     
-                    
+                        <!-- <button onclick="setSSOcredentials();">MOVE TO WEB MANAGEMENT</button>                         -->
+                    </form>                     
+
+                <a href="javascript:;" onclick="setSSOcredentials(); loadURL();">MOVE TO WEB MANAGEMENT</a>                        
+
                 <div data-role="content">
                     <a id="web_mgnt" href="#areyouin-events-page" data-role="button" data-transition="flip" data-theme="b" style="margin-top: -5px;">Back to events</a>
                 </div>
@@ -380,11 +382,15 @@
                     $("#sso_userpass").val(window.localStorage.getItem("user_pass"));  
                 }
 
-                // function loadURL(){
-                //     var url = 'https://r-youin.com/logincheck.php?' + 'ayiloginName=' + window.localStorage.getItem("user_id") + '&ayipassword=' + window.localStorage.getItem("user_pass");
-                //     navigator.app.loadUrl(url, { openExternal:true });
-                //     return false;
-                // }
+                function loadURL(){
+                    var url = 'https://r-youin.com/pg_logincheck.php?' + 'ayiloginName=' + window.localStorage.getItem("user_id") + '&ayipassword=' + window.localStorage.getItem("user_pass");
+
+                    //navigator.app.loadUrl(url, { openExternal:true });
+                    //var ref = cordova.InAppBrowser.open(url, '_blank', 'location=yes');
+
+                    window.open(encodeURI(url), '_blank', 'location=yes, closebuttoncaption=Close');
+
+                }
                     
             </script>
         
