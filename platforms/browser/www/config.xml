@@ -16,6 +16,7 @@
     <content src="index.html" />
     <allow-navigation href="*" />
     <access origin="https://r-youin.com" subdomains="true" />
+    <access origin="http://puonti-solutions.business.site/" subdomains="true" />
     <icon src="icon.png" />
     <icon gap:platform="ios" height="60" src="res/icons/ios/icon-60.png" width="60" />
     <icon gap:platform="ios" height="120" src="res/icons/ios/icon-60-2x.png" width="120" />
