@@ -75,7 +75,7 @@ function getComments(afterlogin=0) {
         },
 
         error: function () {
-            alert("comments error"); 
+            //alert("comments error"); 
         }
 
     });
