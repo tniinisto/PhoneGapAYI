@@ -7,7 +7,7 @@ function getEvents(teamid, afterlogin=0) {
     $.ajax({type: "POST",
     url: serviceURL + 'events.php',
     dataType : 'json',
-    data: {'teamid': teamid, 'timezone': $_SESSION['timezone']},
+    data: {'teamid': teamid, 'timezone': sessionStorage['timezone']},
 
         success:function(result){
 
