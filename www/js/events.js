@@ -320,7 +320,7 @@ function getEvents(teamid, afterlogin=0) {
         },
 
         error: function () {
-            alert("error"); 
+            //alert("error"); 
         }
 
     });
