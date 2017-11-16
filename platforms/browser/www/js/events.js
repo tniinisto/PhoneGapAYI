@@ -102,7 +102,7 @@ function getEvents(teamid, afterlogin=0) {
                         "<div style='text-align:center; padding-bottom: 2em; margin-top: 1em; background: #b37a0f; height: auto; width: auto; padding-top: 1em;'>"
                         
                             + "<h1 style='font-size: 110%; font-weight: bold; color: lightgrey;' id='eventstatus_0' style='background: #39414b; margin-top: -15px;'>Team's license has expired. <br> Valid to: " + licenseValid.toISOString().slice(0,10) +"</h1>"
-                            + "<a style='text-transform: none; text-decoration: underline; font-size: 100%; color: lightgrey;' href='https://r-youin.com/default.php'>You can renew it from R'YouIN web management</a>"
+                            + "<div style='padding-left: 5px; padding-right: 5px;'><button><a style='text-transform: none; text-decoration: underline; font-size: 100%; color: #2ad;' onclick='loadWebURL();'>Renew it from web management</a></button></div>"             
 
                         + "</div>"  
                     
