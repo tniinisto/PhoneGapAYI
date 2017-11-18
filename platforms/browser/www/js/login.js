@@ -178,7 +178,7 @@ $(window).load(function() {
                         },
 
                         error: function () {
-                            alert("error");
+                            //alert("error");
                         }           
                 });
         }
