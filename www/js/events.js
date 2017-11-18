@@ -44,7 +44,8 @@ function getEvents(teamid, afterlogin=0) {
                         areyouin[i][8] = data.pos;
                         if(data.playerid == sessionStorage['playerID']) {
                             areyouin[i][6] = data.EventPlayerID;
-                            areyouin[i][7] = 2;
+                            if(data.private == 1)
+                                areyouin[i][7] = 2;
                         }               
                   }
                     else {
@@ -62,7 +63,8 @@ function getEvents(teamid, afterlogin=0) {
                         areyouin[i][8] = data.pos;
                         if(data.playerid == sessionStorage['playerID']) {
                             areyouin[i][6] = data.EventPlayerID;
-                            areyouin[i][7] = 2;
+                            if(data.private == 1)
+                                areyouin[i][7] = 2;
                         }     
                     }
                 })
