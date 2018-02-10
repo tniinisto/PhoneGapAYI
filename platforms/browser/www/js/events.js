@@ -1,5 +1,5 @@
 
-var serviceURL = "https://r-youin.com/pgmobile/services/";
+var serviceURL = "https://areyouin.azurewebsites.net/pgmobile/services/";
 
 
 function getEvents(teamid, afterlogin=0) {
@@ -117,7 +117,7 @@ function getEvents(teamid, afterlogin=0) {
                         "<div style='text-align:center; padding-bottom: 2em; margin-top: 1em; background: #b37a0f; height: auto; width: auto; padding-top: 1em;'>"
                         
                             + "<h1 style='font-size: 110%; font-weight: bold; color: lightgrey;' id='eventstatus_0' style='background: #39414b; margin-top: -15px;'>Team's license is about to expire. <br> Valid to: " + licenseValid.toISOString().slice(0,10) +"</h1>"
-                            + "<a style='text-transform: none; text-decoration: underline; font-size: 100%; color: lightgrey;' href='https://r-youin.com/default.php'>You can renew it from R'YouIN web management</a>"
+                            + "<a style='text-transform: none; text-decoration: underline; font-size: 100%; color: lightgrey;' href='https://areyouin.azurewebsites.net/default.php'>You can renew it from R'YouIN web management</a>"
 
                         + "</div>"  
                     
@@ -179,11 +179,11 @@ function getEvents(teamid, afterlogin=0) {
                             if(result.items[j].seen == 1) {//Show yellow border if user has seen it
 
                                 if(result.items[j].playerid != sessionStorage['playerID'] && result.items[j].Events_eventID == areyouin[i][0])
-                                participant_list += "<div style='margin-bottom: -5px;'><img class='seen' style='display:inline-block; vertical-align:middle;' width='30' height='30' src='https://r-youin.com/images/" + result.items[j].photourl + "'>&nbsp &nbsp" + result.items[j].name + "&nbsp<div style='color:#22aadd; font-size: 100%; display:inline-block; width:20%; text-align:center; float: right; padding-right: 1em; padding-top: 1em; font-weight: bold;'>" + in_out + "</div></div>";
+                                participant_list += "<div style='margin-bottom: -5px;'><img class='seen' style='display:inline-block; vertical-align:middle;' width='30' height='30' src='https://areyouin.azurewebsites.net/images/" + result.items[j].photourl + "'>&nbsp &nbsp" + result.items[j].name + "&nbsp<div style='color:#22aadd; font-size: 100%; display:inline-block; width:20%; text-align:center; float: right; padding-right: 1em; padding-top: 1em; font-weight: bold;'>" + in_out + "</div></div>";
                             }
                             else {
                                 if(result.items[j].playerid != sessionStorage['playerID'] && result.items[j].Events_eventID == areyouin[i][0])
-                                    participant_list += "<div style='margin-bottom: -5px;'><img class='unseen' style='display:inline-block; vertical-align:middle;' width='30' height='30' src='https://r-youin.com/images/" + result.items[j].photourl + "'>&nbsp &nbsp" + result.items[j].name + "&nbsp<div style='color:#22aadd; font-size: 100%; display:inline-block; width:20%; text-align:center; float: right; padding-right: 1em; padding-top: 1em; font-weight: bold;'>" + in_out + "</div></div>";                           
+                                    participant_list += "<div style='margin-bottom: -5px;'><img class='unseen' style='display:inline-block; vertical-align:middle;' width='30' height='30' src='https://areyouin.azurewebsites.net/images/" + result.items[j].photourl + "'>&nbsp &nbsp" + result.items[j].name + "&nbsp<div style='color:#22aadd; font-size: 100%; display:inline-block; width:20%; text-align:center; float: right; padding-right: 1em; padding-top: 1em; font-weight: bold;'>" + in_out + "</div></div>";                           
                             }
                             
                             j++;
@@ -330,7 +330,7 @@ function getEvents(teamid, afterlogin=0) {
 }
 
 function loadWebURL(){
-    var url = 'https://r-youin.com/pg_logincheck.php?' + 'ayiloginName=' + window.localStorage.getItem("user_id") + '&ayipassword=' + window.localStorage.getItem("user_pass");
+    var url = 'https://areyouin.azurewebsites.net/pg_logincheck.php?' + 'ayiloginName=' + window.localStorage.getItem("user_id") + '&ayipassword=' + window.localStorage.getItem("user_pass");
 
     //navigator.app.loadUrl(url, { openExternal:true });
     //var ref = cordova.InAppBrowser.open(url, '_blank', 'location=yes');
@@ -518,7 +518,7 @@ function displayToggle(event, eventplayer) {
     //User has been invited -> show toggle
     if(eventplayer != 0) {
         
-           return  "<img style='display:inline-block; vertical-align:middle; padding-top: 8px;' width='40' height='40' src='https://r-youin.com/images/" + sessionStorage['photourl'] + "'>"
+           return  "<img style='display:inline-block; vertical-align:middle; padding-top: 8px;' width='40' height='40' src='https://areyouin.azurewebsites.net/images/" + sessionStorage['photourl'] + "'>"
            
            + "<h2 style='display:inline-block; height: 100%; vertical-align:top; margin-left: 1em; margin-right: 1em; font-size: 100%;'> " + sessionStorage['pname'] + "</h2>"
 

@@ -1,5 +1,5 @@
 
-var serviceURL = "https://r-youin.com/pgmobile/services/";
+var serviceURL = "https://areyouin.azurewebsites.net/pgmobile/services/";
 
 //Forgotten password/////////////////////////////////////////////////////
 function forgotPassword(mail) {

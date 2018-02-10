@@ -1,5 +1,5 @@
 
-var serviceURL = "https://r-youin.com/pgmobile/services/";
+var serviceURL = "https://areyouin.azurewebsites.net/pgmobile/services/";
 
 
 function getComments(afterlogin=0) {
@@ -31,7 +31,7 @@ function getComments(afterlogin=0) {
                     $("#comments" ).append(
                         "<ul id='comments_list' data-role='listview' data-inset='true'>"
                         +"<li style='margin: 2px; background: #39414b'>"
-                            + "<img style='margin: 8px; width: 50px; height: 50px;' src='https://r-youin.com/images/" + data.photourl + "'>"
+                            + "<img style='margin: 8px; width: 50px; height: 50px;' src='https://areyouin.azurewebsites.net/images/" + data.photourl + "'>"
                             //+ "<p style='font-size: 90%;'>"  + data.name + "</p>"
                             + "<p style='font-size: 90%; text-transform: none;'>"  + data.name + ' on ' + data.publishTime.toString().substring(0, 16) + "</p>"
                             + "<div style='font-size: 110%; text-transform: none; white-space: normal;'>"  + data.comment + "</div>"
@@ -41,7 +41,7 @@ function getComments(afterlogin=0) {
                 else {
                     $("#comments" ).append(
                         "<li style='margin: 2px; background: #39414b'>"
-                            + "<img style='margin: 8px; width: 50px; height: 50px;' src='https://r-youin.com/images/" + data.photourl + "'>"
+                            + "<img style='margin: 8px; width: 50px; height: 50px;' src='https://areyouin.azurewebsites.net/images/" + data.photourl + "'>"
                             //+ "<p style='font-size: 90%;'>"  + data.name + "</p>"
                             + "<p style='font-size: 90%; text-transform: none;'>"  + data.name + ' on ' + data.publishTime.toString().substring(0, 16) + "</p>"
                             + "<div style='font-size: 110%'; text-transform: none; white-space: normal;'>"  + data.comment + "</div>"
